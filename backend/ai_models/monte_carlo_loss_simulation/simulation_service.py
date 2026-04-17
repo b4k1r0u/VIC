@@ -1,8 +1,39 @@
 # services/simulation_service.py
+"""
+Monte Carlo earthquake loss simulation service.
+Self-contained: can load portfolio from CSV without any Django/FastAPI bootstrap.
+"""
+import os
 import numpy as np
 import pandas as pd
 from scipy.stats import beta as beta_dist
-from services.simulation_service.vulnerability import compute_damage_ratio
+
+# Local import — works when this file is run directly OR imported as a package
+try:
+    from .vulnerability import compute_damage_ratio
+except ImportError:
+    from vulnerability import compute_damage_ratio
+
+# ── Column alias: support both the accented and unaccented field name ──────────
+_VALUE_COL = "VALEUR_ASSURÉE"  # preferred (accented)
+_VALUE_COL_ALT = "VALEUR_ASSUREE"  # fallback CSV encoding variant
+
+
+def _get_value_col(df: pd.DataFrame) -> str:
+    """Return the name of the insured value column, regardless of accent."""
+    if _VALUE_COL in df.columns:
+        return _VALUE_COL
+    if _VALUE_COL_ALT in df.columns:
+        return _VALUE_COL_ALT
+    raise KeyError(f"Cannot find insured value column. Expected one of: {_VALUE_COL!r}, {_VALUE_COL_ALT!r}")
+
+
+# ── Construction type mapping (imputed from TYPE when not explicitly recorded) ─
+_TYPE_TO_CONSTRUCTION = {
+    "1 - Bien Immobilier":           "Maçonnerie creuse",  # residential → hollow brick
+    "2 - Installation Commerciale":  "Béton armé",         # commercial → RC frame
+    "3 - Installation Industrielle": "Structure métallique",  # industrial → steel
+}
 
 class SimulationService:
 
@@ -104,7 +135,8 @@ class SimulationService:
                 damage_samples[i] = rng.beta(a, b, size=N_SIMS)
 
         # Policy loss per simulation: damage_ratio × insured_value
-        insured_values = affected["VALEUR_ASSURÉE"].values.reshape(-1, 1)
+        val_col = _get_value_col(affected)
+        insured_values = affected[val_col].values.reshape(-1, 1)
         policy_losses = damage_samples * insured_values  # (N_policies, N_sims)
 
         # Portfolio gross loss per simulation: Σ across policies
@@ -234,10 +266,67 @@ class SimulationService:
         """Aggregate expected losses by commune for map overlay."""
         affected = affected.copy()
         affected["expected_loss"] = mean_losses
+        val_col = _get_value_col(affected)
         agg = affected.groupby(["wilaya_code", "commune_name", "lat", "lon"]).agg(
             expected_loss=("expected_loss", "sum"),
-            policy_count=("VALEUR_ASSURÉE", "count"),
-            total_exposure=("VALEUR_ASSURÉE", "sum"),
+            policy_count=(val_col, "count"),
+            total_exposure=(val_col, "sum"),
         ).reset_index()
 
         return agg.to_dict(orient="records")
+
+    # -------------------------------------------------------------------------
+    # Data loading helpers
+    # -------------------------------------------------------------------------
+
+    @classmethod
+    def load_portfolio(cls, csv_path: str | None = None) -> pd.DataFrame:
+        """
+        Load and prepare the enriched portfolio CSV for simulation.
+
+        Automatically:
+        - Resolves the CSV path (defaults to the shared datasets folder)
+        - Normalises the insured value column name
+        - Imputes construction_type from TYPE when missing
+        - Drops rows with zero or missing insured value
+        - Drops rows with missing lat/lon (needed for PGA calculation)
+
+        Returns a DataFrame ready to pass into SimulationService.run().
+        """
+        if csv_path is None:
+            # Default: relative to this file → ../datasets/data/portfolio_enriched.csv
+            here = os.path.dirname(os.path.abspath(__file__))
+            csv_path = os.path.join(
+                here, "..", "datasets", "data", "portfolio_enriched.csv"
+            )
+
+        df = pd.read_csv(csv_path, low_memory=False)
+
+        # ── Normalise value column ────────────────────────────────────────────
+        val_col = _get_value_col(df)
+        if val_col != _VALUE_COL:
+            df.rename(columns={val_col: _VALUE_COL}, inplace=True)
+
+        df[_VALUE_COL] = pd.to_numeric(df[_VALUE_COL], errors="coerce").fillna(0)
+
+        # ── Impute construction_type if not present ───────────────────────────
+        if "construction_type" not in df.columns:
+            df["construction_type"] = df["TYPE"].map(_TYPE_TO_CONSTRUCTION).fillna("Inconnu")
+        else:
+            df["construction_type"] = df["construction_type"].fillna(
+                df["TYPE"].map(_TYPE_TO_CONSTRUCTION)
+            ).fillna("Inconnu")
+
+        # ── Drop unusable rows ────────────────────────────────────────────────
+        df = df[df[_VALUE_COL] > 0].copy()
+        df = df.dropna(subset=["lat", "lon"]).copy()
+
+        # ── Ensure wilaya_code is zero-padded string ──────────────────────────
+        df["wilaya_code"] = df["wilaya_code"].astype(str).str.zfill(2)
+
+        print(f"[SimulationService] Portfolio loaded: {len(df):,} policies")
+        print(f"  Wilayas: {df['wilaya_code'].nunique()}")
+        print(f"  Total exposure: {df[_VALUE_COL].sum():,.0f} DZD")
+        print(f"  Zone distribution: {df['zone_sismique'].value_counts().to_dict()}")
+
+        return df
