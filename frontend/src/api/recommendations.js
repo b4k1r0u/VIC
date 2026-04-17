@@ -8,7 +8,7 @@
  */
 import apiClient from './client'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || 'https://s-ismicrisk.onrender.com'
 
 /**
  * @typedef {Object} RecommendationContext

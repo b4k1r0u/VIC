@@ -2,6 +2,7 @@
  * @fileoverview geo API — typed functions for all geography endpoints.
  * Corresponds to backend router: routers/geo.py — prefix: /api/geo
  */
+import axios from 'axios'
 import apiClient from './client'
 import { toNumber } from '../utils/format'
 
@@ -25,6 +26,10 @@ function normalizeMapFeature(item) {
     layer_value: toNumber(item.layer_value),
   }
 }
+
+const COMMUNE_API_BASE =
+  import.meta.env.VITE_COMMUNE_API_URL ||
+  (typeof window !== 'undefined' ? window.location.origin : '')
 
 export const geoAPI = {
   /**
@@ -80,13 +85,7 @@ export const geoAPI = {
    * @returns {Promise<import('../types/geo').CommuneBasic[]>}
    */
   getCommunesByWilaya: (wilayaCode) =>
-    apiClient.get(`/api/geo/wilayas/${wilayaCode}/communes`).then((r) =>
-      (r.data ?? []).map((item) => ({
-        code: item.code,
-        name: item.name,
-        zone_sismique: item.zone_sismique,
-      }))
-    ),
+    axios.get(`${COMMUNE_API_BASE}/api/geo/wilayas/${wilayaCode}/communes`).then((r) => r.data),
 
   /**
    * GET /api/geo/zone/{wilaya_code}/{commune_name}
@@ -96,8 +95,8 @@ export const geoAPI = {
    * @returns {Promise<{ zone: string, description: string }>}
    */
   getZone: (wilayaCode, communeName) =>
-    apiClient
-      .get(`/api/geo/zone/${wilayaCode}/${encodeURIComponent(communeName)}`)
+    axios
+      .get(`${COMMUNE_API_BASE}/api/geo/zone/${wilayaCode}/${encodeURIComponent(communeName)}`)
       .then((r) => r.data),
 
   /**

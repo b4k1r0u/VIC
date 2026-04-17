@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react'
 import useAlertStore from '../store/alertStore'
 import useSimulationStore from '../store/simulationStore'
 
-const WS_URL = import.meta.env.VITE_WS_URL || 'ws://localhost:8000'
+const WS_URL = import.meta.env.VITE_WS_URL || 'wss://s-ismicrisk.onrender.com'
 const RECONNECT_DELAY = 5000
 
 export function useSeismicAlerts() {
