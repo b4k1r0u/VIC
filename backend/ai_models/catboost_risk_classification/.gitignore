@@ -1,0 +1,5 @@
+.codex
+.codex/
+.matplotlib/
+__pycache__/
+catboost_info/

@@ -11,7 +11,7 @@ from __future__ import annotations
 import os
 import sys
 import time
-from typing import Optional, List
+from typing import List, Optional
 
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
@@ -32,8 +32,9 @@ except Exception as e:
 class PolicyScoreRequest(BaseModel):
     zone_sismique: str = Field(default="I", description="RPA 99 Seismic Zone (0, I, IIa, IIb, III)")
     wilaya_code: str = Field(default="16", description="Wilaya code (01-58)")
-    type_risque: str = Field(default="1 - Bien Immobilier", description="Usage type")
-    construction_type: str = Field(default="Béton armé", description="Material (e.g. Béton armé, Maçonnerie)")
+    commune_name: Optional[str] = Field(default=None, description="Commune name when known")
+    type_risque: str = Field(default="Bien immobilier", description="Usage type")
+    construction_type: Optional[str] = Field(default=None, description="Material (optional)")
     valeur_assuree: float = Field(default=10000000.0, description="Insured Value in DZD")
     prime_nette: Optional[float] = Field(0.0, description="Net premium (used to calculate coverage adequacy rate)")
     year: int = Field(2025, description="Underwriting year")
@@ -48,6 +49,7 @@ class PolicyScoreResponse(BaseModel):
     tier: str
     proba: Probabilities
     dominant_factor: str
+    normalized_inputs: dict
     elapsed_ms: float
 
 class BatchScoreRequest(BaseModel):
