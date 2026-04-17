@@ -1,26 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { SIMULATED_EVENTS } from '../data/constants'
-import { Wifi, WifiOff, Zap, AlertTriangle, Phone, X, Clock, Activity } from 'lucide-react'
+import { Wifi, Zap, AlertTriangle, Phone, X, Clock, Activity } from 'lucide-react'
 
-const magColor = m => m >= 5 ? '#ef4444' : m >= 4 ? '#f59e0b' : '#22c55e'
-const magBg    = m => m >= 5 ? 'rgba(239,68,68,0.12)' : m >= 4 ? 'rgba(245,158,11,0.12)' : 'rgba(34,197,94,0.12)'
-const fmtTime  = d => d.toLocaleTimeString('fr-FR', { hour:'2-digit', minute:'2-digit', second:'2-digit' })
-const fmtDate  = d => d.toLocaleDateString('fr-FR', { day:'2-digit', month:'short' })
+const magColor = m => m >= 5 ? 'var(--danger)' : m >= 4 ? 'var(--warning)' : 'var(--success)'
+const magBg = m => m >= 5 ? 'var(--danger-muted)' : m >= 4 ? 'var(--warning-muted)' : 'var(--success-muted)'
+const fmtTime = d => d.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })
+const fmtDate = d => d.toLocaleDateString('fr-FR', { day: '2-digit', month: 'short' })
 
 const SEED_ALERTS = [
-  { id:10, time: new Date(Date.now()-172800000), ...SIMULATED_EVENTS[4] },
-  { id:11, time: new Date(Date.now()-86400000),  ...SIMULATED_EVENTS[2] },
-  { id:12, time: new Date(Date.now()-10800000),  ...SIMULATED_EVENTS[1] },
-  { id:13, time: new Date(Date.now()-900000),    ...SIMULATED_EVENTS[0] },
+  { id: 10, time: new Date(Date.now() - 172800000), ...SIMULATED_EVENTS[4] },
+  { id: 11, time: new Date(Date.now() - 86400000), ...SIMULATED_EVENTS[2] },
+  { id: 12, time: new Date(Date.now() - 10800000), ...SIMULATED_EVENTS[1] },
+  { id: 13, time: new Date(Date.now() - 900000), ...SIMULATED_EVENTS[0] },
 ]
 
 export default function AlertsPage() {
-  const [wsStatus, setWsStatus]     = useState('connecting')
-  const [alerts, setAlerts]         = useState(SEED_ALERTS)
+  const [wsStatus, setWsStatus] = useState('connecting')
+  const [alerts, setAlerts] = useState(SEED_ALERTS)
   const [majorAlert, setMajorAlert] = useState(null)
-  const [flash, setFlash]           = useState(false)
+  const [flash, setFlash] = useState(false)
   const [lastUpdate, setLastUpdate] = useState(new Date())
-  const [epicentre, setEpicentre]   = useState(null)
+  const [epicentre, setEpicentre] = useState(null)
   const eventIdx = useRef(0)
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function AlertsPage() {
     <main
       style={{
         ...S.page,
-        background: flash ? 'rgba(239,68,68,0.04)' : 'transparent',
+        background: flash ? 'rgba(220,38,38,0.02)' : 'transparent',
         transition: 'background 0.5s',
       }}
       className="page-fade"
@@ -62,20 +62,20 @@ export default function AlertsPage() {
       {/* Major alert banner */}
       {majorAlert && (
         <div style={S.majorBanner} className="major-alert-flash">
-          <div style={{ display:'flex', alignItems:'center', gap:14 }}>
-            <div style={{ width:44, height:44, borderRadius:12, background:'rgba(255,255,255,0.15)', display:'flex', alignItems:'center', justifyContent:'center', flexShrink:0 }}>
-              <AlertTriangle size={22} color="#fff" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 40, height: 40, borderRadius: 10, background: 'rgba(255,255,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+              <AlertTriangle size={20} color="#fff" />
             </div>
             <div>
-              <div style={{ fontFamily:'Syne,sans-serif', fontWeight:800, fontSize:'1rem', color:'#fff', letterSpacing:'-0.3px' }}>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '0.95rem', color: '#fff' }}>
                 ALERTE SISMIQUE MAJEURE — M{majorAlert.magnitude}
               </div>
-              <div style={{ fontSize:'0.78rem', color:'rgba(255,255,255,0.85)', marginTop:2 }}>{majorAlert.location}</div>
+              <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.8)', marginTop: 2 }}>{majorAlert.location}</div>
             </div>
           </div>
-          <div style={{ display:'flex', gap:8 }}>
+          <div style={{ display: 'flex', gap: 8 }}>
             <button style={S.crisisBtn}>
-              <Phone size={13} style={{ marginRight:6 }} />
+              <Phone size={13} style={{ marginRight: 6 }} />
               Protocole de Crise
             </button>
             <button onClick={() => setMajorAlert(null)} style={S.dismissBtn}>
@@ -88,30 +88,29 @@ export default function AlertsPage() {
       {/* Status strip */}
       <div style={S.statusStrip}>
         {[
-          { label:'EMSC WebSocket', ok: wsStatus==='connected', state: wsStatus==='connected' ? 'CONNECTÉ' : 'CONNEXION...' },
-          { label:'USGS API',       ok: true,  state:'CONNECTÉ' },
-          { label:'CRAAG Algérie',  ok: null,  state:'SIMULÉ'   },
+          { label: 'EMSC WebSocket', ok: wsStatus === 'connected', state: wsStatus === 'connected' ? 'CONNECTÉ' : 'CONNEXION...' },
+          { label: 'USGS API', ok: true, state: 'CONNECTÉ' },
+          { label: 'CRAAG Algérie', ok: null, state: 'SIMULÉ' },
         ].map(s => (
           <div key={s.label} style={S.statusItem}>
             <div style={{
               ...S.statusDot,
-              background: s.ok===null ? '#f59e0b' : s.ok ? '#22c55e' : '#64748b',
-              animation: s.ok ? 'pulseDot 1.5s infinite' : 'none',
-              boxShadow: s.ok===null ? '0 0 8px rgba(245,158,11,0.5)' : s.ok ? '0 0 8px rgba(34,197,94,0.5)' : 'none',
+              background: s.ok === null ? 'var(--warning)' : s.ok ? 'var(--success)' : 'var(--text-quaternary)',
+              animation: s.ok ? 'pulseDot 2s infinite' : 'none',
             }} />
-            <span style={{ fontSize:'0.68rem', color:'var(--text-2)', fontWeight:600 }}>{s.label}</span>
+            <span style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', fontWeight: 500 }}>{s.label}</span>
             <span style={{
-              fontFamily:'JetBrains Mono,monospace', fontSize:'0.6rem',
-              color: s.ok===null ? '#f59e0b' : s.ok ? '#22c55e' : '#64748b',
-              fontWeight:700,
+              fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem',
+              color: s.ok === null ? 'var(--warning)' : s.ok ? 'var(--success)' : 'var(--text-quaternary)',
+              fontWeight: 600,
             }}>
               ● {s.state}
             </span>
           </div>
         ))}
-        <div style={{ marginLeft:'auto', display:'flex', alignItems:'center', gap:6 }}>
-          <Clock size={11} color="var(--text-3)" />
-          <span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'0.6rem', color:'var(--text-3)' }}>
+        <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6 }}>
+          <Clock size={11} color="var(--text-quaternary)" />
+          <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', color: 'var(--text-quaternary)' }}>
             {fmtTime(lastUpdate)}
           </span>
         </div>
@@ -119,14 +118,14 @@ export default function AlertsPage() {
 
       {wsStatus === 'connecting' ? (
         <div style={S.connectBox}>
-          <div style={{ position:'relative', width:64, height:64 }}>
+          <div style={{ position: 'relative', width: 56, height: 56 }}>
             <div style={S.spinner} />
-            <Wifi size={24} color="var(--g500)" style={{ position:'absolute', top:'50%', left:'50%', transform:'translate(-50%,-50%)' }} />
+            <Wifi size={22} color="var(--primary-500)" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }} />
           </div>
-          <div style={{ fontFamily:'Syne,sans-serif', fontWeight:700, color:'var(--text-2)', fontSize:'1rem' }}>
+          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, color: 'var(--text-secondary)', fontSize: '1rem' }}>
             Connexion à EMSC WebSocket...
           </div>
-          <code style={{ fontSize:'0.68rem', color:'var(--text-3)', background:'var(--surface)', border:'1px solid var(--border)', padding:'6px 12px', borderRadius:8 }}>
+          <code style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', background: 'var(--bg-subtle)', border: '1px solid var(--border)', padding: '6px 12px', borderRadius: 6 }}>
             wss://www.seismicportal.eu/standing_order/websocket
           </code>
         </div>
@@ -135,9 +134,9 @@ export default function AlertsPage() {
           {/* Feed column */}
           <div style={S.feedCard}>
             <div style={S.feedHead}>
-              <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-                <Activity size={15} color="#ef4444" />
-                <span style={{ fontFamily:'Syne,sans-serif', fontWeight:700, fontSize:'0.85rem', color:'var(--text-1)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <Activity size={14} color="var(--danger)" />
+                <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.85rem', color: 'var(--text-primary)' }}>
                   Flux en Temps Réel
                 </span>
               </div>
@@ -147,39 +146,38 @@ export default function AlertsPage() {
               {alerts.map((a, i) => (
                 <div key={a.id} style={{
                   ...S.alertRow,
-                  borderLeft:`3px solid ${magColor(a.magnitude)}`,
-                  background: a.isMajor ? 'rgba(239,68,68,0.06)' : 'var(--surface2)',
+                  borderLeft: `3px solid ${magColor(a.magnitude)}`,
+                  background: a.isMajor ? 'var(--danger-muted)' : 'var(--surface)',
                   animation: i === 0 ? 'fadeIn 0.4s ease' : 'none',
                 }}>
-                  <div style={{ display:'flex', justifyContent:'space-between', marginBottom:6 }}>
-                    <div style={{ display:'flex', alignItems:'center', gap:8 }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                       <span style={{
                         ...S.magBadge,
-                        background:magBg(a.magnitude),
-                        color:magColor(a.magnitude),
-                        border:`1px solid ${magColor(a.magnitude)}30`,
+                        background: magBg(a.magnitude),
+                        color: magColor(a.magnitude),
                       }}>
                         M{a.magnitude}
                       </span>
-                      <span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'0.6rem', color:'var(--text-3)' }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.62rem', color: 'var(--text-quaternary)' }}>
                         {fmtDate(a.time)} · {fmtTime(a.time)}
                       </span>
                     </div>
-                    {a.isMajor && <span style={S.majorChip}>🔴 MAJEUR</span>}
+                    {a.isMajor && <span style={S.majorChip}>MAJEUR</span>}
                   </div>
-                  <div style={{ fontSize:'0.78rem', fontWeight:600, color:'var(--text-1)', marginBottom:3 }}>
+                  <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: 3 }}>
                     {a.location}
                   </div>
-                  <div style={{ fontSize:'0.65rem', color:'var(--text-3)', marginBottom: a.affectedWilayas?.length ? 8 : 0 }}>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', marginBottom: a.affectedWilayas?.length ? 8 : 0 }}>
                     Prof: {a.depth} km · {a.lat}°N {a.lon}°E
                   </div>
                   {a.affectedWilayas?.length > 0 ? (
                     <div style={S.impactBox}>
-                      <div style={{ fontSize:'0.6rem', fontWeight:700, color:'#fbbf24', marginBottom:6, display:'flex', alignItems:'center', gap:5 }}>
-                        <Zap size={10} style={{ flexShrink:0 }} />
+                      <div style={{ fontSize: '0.62rem', fontWeight: 600, color: 'var(--warning)', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 5 }}>
+                        <Zap size={10} style={{ flexShrink: 0 }} />
                         IMPACT PORTEFEUILLE
                       </div>
-                      <div style={{ display:'flex', flexWrap:'wrap', gap:4 }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 4 }}>
                         {a.affectedWilayas.map(w => (
                           <span key={w} style={S.wChip}>{w}</span>
                         ))}
@@ -197,27 +195,27 @@ export default function AlertsPage() {
           <div style={S.rightCol}>
             {/* Mini map */}
             <div style={S.sideCard}>
-              <div style={S.sideTitle}>🗺️ Localisation Épicentre</div>
-              <svg viewBox="0 0 500 370" style={{ width:'100%', height:175 }}>
-                <rect width="500" height="370" fill="#f1f5f9" />
+              <div style={S.sideTitle}>Localisation Épicentre</div>
+              <svg viewBox="0 0 500 370" style={{ width: '100%', height: 165 }}>
+                <rect width="500" height="370" fill="var(--bg-subtle)" rx="8" />
                 <path
                   d="M 45,72 L 95,58 L 175,50 L 255,47 L 330,48 L 408,52 L 452,68 L 462,95 L 455,128 L 440,158 L 432,192 L 424,232 L 416,274 L 405,320 L 385,362 L 348,370 L 295,368 L 240,366 L 187,358 L 148,340 L 122,310 L 100,278 L 80,245 L 62,212 L 48,178 L 42,140 Z"
-                  fill="rgba(34,197,94,0.06)"
-                  stroke="rgba(34,197,94,0.25)"
+                  fill="rgba(20,184,166,0.06)"
+                  stroke="rgba(20,184,166,0.2)"
                   strokeWidth={1.5}
                 />
                 {epicentre && (
                   <g>
-                    <circle cx={epicentre.x} cy={epicentre.y} r={28} fill="none" stroke="#ef4444" strokeWidth={1} opacity={0.2} />
-                    <circle cx={epicentre.x} cy={epicentre.y} r={15} fill="none" stroke="#ef4444" strokeWidth={1.5} opacity={0.5} />
-                    <circle cx={epicentre.x} cy={epicentre.y} r={5} fill="#ef4444" />
-                    <text x={epicentre.x+8} y={epicentre.y-8} fontSize={8} fill="#f87171" fontFamily="JetBrains Mono" fontWeight="700">
+                    <circle cx={epicentre.x} cy={epicentre.y} r={24} fill="none" stroke="var(--danger)" strokeWidth={1} opacity={0.15} />
+                    <circle cx={epicentre.x} cy={epicentre.y} r={12} fill="none" stroke="var(--danger)" strokeWidth={1.5} opacity={0.4} />
+                    <circle cx={epicentre.x} cy={epicentre.y} r={4} fill="var(--danger)" />
+                    <text x={epicentre.x + 8} y={epicentre.y - 8} fontSize={8} fill="var(--danger)" fontFamily="'JetBrains Mono'" fontWeight="600">
                       Épicentre
                     </text>
                   </g>
                 )}
                 {!epicentre && (
-                  <text x={250} y={185} textAnchor="middle" fontSize={10} fill="#94a3b8" fontFamily="Plus Jakarta Sans">
+                  <text x={250} y={185} textAnchor="middle" fontSize={10} fill="var(--text-quaternary)" fontFamily="'Plus Jakarta Sans'">
                     En attente d'événement...
                   </text>
                 )}
@@ -227,22 +225,22 @@ export default function AlertsPage() {
             {/* Impact panel */}
             {latestMajor?.affectedWilayas?.length > 0 && (
               <div style={S.sideCard}>
-                <div style={S.sideTitle}>⚡ Dernier Impact Calculé</div>
-                <div style={{ marginBottom:10 }}>
+                <div style={S.sideTitle}>Dernier Impact Calculé</div>
+                <div style={{ marginBottom: 10 }}>
                   <span style={{
-                    fontFamily:'JetBrains Mono,monospace', fontWeight:800, fontSize:'1.3rem',
-                    color:magColor(latestMajor.magnitude),
+                    fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: '1.2rem',
+                    color: magColor(latestMajor.magnitude),
                   }}>M{latestMajor.magnitude}</span>
                 </div>
                 {[
-                  ['Polices exposées',    '~29 500',       '#ef4444'],
-                  ['Exposition SI',       '~295 Mrd DZD',  '#f59e0b'],
-                  ['Rétention nette',     '~88 Mrd DZD',   '#f59e0b'],
-                  ['Réassureur notifié',  'Swiss Re [SIM]','#22c55e'],
-                ].map(([l,v,c]) => (
+                  ['Polices exposées', '~29 500', 'var(--danger)'],
+                  ['Exposition SI', '~295 Mrd DZD', 'var(--warning)'],
+                  ['Rétention nette', '~88 Mrd DZD', 'var(--warning)'],
+                  ['Réassureur notifié', 'Swiss Re [SIM]', 'var(--success)'],
+                ].map(([l, v, c]) => (
                   <div key={l} style={S.impactRow}>
-                    <span style={{ fontSize:'0.67rem', color:'var(--text-2)' }}>{l}</span>
-                    <span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'0.7rem', fontWeight:700, color:c }}>{v}</span>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>{l}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 600, color: c }}>{v}</span>
                   </div>
                 ))}
               </div>
@@ -252,14 +250,14 @@ export default function AlertsPage() {
             <div style={S.sideCard}>
               <div style={S.sideTitle}>Échelle de Magnitude</div>
               {[
-                ['< 4.0', 'Mineur',  '#22c55e'],
-                ['4.0–5.0','Modéré', '#f59e0b'],
-                ['> 5.0', 'Majeur',  '#ef4444'],
-              ].map(([r,l,c]) => (
-                <div key={r} style={{ display:'flex', alignItems:'center', gap:9, marginBottom:9 }}>
-                  <div style={{ width:9, height:9, borderRadius:'50%', background:c, boxShadow:`0 0 8px ${c}60` }} />
-                  <span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'0.68rem', color:c, fontWeight:600 }}>M{r}</span>
-                  <span style={{ fontSize:'0.68rem', color:'var(--text-3)' }}>{l}</span>
+                ['< 4.0', 'Mineur', 'var(--success)'],
+                ['4.0–5.0', 'Modéré', 'var(--warning)'],
+                ['> 5.0', 'Majeur', 'var(--danger)'],
+              ].map(([r, l, c]) => (
+                <div key={r} style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+                  <div style={{ width: 8, height: 8, borderRadius: 3, background: c }} />
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', color: c, fontWeight: 600 }}>M{r}</span>
+                  <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>{l}</span>
                 </div>
               ))}
             </div>
@@ -271,108 +269,107 @@ export default function AlertsPage() {
 }
 
 const S = {
-  page: { flex:1, overflowY:'auto', padding:'16px 24px' },
+  page: { flex: 1, overflowY: 'auto', padding: '14px 20px' },
   majorBanner: {
-    background:'linear-gradient(135deg,#dc2626,#7f1d1d)',
-    border:'1px solid rgba(239,68,68,0.4)',
-    borderRadius:14, padding:'16px 20px', marginBottom:14,
-    display:'flex', alignItems:'center', justifyContent:'space-between', gap:12,
-    boxShadow:'0 8px 32px rgba(239,68,68,0.3)',
-    color:'#fff',
+    background: 'linear-gradient(135deg,#dc2626,#991b1b)',
+    border: '1px solid rgba(220,38,38,0.3)',
+    borderRadius: 'var(--radius-lg)', padding: '14px 18px', marginBottom: 12,
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12,
+    color: '#fff',
   },
   crisisBtn: {
-    background:'rgba(255,255,255,0.15)',
-    border:'1px solid rgba(255,255,255,0.3)',
-    color:'#fff', borderRadius:8, padding:'8px 14px',
-    fontSize:'0.72rem', fontWeight:700, cursor:'pointer',
-    display:'flex', alignItems:'center',
+    background: 'rgba(255,255,255,0.12)',
+    border: '1px solid rgba(255,255,255,0.25)',
+    color: '#fff', borderRadius: 6, padding: '7px 14px',
+    fontSize: '0.72rem', fontWeight: 600, cursor: 'pointer',
+    display: 'flex', alignItems: 'center',
   },
   dismissBtn: {
-    background:'rgba(255,255,255,0.1)', color:'#fff', border:'none',
-    borderRadius:8, padding:'8px', cursor:'pointer',
-    display:'flex', alignItems:'center', justifyContent:'center',
+    background: 'rgba(255,255,255,0.08)', color: '#fff', border: 'none',
+    borderRadius: 6, padding: '7px', cursor: 'pointer',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
   },
   statusStrip: {
-    display:'flex', alignItems:'center', gap:20, flexWrap:'wrap',
-    background:'var(--surface)', border:'1px solid var(--border)',
-    borderRadius:12, padding:'10px 20px', marginBottom:14,
-    boxShadow:'var(--sh-sm)',
+    display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap',
+    background: 'var(--surface)', border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)', padding: '8px 18px', marginBottom: 12,
+    boxShadow: 'var(--shadow-card)',
   },
-  statusItem: { display:'flex', alignItems:'center', gap:7 },
-  statusDot:  { width:8, height:8, borderRadius:'50%', flexShrink:0 },
+  statusItem: { display: 'flex', alignItems: 'center', gap: 6 },
+  statusDot: { width: 6, height: 6, borderRadius: '50%', flexShrink: 0 },
   connectBox: {
-    display:'flex', flexDirection:'column', alignItems:'center',
-    justifyContent:'center', height:'55vh', gap:18,
+    display: 'flex', flexDirection: 'column', alignItems: 'center',
+    justifyContent: 'center', height: '55vh', gap: 16,
   },
   spinner: {
-    width:64, height:64, border:'3px solid rgba(34,197,94,0.1)',
-    borderTop:'3px solid var(--g500)', borderRadius:'50%',
-    animation:'spin 0.9s linear infinite', position:'absolute',
-    top:0, left:0,
+    width: 56, height: 56, border: '3px solid var(--border)',
+    borderTop: '3px solid var(--primary-500)', borderRadius: '50%',
+    animation: 'spin 0.9s linear infinite', position: 'absolute',
+    top: 0, left: 0,
   },
   layout: {
-    display:'flex', gap:14,
-    height:'calc(100vh - var(--topbar-h) - 120px)', minHeight:380,
+    display: 'flex', gap: 12,
+    height: 'calc(100vh - var(--topbar-h) - 110px)', minHeight: 380,
   },
   feedCard: {
-    flex:1, background:'var(--surface)', border:'1px solid var(--border)',
-    borderRadius:14, boxShadow:'var(--sh-sm)',
-    display:'flex', flexDirection:'column', overflow:'hidden',
+    flex: 1, background: 'var(--surface)', border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)',
+    display: 'flex', flexDirection: 'column', overflow: 'hidden',
   },
   feedHead: {
-    padding:'14px 18px', borderBottom:'1px solid var(--border)',
-    display:'flex', alignItems:'center', justifyContent:'space-between',
-    background:'var(--surface2)', flexShrink:0,
+    padding: '12px 16px', borderBottom: '1px solid var(--border)',
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+    background: 'var(--bg-subtle)', flexShrink: 0,
   },
   countBadge: {
-    background:'rgba(34,197,94,0.1)',
-    border:'1px solid rgba(34,197,94,0.2)',
-    color:'var(--g400)', borderRadius:20,
-    padding:'2px 10px', fontSize:'0.62rem', fontWeight:700,
+    background: 'var(--primary-50)',
+    border: '1px solid rgba(20,184,166,0.15)',
+    color: 'var(--primary-700)', borderRadius: 4,
+    padding: '2px 10px', fontSize: '0.63rem', fontWeight: 600,
   },
-  feedScroll: { flex:1, overflowY:'auto', padding:'10px 12px', display:'flex', flexDirection:'column', gap:8 },
+  feedScroll: { flex: 1, overflowY: 'auto', padding: '8px 10px', display: 'flex', flexDirection: 'column', gap: 6 },
   alertRow: {
-    borderRadius:10, padding:'11px 13px',
-    border:'1px solid var(--border)',
-    background:'var(--surface)',
-    transition:'background 0.2s',
+    borderRadius: 'var(--radius)', padding: '10px 12px',
+    border: '1px solid var(--border)',
+    background: 'var(--surface)',
+    transition: 'background 0.2s',
   },
   magBadge: {
-    padding:'2px 9px', borderRadius:6,
-    fontFamily:'JetBrains Mono,monospace', fontWeight:700, fontSize:'0.73rem',
+    padding: '2px 8px', borderRadius: 4,
+    fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, fontSize: '0.72rem',
   },
   majorChip: {
-    background:'rgba(239,68,68,0.15)', color:'#f87171',
-    border:'1px solid rgba(239,68,68,0.3)',
-    fontSize:'0.6rem', fontWeight:700, padding:'2px 8px', borderRadius:6,
+    background: 'var(--danger-muted)', color: 'var(--danger)',
+    border: '1px solid var(--danger-border)',
+    fontSize: '0.6rem', fontWeight: 600, padding: '2px 8px', borderRadius: 4,
   },
   safeChip: {
-    background:'rgba(34,197,94,0.1)', color:'#4ade80',
-    border:'1px solid rgba(34,197,94,0.2)',
-    fontSize:'0.62rem', fontWeight:600, padding:'3px 9px',
-    borderRadius:6, display:'inline-block', marginTop:2,
+    background: 'var(--success-muted)', color: 'var(--success)',
+    border: '1px solid var(--success-border)',
+    fontSize: '0.65rem', fontWeight: 500, padding: '3px 8px',
+    borderRadius: 4, display: 'inline-block', marginTop: 2,
   },
   impactBox: {
-    background:'rgba(245,158,11,0.07)',
-    border:'1px solid rgba(245,158,11,0.2)',
-    borderRadius:8, padding:'8px 10px', marginTop:4,
+    background: 'var(--warning-muted)',
+    border: '1px solid var(--warning-border)',
+    borderRadius: 6, padding: '8px 10px', marginTop: 4,
   },
   wChip: {
-    background:'rgba(255,255,255,0.05)', border:'1px solid rgba(245,158,11,0.2)',
-    fontSize:'0.6rem', color:'#fbbf24', padding:'2px 7px',
-    borderRadius:4, fontWeight:600,
+    background: 'var(--surface)', border: '1px solid var(--warning-border)',
+    fontSize: '0.62rem', color: 'var(--warning)', padding: '2px 7px',
+    borderRadius: 3, fontWeight: 500,
   },
-  rightCol: { width:274, display:'flex', flexDirection:'column', gap:12, overflowY:'auto' },
+  rightCol: { width: 260, display: 'flex', flexDirection: 'column', gap: 10, overflowY: 'auto' },
   sideCard: {
-    background:'var(--surface)', border:'1px solid var(--border)',
-    borderRadius:12, padding:'14px 16px', boxShadow:'var(--sh-sm)',
+    background: 'var(--surface)', border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)', padding: '12px 14px', boxShadow: 'var(--shadow-card)',
   },
   sideTitle: {
-    fontFamily:'Syne,sans-serif', fontWeight:700,
-    fontSize:'0.75rem', color:'var(--text-1)', marginBottom:12,
+    fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600,
+    fontSize: '0.78rem', color: 'var(--text-primary)', marginBottom: 10,
   },
   impactRow: {
-    display:'flex', justifyContent:'space-between', alignItems:'center',
-    marginBottom:8, paddingBottom:8, borderBottom:'1px solid var(--border)',
+    display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+    marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid var(--border-subtle)',
   },
 }

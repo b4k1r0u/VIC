@@ -10,56 +10,41 @@ import {
   TrendingDown, TrendingUp,
 } from 'lucide-react'
 
+/* ── Zone color map for consistent rendering ── */
+const ZONE_FILL = {
+  'Zone III': '#dc2626',
+  'Zone IIb': '#d97706',
+  'Zone IIa': '#ca8a04',
+  'Zone I': '#059669',
+  'Zone 0': '#2563eb',
+}
+
 /* ── KPI definitions ── */
 const KPI_LIST = [
-  { label: 'Total Polices',       raw: 113100, fmt: v => Math.round(v).toLocaleString('fr-FR'),  unit: 'polices',      Icon: FileText },
-  { label: 'Exposition Estimée',  raw: 1131,   fmt: v => v.toFixed(0),                            unit: 'Mrd DZD',      Icon: DollarSign },
-  { label: 'Zone III Critique',   raw: 30.5,   fmt: v => v.toFixed(1) + '%',                      unit: 'du portfolio', Icon: AlertTriangle, status: 'warn' },
-  { label: 'Balance Score',       raw: 47,     fmt: v => v.toFixed(0) + ' / 100',                 unit: 'score',        Icon: Scale },
-  { label: 'PML 200-ans',         raw: 285,    fmt: v => '~' + v.toFixed(0),                      unit: 'Mrd DZD',      Icon: TrendingDown,  status: 'warn' },
-  { label: 'Prime Annuelle',      raw: 351.4,  fmt: v => v.toFixed(1),                            unit: 'M DZD',        Icon: TrendingUp,    status: 'good' },
+  { label: 'Total Polices', raw: 113100, fmt: v => Math.round(v).toLocaleString('fr-FR'), unit: 'polices', Icon: FileText },
+  { label: 'Exposition Estimée', raw: 1131, fmt: v => v.toFixed(0), unit: 'Mrd DZD', Icon: DollarSign },
+  { label: 'Zone III Critique', raw: 30.5, fmt: v => v.toFixed(1) + '%', unit: 'du portfolio', Icon: AlertTriangle, status: 'danger' },
+  { label: 'Balance Score', raw: 47, fmt: v => v.toFixed(0) + ' / 100', unit: 'score', Icon: Scale },
+  { label: 'PML 200-ans', raw: 285, fmt: v => '~' + v.toFixed(0), unit: 'Mrd DZD', Icon: TrendingDown, status: 'danger' },
+  { label: 'Prime Annuelle', raw: 351.4, fmt: v => v.toFixed(1), unit: 'M DZD', Icon: TrendingUp, status: 'success' },
 ]
 
 function KpiCard({ item, delay }) {
   const val = useCountUp(item.raw, 1200 + delay)
-  const valColor = item.status === 'warn' ? '#dc2626' : item.status === 'good' ? '#16a34a' : 'var(--text-1)'
+  const valColor = item.status === 'danger' ? 'var(--danger)' : item.status === 'success' ? 'var(--success)' : 'var(--text-primary)'
 
   return (
-    <div style={{
-      background: 'var(--surface)',
-      border: '1px solid var(--border)',
-      borderRadius: 'var(--radius-lg)',
-      padding: '18px 20px',
-      boxShadow: 'var(--sh-sm)',
-      position: 'relative',
-      overflow: 'hidden',
-      transition: 'transform 0.2s, box-shadow 0.2s',
-      cursor: 'default',
-    }}
-    className="card-hover"
-    >
-      <div style={{ position:'relative', zIndex:1 }}>
-        <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:12 }}>
-          <div style={{ fontSize:'0.6rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'1.5px', color:'var(--text-3)' }}>
-            {item.label}
-          </div>
-          <div style={{
-            width:32, height:32, borderRadius:9, background:'var(--surface2)',
-            border:'1px solid var(--border)',
-            display:'flex', alignItems:'center', justifyContent:'center',
-          }}>
-            <item.Icon size={15} color="var(--text-2)" strokeWidth={2} />
-          </div>
+    <div style={S.kpiCard} className="card-hover">
+      <div style={S.kpiHeader}>
+        <div style={S.kpiLabel}>{item.label}</div>
+        <div style={S.kpiIcon}>
+          <item.Icon size={14} color="var(--text-quaternary)" strokeWidth={1.8} />
         </div>
-        <div style={{
-          fontFamily:'JetBrains Mono, monospace',
-          fontSize:'clamp(1.1rem,2vw,1.45rem)', fontWeight:700, lineHeight:1,
-          color: valColor, marginBottom:5,
-        }}>
-          {item.fmt(val)}
-        </div>
-        <div style={{ fontSize:'0.62rem', color:'var(--text-3)', fontWeight:500 }}>{item.unit}</div>
       </div>
+      <div style={{ ...S.kpiValue, color: valColor }}>
+        {item.fmt(val)}
+      </div>
+      <div style={S.kpiUnit}>{item.unit}</div>
     </div>
   )
 }
@@ -68,10 +53,10 @@ function KpiCard({ item, delay }) {
 function DonutCenter({ cx, cy }) {
   return (
     <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle">
-      <tspan x={cx} dy="-7" fontSize={13} fontFamily="JetBrains Mono,monospace" fontWeight="700" fill="#0f172a">
+      <tspan x={cx} dy="-6" fontSize={14} fontFamily="'JetBrains Mono', monospace" fontWeight="700" fill="var(--text-primary)">
         113 100
       </tspan>
-      <tspan x={cx} dy={18} fontSize={9} fill="#64748b" fontFamily="Plus Jakarta Sans,sans-serif">
+      <tspan x={cx} dy={18} fontSize={10} fill="var(--text-tertiary)" fontFamily="'Plus Jakarta Sans', sans-serif">
         polices
       </tspan>
     </text>
@@ -79,25 +64,21 @@ function DonutCenter({ cx, cy }) {
 }
 
 /* ── Score color ── */
-const scoreColor = s => s >= 85 ? '#ef4444' : s >= 70 ? '#f59e0b' : '#eab308'
+const scoreColor = s => s >= 85 ? '#dc2626' : s >= 70 ? '#d97706' : '#ca8a04'
 
 /* ── Status label ── */
 const statusInfo = z =>
-  z === 'III'  ? ['rgba(239,68,68,0.12)',  '#f87171', '🔴 CRITIQUE']
-  : z === 'IIb' ? ['rgba(245,158,11,0.12)', '#fbbf24', '🟠 ÉLEVÉ']
-  : ['rgba(234,179,8,0.12)', '#facc15', '🟡 MODÉRÉ']
+  z === 'III' ? ['var(--danger-muted)', 'var(--danger)', 'CRITIQUE']
+    : z === 'IIb' ? ['var(--warning-muted)', 'var(--warning)', 'ÉLEVÉ']
+      : ['rgba(202,138,4,0.08)', '#ca8a04', 'MODÉRÉ']
 
 /* ── Tooltip ── */
 const ChartTooltip = ({ active, payload }) => {
   if (!active || !payload?.length) return null
   return (
-    <div style={{
-      background:'var(--surface2)', border:'1px solid var(--border)',
-      borderRadius:10, padding:'10px 14px', fontSize:'0.72rem',
-      boxShadow:'var(--sh-lg)',
-    }}>
+    <div style={S.tooltip}>
       {payload.map(p => (
-        <div key={p.name} style={{ color:p.color, marginBottom:2 }}>
+        <div key={p.name} style={{ color: p.color, marginBottom: 2 }}>
           <strong>{p.name}</strong>: {p.value?.toLocaleString('fr-FR')}
         </div>
       ))}
@@ -106,15 +87,8 @@ const ChartTooltip = ({ active, payload }) => {
 }
 
 const SectionTitle = ({ children }) => (
-  <div style={{
-    fontFamily:'Syne, sans-serif', fontSize:'0.6rem', fontWeight:700,
-    textTransform:'uppercase', letterSpacing:'2.5px', color:'var(--text-3)',
-    marginBottom:14, marginTop:26,
-    display:'flex', alignItems:'center', gap:10,
-  }}>
-    <div style={{ height:1, width:20, background:'var(--border)', borderRadius:2 }} />
+  <div style={S.sectionTitle}>
     {children}
-    <div style={{ height:1, flex:1, background:'var(--border)', borderRadius:2 }} />
   </div>
 )
 
@@ -137,37 +111,36 @@ export default function OverviewPage() {
         <div style={S.chartCard}>
           <div style={S.chartTitle}>Distribution par Zone Sismique</div>
           <div style={S.chartSub}>RPA99 · Répartition du portefeuille</div>
-          <div style={{ display:'flex', alignItems:'center', gap:20 }}>
-            <ResponsiveContainer width={190} height={190}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+            <ResponsiveContainer width={180} height={180}>
               <PieChart>
-                <Pie data={ZONES} dataKey="pct" innerRadius={60} outerRadius={86}
+                <Pie data={ZONES} dataKey="pct" innerRadius={58} outerRadius={82}
                   paddingAngle={2} startAngle={90} endAngle={-270}>
                   {ZONES.map((z, i) => (
-                    <Cell key={i} fill={z.color} stroke="none" opacity={0.9} />
+                    <Cell key={i} fill={ZONE_FILL[z.name] || z.color} stroke="none" opacity={0.85} />
                   ))}
                 </Pie>
-                <DonutCenter cx={95} cy={95} />
+                <DonutCenter cx={90} cy={90} />
                 <Tooltip
                   formatter={(v, n, p) => [`${v}% — ${p.payload.policies.toLocaleString('fr-FR')} polices`, '']}
-                  contentStyle={{
-                    background:'var(--surface2)', borderRadius:10,
-                    border:'1px solid var(--border)', fontSize:'0.72rem',
-                    color:'var(--text-1)',
-                  }}
+                  contentStyle={S.tooltipStyle}
                 />
               </PieChart>
             </ResponsiveContainer>
-            <div style={{ display:'flex', flexDirection:'column', gap:8, flex:1 }}>
-              {ZONES.map(z => (
-                <div key={z.name} style={{ display:'flex', alignItems:'center', gap:8, fontSize:'0.74rem' }}>
-                  <div style={{ width:9, height:9, borderRadius:'50%', background:z.color, flexShrink:0 }} />
-                  <span style={{ color:'var(--text-2)', flex:1 }}>{z.name}</span>
-                  <span style={{ fontFamily:'JetBrains Mono,monospace', fontWeight:700, color:z.color, fontSize:'0.7rem' }}>
-                    {z.pct}%
-                  </span>
-                  <span style={{ fontSize:'0.63rem', color:'var(--text-3)', fontFamily:'JetBrains Mono,monospace' }}>{z.si} Mrd</span>
-                </div>
-              ))}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
+              {ZONES.map(z => {
+                const fill = ZONE_FILL[z.name] || z.color
+                return (
+                  <div key={z.name} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.78rem' }}>
+                    <div style={{ width: 8, height: 8, borderRadius: 3, background: fill, flexShrink: 0 }} />
+                    <span style={{ color: 'var(--text-secondary)', flex: 1 }}>{z.name}</span>
+                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.75rem' }}>
+                      {z.pct}%
+                    </span>
+                    <span style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', fontFamily: "'JetBrains Mono', monospace" }}>{z.si} Mrd</span>
+                  </div>
+                )
+              })}
             </div>
           </div>
         </div>
@@ -176,21 +149,21 @@ export default function OverviewPage() {
         <div style={S.chartCard}>
           <div style={S.chartTitle}>Évolution du Portefeuille 2023–2025</div>
           <div style={S.chartSub}>Nombre de polices par zone sismique</div>
-          <ResponsiveContainer width="100%" height={185}>
-            <AreaChart data={GROWTH} margin={{ top:4, right:4, left:-20, bottom:0 }}>
+          <ResponsiveContainer width="100%" height={180}>
+            <AreaChart data={GROWTH} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
               <defs>
-                {[['III','#ef4444'],['IIb','#f59e0b'],['IIa','#eab308'],['I','#22c55e'],['Z0','#3b82f6']].map(([k, c]) => (
+                {[['III', '#dc2626'], ['IIb', '#d97706'], ['IIa', '#ca8a04'], ['I', '#059669'], ['Z0', '#2563eb']].map(([k, c]) => (
                   <linearGradient key={k} id={`g${k}`} x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%"  stopColor={c} stopOpacity={0.35} />
-                    <stop offset="95%" stopColor={c} stopOpacity={0.03} />
+                    <stop offset="5%" stopColor={c} stopOpacity={0.2} />
+                    <stop offset="95%" stopColor={c} stopOpacity={0.02} />
                   </linearGradient>
                 ))}
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
-              <XAxis dataKey="year" tick={{ fontSize:11, fill:'#64748b' }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize:10, fill:'#64748b' }} axisLine={false} tickLine={false} />
+              <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+              <XAxis dataKey="year" tick={{ fontSize: 11, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 10, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} />
               <Tooltip content={<ChartTooltip />} />
-              {[['III','#ef4444'],['IIb','#f59e0b'],['IIa','#eab308'],['I','#22c55e'],['Z0','#3b82f6']].map(([k, c]) => (
+              {[['III', '#dc2626'], ['IIb', '#d97706'], ['IIa', '#ca8a04'], ['I', '#059669'], ['Z0', '#2563eb']].map(([k, c]) => (
                 <Area key={k} type="monotone" dataKey={k} stackId="1"
                   stroke={c} strokeWidth={1.5} fill={`url(#g${k})`} />
               ))}
@@ -213,43 +186,49 @@ export default function OverviewPage() {
           <tbody>
             {HOTSPOTS.map(h => {
               const [rowBg, fg, label] = statusInfo(h.zone)
-              const zBg  = { III:'rgba(239,68,68,0.12)', IIb:'rgba(245,158,11,0.12)', IIa:'rgba(234,179,8,0.12)' }[h.zone] || 'rgba(34,197,94,0.12)'
-              const zFg  = { III:'#f87171', IIb:'#fbbf24', IIa:'#facc15' }[h.zone] || '#4ade80'
-              const bc   = { III:'#ef4444', IIb:'#f59e0b', IIa:'#eab308' }[h.zone] || '#22c55e'
+              const zoneColor = { III: '#dc2626', IIb: '#d97706', IIa: '#ca8a04' }[h.zone] || '#059669'
               return (
-                <tr key={h.rank} style={{ borderLeft:`3px solid ${bc}`, transition:'background 0.15s' }}
-                   className="table-row-hover">
-                  <td style={{ ...S.td, fontFamily:'JetBrains Mono,monospace', fontSize:'0.68rem', color:'var(--text-3)' }}>
-                    {String(h.rank).padStart(2,'0')}
+                <tr key={h.rank} className="table-row-hover"
+                  style={{ transition: 'background 0.15s' }}>
+                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: 'var(--text-quaternary)' }}>
+                    {String(h.rank).padStart(2, '0')}
                   </td>
-                  <td style={{ ...S.td, fontWeight:600, color:'var(--text-1)' }}>
-                    {h.wilaya} <span style={{ color:'var(--text-3)', fontWeight:400 }}>({h.code})</span>
+                  <td style={{ ...S.td, fontWeight: 600, color: 'var(--text-primary)' }}>
+                    {h.wilaya} <span style={{ color: 'var(--text-quaternary)', fontWeight: 400 }}>({h.code})</span>
                   </td>
                   <td style={S.td}>
-                    <span style={{ background:zBg, color:zFg, padding:'2px 8px', borderRadius:6, fontSize:'0.63rem', fontWeight:700, fontFamily:'JetBrains Mono,monospace', border:`1px solid ${bc}30` }}>
+                    <span style={{
+                      background: `${zoneColor}10`, color: zoneColor,
+                      padding: '3px 8px', borderRadius: 4,
+                      fontSize: '0.68rem', fontWeight: 600,
+                      fontFamily: "'JetBrains Mono', monospace",
+                    }}>
                       {h.zone}
                     </span>
                   </td>
-                  <td style={{ ...S.td, fontFamily:'JetBrains Mono,monospace', color:'var(--text-2)' }}>{h.policies.toLocaleString('fr-FR')}</td>
-                  <td style={{ ...S.td, fontFamily:'JetBrains Mono,monospace', color:'var(--text-2)' }}>{h.si.toLocaleString('fr-FR')}</td>
+                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-secondary)' }}>{h.policies.toLocaleString('fr-FR')}</td>
+                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-secondary)' }}>{h.si.toLocaleString('fr-FR')}</td>
                   <td style={S.td}>
-                    <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-                      <div style={{ flex:1, height:5, background:'rgba(0,0,0,0.07)', borderRadius:4, overflow:'hidden' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                      <div style={{ flex: 1, height: 4, background: 'var(--border-subtle)', borderRadius: 2, overflow: 'hidden' }}>
                         <div style={{
-                          height:'100%', borderRadius:4,
+                          height: '100%', borderRadius: 2,
                           width: barVisible ? h.score + '%' : '0%',
                           background: scoreColor(h.score),
-                          transition:'width 1s ease',
-                          boxShadow:`0 0 8px ${scoreColor(h.score)}60`,
+                          transition: 'width 0.8s ease',
                         }} />
                       </div>
-                      <span style={{ fontFamily:'JetBrains Mono,monospace', fontSize:'0.7rem', fontWeight:700, color:scoreColor(h.score) }}>
+                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 600, color: scoreColor(h.score), minWidth: 20, textAlign: 'right' }}>
                         {h.score}
                       </span>
                     </div>
                   </td>
                   <td style={S.td}>
-                    <span style={{ background:rowBg, color:fg, padding:'3px 8px', borderRadius:6, fontSize:'0.62rem', fontWeight:700, border:`1px solid ${fg}30` }}>
+                    <span style={{
+                      background: rowBg, color: fg,
+                      padding: '3px 10px', borderRadius: 4,
+                      fontSize: '0.65rem', fontWeight: 600,
+                    }}>
                       {label}
                     </span>
                   </td>
@@ -259,46 +238,89 @@ export default function OverviewPage() {
           </tbody>
         </table>
       </div>
-      <div style={{ height:32 }} />
+      <div style={{ height: 24 }} />
     </main>
   )
 }
 
 const S = {
-  page: { flex:1, overflowY:'auto', padding:'22px 28px' },
-  kpiGrid: {
-    display:'grid', gridTemplateColumns:'repeat(6,1fr)',
-    gap:14,
+  page: { flex: 1, overflowY: 'auto', padding: '20px 24px' },
+  sectionTitle: {
+    fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', fontWeight: 600,
+    textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-quaternary)',
+    marginBottom: 14, marginTop: 28,
+    display: 'flex', alignItems: 'center', gap: 10,
   },
-  twoCol: { display:'grid', gridTemplateColumns:'1fr 1fr', gap:16 },
+  kpiGrid: {
+    display: 'grid', gridTemplateColumns: 'repeat(6,1fr)',
+    gap: 12,
+  },
+  kpiCard: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)',
+    padding: '16px 18px',
+    boxShadow: 'var(--shadow-card)',
+    position: 'relative',
+    overflow: 'hidden',
+    cursor: 'default',
+  },
+  kpiHeader: {
+    display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14,
+  },
+  kpiLabel: {
+    fontSize: '0.65rem', fontWeight: 600, textTransform: 'uppercase',
+    letterSpacing: '0.8px', color: 'var(--text-tertiary)',
+  },
+  kpiIcon: {
+    width: 28, height: 28, borderRadius: 6, background: 'var(--bg-subtle)',
+    display: 'flex', alignItems: 'center', justifyContent: 'center',
+  },
+  kpiValue: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: 'clamp(1rem,1.8vw,1.35rem)', fontWeight: 700, lineHeight: 1,
+    marginBottom: 6,
+  },
+  kpiUnit: { fontSize: '0.65rem', color: 'var(--text-quaternary)', fontWeight: 500 },
+  twoCol: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 },
   chartCard: {
-    background:'var(--surface)',
-    border:'1px solid var(--border)',
-    borderRadius:'var(--radius-lg)',
-    padding:'20px 22px',
-    boxShadow:'var(--sh-sm)',
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)',
+    padding: '18px 20px',
+    boxShadow: 'var(--shadow-card)',
   },
   chartTitle: {
-    fontFamily:'Syne, sans-serif', fontSize:'0.82rem',
-    fontWeight:700, color:'var(--text-1)', marginBottom:2,
+    fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem',
+    fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2,
   },
   chartSub: {
-    fontSize:'0.68rem', color:'var(--text-3)', marginBottom:16,
+    fontSize: '0.72rem', color: 'var(--text-quaternary)', marginBottom: 16,
   },
   tableWrap: {
-    background:'var(--surface)', border:'1px solid var(--border)',
-    borderRadius:'var(--radius-lg)', overflow:'hidden', boxShadow:'var(--sh-sm)',
+    background: 'var(--surface)', border: '1px solid var(--border)',
+    borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-card)',
   },
-  table: { width:'100%', borderCollapse:'collapse' },
+  table: { width: '100%', borderCollapse: 'collapse' },
   th: {
-    background:'rgba(0,0,0,0.02)',
-    fontSize:'0.6rem', fontWeight:700,
-    textTransform:'uppercase', letterSpacing:'1px',
-    color:'var(--text-3)', padding:'12px 16px',
-    textAlign:'left', borderBottom:'1px solid var(--border)',
+    background: 'var(--bg-subtle)',
+    fontSize: '0.63rem', fontWeight: 600,
+    textTransform: 'uppercase', letterSpacing: '0.8px',
+    color: 'var(--text-tertiary)', padding: '10px 16px',
+    textAlign: 'left', borderBottom: '1px solid var(--border)',
   },
   td: {
-    padding:'11px 16px', fontSize:'0.78rem',
-    color:'var(--text-2)', borderBottom:'1px solid rgba(0,0,0,0.04)',
+    padding: '10px 16px', fontSize: '0.78rem',
+    color: 'var(--text-secondary)', borderBottom: '1px solid var(--border-subtle)',
+  },
+  tooltip: {
+    background: 'var(--surface)', border: '1px solid var(--border)',
+    borderRadius: 8, padding: '10px 14px', fontSize: '0.72rem',
+    boxShadow: 'var(--shadow-lg)',
+  },
+  tooltipStyle: {
+    background: 'var(--surface)', borderRadius: 8,
+    border: '1px solid var(--border)', fontSize: '0.72rem',
+    color: 'var(--text-primary)',
   },
 }

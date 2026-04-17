@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 
 const DEMO_USERS = [
   { email: 'admin@rased.dz', password: 'rased2025', name: 'Ahmed Benali', role: 'Directeur Risques' },
-  { email: 'demo@rased.dz',  password: 'demo',      name: 'Yasmine Kaci', role: 'Analyste Actuariel' },
+  { email: 'demo@rased.dz', password: 'demo', name: 'Yasmine Kaci', role: 'Analyste Actuariel' },
 ]
 
 export default function LoginPage({ onLogin, onBack }) {
-  const [email, setEmail]       = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError]       = useState('')
-  const [loading, setLoading]   = useState(false)
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
   const [showPass, setShowPass] = useState(false)
-  const [focused, setFocused]   = useState(null)
+  const [focused, setFocused] = useState(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -39,7 +39,6 @@ export default function LoginPage({ onLogin, onBack }) {
       {/* Left panel — branding */}
       <div style={S.left}>
         <div style={S.leftBg} />
-        <div style={S.leftGlow} />
 
         <div style={{ position: 'relative', zIndex: 1 }}>
           <button onClick={onBack} style={S.backBtn}>← Retour</button>
@@ -47,7 +46,7 @@ export default function LoginPage({ onLogin, onBack }) {
           <div style={S.brandWrap}>
             <div style={S.logo}>رَصْد</div>
             <div style={S.brandName}>RASED</div>
-            <div style={S.brandTagline}>Risque Assurantiel Sismique<br/>Exposition et Diagnostic</div>
+            <div style={S.brandTagline}>Risque Assurantiel Sismique<br />Exposition et Diagnostic</div>
           </div>
 
           <div style={S.features}>
@@ -65,7 +64,7 @@ export default function LoginPage({ onLogin, onBack }) {
           </div>
 
           <div style={S.statsWrap}>
-            {[['113 100','Polices'], ['1 131 Mrd','Exposition (DZD)'], ['48','Wilayas']].map(([v,l]) => (
+            {[['113 100', 'Polices'], ['1 131 Mrd', 'Exposition (DZD)'], ['48', 'Wilayas']].map(([v, l]) => (
               <div key={l} style={S.statItem}>
                 <div style={S.statVal}>{v}</div>
                 <div style={S.statLbl}>{l}</div>
@@ -89,8 +88,8 @@ export default function LoginPage({ onLogin, onBack }) {
             <div style={{ display: 'flex', gap: 8 }}>
               {DEMO_USERS.map(u => (
                 <button key={u.email} onClick={() => fillDemo(u)} style={S.demoBtn}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#15803d' }}>{u.role}</div>
-                  <div style={{ fontSize: '0.62rem', color: '#64748b' }}>{u.email}</div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--primary-700)' }}>{u.role}</div>
+                  <div style={{ fontSize: '0.62rem', color: 'var(--text-tertiary)' }}>{u.email}</div>
                 </button>
               ))}
             </div>
@@ -100,7 +99,7 @@ export default function LoginPage({ onLogin, onBack }) {
             {/* Email */}
             <div style={S.fieldWrap}>
               <label style={S.label}>Adresse Email</label>
-              <div style={{ ...S.inputWrap, borderColor: focused === 'email' ? 'var(--g500)' : error ? '#dc2626' : 'var(--border)', boxShadow: focused === 'email' ? '0 0 0 3px rgba(34,197,94,0.12)' : 'none' }}>
+              <div style={{ ...S.inputWrap, borderColor: focused === 'email' ? 'var(--primary-500)' : error ? 'var(--danger)' : 'var(--border)', boxShadow: focused === 'email' ? '0 0 0 3px rgba(20,184,166,0.08)' : 'none' }}>
                 <span style={S.inputIcon}>📧</span>
                 <input
                   type="email" value={email} required
@@ -116,7 +115,7 @@ export default function LoginPage({ onLogin, onBack }) {
             {/* Password */}
             <div style={S.fieldWrap}>
               <label style={S.label}>Mot de Passe</label>
-              <div style={{ ...S.inputWrap, borderColor: focused === 'pass' ? 'var(--g500)' : error ? '#dc2626' : 'var(--border)', boxShadow: focused === 'pass' ? '0 0 0 3px rgba(34,197,94,0.12)' : 'none' }}>
+              <div style={{ ...S.inputWrap, borderColor: focused === 'pass' ? 'var(--primary-500)' : error ? 'var(--danger)' : 'var(--border)', boxShadow: focused === 'pass' ? '0 0 0 3px rgba(20,184,166,0.08)' : 'none' }}>
                 <span style={S.inputIcon}>🔒</span>
                 <input
                   type={showPass ? 'text' : 'password'} value={password} required
@@ -151,7 +150,7 @@ export default function LoginPage({ onLogin, onBack }) {
           </form>
 
           <div style={S.formFooter}>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8', textAlign: 'center' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-quaternary)', textAlign: 'center' }}>
               🔒 Accès restreint · Données confidentielles IARD
             </div>
           </div>
@@ -163,11 +162,9 @@ export default function LoginPage({ onLogin, onBack }) {
 
 const S = {
   root: { display: 'flex', minHeight: '100vh' },
-
-  /* Left branding panel */
   left: {
     flex: '0 0 420px', position: 'relative', overflow: 'hidden',
-    background: 'linear-gradient(160deg, var(--g800) 0%, var(--g600) 50%, #10b981 100%)',
+    background: 'linear-gradient(160deg, #115e59 0%, #0d9488 50%, #14b8a6 100%)',
     padding: '40px 44px', display: 'flex', flexDirection: 'column', justifyContent: 'center',
   },
   leftBg: {
@@ -175,87 +172,74 @@ const S = {
     background: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.03\'%3E%3Ccircle cx=\'30\' cy=\'30\' r=\'2\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
     pointerEvents: 'none',
   },
-  leftGlow: {
-    position: 'absolute', top: -100, right: -100, width: 400, height: 400,
-    borderRadius: '50%', background: 'rgba(255,255,255,0.05)', pointerEvents: 'none',
-  },
   backBtn: {
-    background: 'rgba(255,255,255,0.12)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)',
-    borderRadius: 8, padding: '6px 14px', fontSize: '0.75rem', fontWeight: 600,
-    cursor: 'pointer', marginBottom: 40, display: 'inline-block',
-    transition: 'background 0.15s',
+    background: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.15)',
+    borderRadius: 8, padding: '6px 14px', fontSize: '0.75rem', fontWeight: 500,
+    cursor: 'pointer', marginBottom: 40, display: 'inline-block', transition: 'background 0.15s',
   },
   brandWrap: { marginBottom: 40 },
-  logo:      { fontFamily: 'Syne,sans-serif', fontWeight: 900, fontSize: '3.5rem', color: '#fff', lineHeight: 1, marginBottom: 4, opacity: 0.9 },
-  brandName: { fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: '2rem', color: '#fff', letterSpacing: '-1px' },
+  logo: { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '3rem', color: '#fff', lineHeight: 1, marginBottom: 4, opacity: 0.9 },
+  brandName: { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.8rem', color: '#fff', letterSpacing: '-0.5px' },
   brandTagline: { fontSize: '0.8rem', color: 'rgba(255,255,255,0.65)', marginTop: 8, lineHeight: 1.6 },
   features: { display: 'flex', flexDirection: 'column', gap: 14, marginBottom: 40 },
   featureItem: { display: 'flex', alignItems: 'center', gap: 12 },
   featureIconLeft: {
     width: 34, height: 34, borderRadius: 9,
-    background: 'rgba(255,255,255,0.15)', display: 'flex',
+    background: 'rgba(255,255,255,0.1)', display: 'flex',
     alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0,
   },
   statsWrap: {
     display: 'flex', gap: 0,
-    background: 'rgba(255,255,255,0.08)',
-    borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.12)',
+    background: 'rgba(255,255,255,0.06)',
+    borderRadius: 12, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)',
   },
-  statItem: { flex: 1, padding: '14px 16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.1)' },
-  statVal:  { fontFamily: 'JetBrains Mono,monospace', fontWeight: 800, fontSize: '0.9rem', color: '#fff' },
-  statLbl:  { fontSize: '0.6rem', color: 'rgba(255,255,255,0.6)', marginTop: 3 },
-
-  /* Right form panel */
+  statItem: { flex: 1, padding: '14px 16px', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' },
+  statVal: { fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: '0.9rem', color: '#fff' },
+  statLbl: { fontSize: '0.6rem', color: 'rgba(255,255,255,0.5)', marginTop: 3 },
   right: {
     flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: '#f1f5f9', padding: '40px 24px',
+    background: 'var(--bg)', padding: '40px 24px',
   },
   formCard: {
-    background: '#fff', borderRadius: 20, padding: '36px 40px',
-    boxShadow: '0 8px 32px rgba(0,0,0,0.10)', border: '1px solid rgba(0,0,0,0.07)',
+    background: 'var(--surface)', borderRadius: 16, padding: '36px 40px',
+    boxShadow: 'var(--shadow-xl)', border: '1px solid var(--border)',
     width: '100%', maxWidth: 440,
   },
   formHeader: { marginBottom: 24 },
-  formTitle: { fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: '1.5rem', color: '#0f172a', marginBottom: 4 },
-  formSub:   { fontSize: '0.82rem', color: '#64748b' },
-
+  formTitle: { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: 4 },
+  formSub: { fontSize: '0.82rem', color: 'var(--text-tertiary)' },
   demoSection: { marginBottom: 20 },
-  demoLabel:   { fontSize: '0.65rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '1.2px', marginBottom: 8 },
+  demoLabel: { fontSize: '0.65rem', fontWeight: 600, color: 'var(--text-quaternary)', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 8 },
   demoBtn: {
-    flex: 1, background: '#f0fdf4', border: '1px solid #bbf7d0',
+    flex: 1, background: 'var(--primary-50)', border: '1px solid rgba(20,184,166,0.12)',
     borderRadius: 10, padding: '10px 12px', cursor: 'pointer',
     textAlign: 'left', transition: 'background 0.15s', display: 'block',
   },
-
-  fieldWrap:  { display: 'flex', flexDirection: 'column', gap: 6 },
-  label:      { fontSize: '0.72rem', fontWeight: 600, color: '#334155' },
+  fieldWrap: { display: 'flex', flexDirection: 'column', gap: 6 },
+  label: { fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-secondary)' },
   inputWrap: {
     display: 'flex', alignItems: 'center',
-    border: '1px solid #e2e8f0', borderRadius: 10,
-    background: '#fff', overflow: 'hidden', transition: 'border-color 0.2s, box-shadow 0.2s',
+    border: '1px solid var(--border)', borderRadius: 10,
+    background: 'var(--surface)', overflow: 'hidden', transition: 'border-color 0.2s, box-shadow 0.2s',
   },
   inputIcon: { padding: '0 12px', fontSize: '0.9rem' },
   input: {
     flex: 1, border: 'none', outline: 'none',
     padding: '12px 12px 12px 0', fontSize: '0.85rem',
-    color: '#0f172a', background: 'transparent',
-    fontFamily: 'Inter,sans-serif',
+    color: 'var(--text-primary)', background: 'transparent',
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
   },
-  eyeBtn: {
-    background: 'none', border: 'none', padding: '0 12px',
-    cursor: 'pointer', fontSize: '0.9rem',
-  },
+  eyeBtn: { background: 'none', border: 'none', padding: '0 12px', cursor: 'pointer', fontSize: '0.9rem' },
   errorBox: {
-    background: '#fef2f2', border: '1px solid #fecaca',
-    borderRadius: 8, padding: '10px 14px',
-    fontSize: '0.78rem', color: '#dc2626',
+    background: 'var(--danger-muted)', border: '1px solid var(--danger-border)',
+    borderRadius: 8, padding: '10px 14px', fontSize: '0.78rem', color: 'var(--danger)',
   },
   submitBtn: {
-    background: 'linear-gradient(135deg,var(--g700),var(--g500))',
+    background: 'linear-gradient(135deg,#0f766e,#14b8a6)',
     color: '#fff', border: 'none', borderRadius: 12,
-    padding: '14px', fontSize: '0.9rem', fontWeight: 700,
-    cursor: 'pointer', boxShadow: 'var(--sh-green)',
-    fontFamily: 'Syne,sans-serif', transition: 'opacity 0.2s',
+    padding: '14px', fontSize: '0.9rem', fontWeight: 600,
+    cursor: 'pointer', boxShadow: '0 2px 8px rgba(20,184,166,0.2)',
+    fontFamily: "'Space Grotesk', sans-serif", transition: 'opacity 0.2s',
     width: '100%',
   },
   formFooter: { marginTop: 20 },
