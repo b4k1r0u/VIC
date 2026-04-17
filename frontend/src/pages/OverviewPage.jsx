@@ -12,20 +12,22 @@ import {
 
 /* ── KPI definitions ── */
 const KPI_LIST = [
-  { label: 'Total Polices',       raw: 113100, fmt: v => Math.round(v).toLocaleString('fr-FR'),  unit: 'polices',     color: '#3b82f6',  Icon: FileText,       accent: 'rgba(59,130,246,0.12)',  border: 'rgba(59,130,246,0.25)' },
-  { label: 'Exposition Estimée',  raw: 1131,   fmt: v => v.toFixed(0),                            unit: 'Mrd DZD',     color: '#a78bfa',  Icon: DollarSign,     accent: 'rgba(167,139,250,0.12)', border: 'rgba(167,139,250,0.25)' },
-  { label: 'Zone III Critique',   raw: 30.5,   fmt: v => v.toFixed(1) + '%',                      unit: 'du portfolio', color: '#ef4444',  Icon: AlertTriangle,  accent: 'rgba(239,68,68,0.12)',  border: 'rgba(239,68,68,0.25)' },
-  { label: 'Balance Score',       raw: 47,     fmt: v => v.toFixed(0) + ' / 100',                 unit: 'score',       color: '#f59e0b',  Icon: Scale,          accent: 'rgba(245,158,11,0.12)', border: 'rgba(245,158,11,0.25)' },
-  { label: 'PML 200-ans',         raw: 285,    fmt: v => '~' + v.toFixed(0),                      unit: 'Mrd DZD',     color: '#ef4444',  Icon: TrendingDown,   accent: 'rgba(239,68,68,0.12)',  border: 'rgba(239,68,68,0.25)' },
-  { label: 'Prime Annuelle',      raw: 351.4,  fmt: v => v.toFixed(1),                            unit: 'M DZD',       color: '#22c55e',  Icon: TrendingUp,     accent: 'rgba(34,197,94,0.12)',  border: 'rgba(34,197,94,0.25)' },
+  { label: 'Total Polices',       raw: 113100, fmt: v => Math.round(v).toLocaleString('fr-FR'),  unit: 'polices',      Icon: FileText },
+  { label: 'Exposition Estimée',  raw: 1131,   fmt: v => v.toFixed(0),                            unit: 'Mrd DZD',      Icon: DollarSign },
+  { label: 'Zone III Critique',   raw: 30.5,   fmt: v => v.toFixed(1) + '%',                      unit: 'du portfolio', Icon: AlertTriangle, status: 'warn' },
+  { label: 'Balance Score',       raw: 47,     fmt: v => v.toFixed(0) + ' / 100',                 unit: 'score',        Icon: Scale },
+  { label: 'PML 200-ans',         raw: 285,    fmt: v => '~' + v.toFixed(0),                      unit: 'Mrd DZD',      Icon: TrendingDown,  status: 'warn' },
+  { label: 'Prime Annuelle',      raw: 351.4,  fmt: v => v.toFixed(1),                            unit: 'M DZD',        Icon: TrendingUp,    status: 'good' },
 ]
 
 function KpiCard({ item, delay }) {
   const val = useCountUp(item.raw, 1200 + delay)
+  const valColor = item.status === 'warn' ? '#dc2626' : item.status === 'good' ? '#16a34a' : 'var(--text-1)'
+
   return (
     <div style={{
       background: 'var(--surface)',
-      border: `1px solid ${item.border}`,
+      border: '1px solid var(--border)',
       borderRadius: 'var(--radius-lg)',
       padding: '18px 20px',
       boxShadow: 'var(--sh-sm)',
@@ -36,29 +38,23 @@ function KpiCard({ item, delay }) {
     }}
     className="card-hover"
     >
-      {/* Glow accent */}
-      <div style={{
-        position:'absolute', inset:0, borderRadius:'inherit',
-        background: `radial-gradient(ellipse at top right, ${item.accent} 0%, transparent 70%)`,
-        pointerEvents:'none',
-      }} />
       <div style={{ position:'relative', zIndex:1 }}>
         <div style={{ display:'flex', alignItems:'center', justifyContent:'space-between', marginBottom:12 }}>
           <div style={{ fontSize:'0.6rem', fontWeight:700, textTransform:'uppercase', letterSpacing:'1.5px', color:'var(--text-3)' }}>
             {item.label}
           </div>
           <div style={{
-            width:32, height:32, borderRadius:9, background:item.accent,
-            border:`1px solid ${item.border}`,
+            width:32, height:32, borderRadius:9, background:'var(--surface2)',
+            border:'1px solid var(--border)',
             display:'flex', alignItems:'center', justifyContent:'center',
           }}>
-            <item.Icon size={15} color={item.color} strokeWidth={2} />
+            <item.Icon size={15} color="var(--text-2)" strokeWidth={2} />
           </div>
         </div>
         <div style={{
           fontFamily:'JetBrains Mono, monospace',
           fontSize:'clamp(1.1rem,2vw,1.45rem)', fontWeight:700, lineHeight:1,
-          color: item.color, marginBottom:5,
+          color: valColor, marginBottom:5,
         }}>
           {item.fmt(val)}
         </div>
@@ -72,7 +68,7 @@ function KpiCard({ item, delay }) {
 function DonutCenter({ cx, cy }) {
   return (
     <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle">
-      <tspan x={cx} dy="-7" fontSize={13} fontFamily="JetBrains Mono,monospace" fontWeight="700" fill="#f1f5f9">
+      <tspan x={cx} dy="-7" fontSize={13} fontFamily="JetBrains Mono,monospace" fontWeight="700" fill="#0f172a">
         113 100
       </tspan>
       <tspan x={cx} dy={18} fontSize={9} fill="#64748b" fontFamily="Plus Jakarta Sans,sans-serif">
@@ -238,7 +234,7 @@ export default function OverviewPage() {
                   <td style={{ ...S.td, fontFamily:'JetBrains Mono,monospace', color:'var(--text-2)' }}>{h.si.toLocaleString('fr-FR')}</td>
                   <td style={S.td}>
                     <div style={{ display:'flex', alignItems:'center', gap:8 }}>
-                      <div style={{ flex:1, height:5, background:'rgba(255,255,255,0.06)', borderRadius:4, overflow:'hidden' }}>
+                      <div style={{ flex:1, height:5, background:'rgba(0,0,0,0.07)', borderRadius:4, overflow:'hidden' }}>
                         <div style={{
                           height:'100%', borderRadius:4,
                           width: barVisible ? h.score + '%' : '0%',
@@ -295,7 +291,7 @@ const S = {
   },
   table: { width:'100%', borderCollapse:'collapse' },
   th: {
-    background:'rgba(255,255,255,0.03)',
+    background:'rgba(0,0,0,0.02)',
     fontSize:'0.6rem', fontWeight:700,
     textTransform:'uppercase', letterSpacing:'1px',
     color:'var(--text-3)', padding:'12px 16px',
@@ -303,6 +299,6 @@ const S = {
   },
   td: {
     padding:'11px 16px', fontSize:'0.78rem',
-    color:'var(--text-2)', borderBottom:'1px solid rgba(255,255,255,0.03)',
+    color:'var(--text-2)', borderBottom:'1px solid rgba(0,0,0,0.04)',
   },
 }

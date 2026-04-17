@@ -97,7 +97,7 @@ export default function RecommendationPanel({ scope = 'portfolio', scopeRef }) {
   return (
     <div className="recommendation-panel">
       <div className="panel-header">
-        <span className="panel-title">💡 Recommandations IA</span>
+        <span className="panel-title">💡 Recommandations Stratégiques</span>
         <button
           className="refresh-btn"
           onClick={() => fetchRecommendations()}
@@ -145,7 +145,7 @@ export default function RecommendationPanel({ scope = 'portfolio', scopeRef }) {
         <input
           ref={questionRef}
           type="text"
-          placeholder="Posez une question au modèle IA…"
+          placeholder="Posez une question au modèle actuariel…"
           value={userQuestion}
           onChange={(e) => setUserQuestion(e.target.value)}
           disabled={streaming}

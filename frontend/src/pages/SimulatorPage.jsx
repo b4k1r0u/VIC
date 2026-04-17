@@ -233,7 +233,7 @@ export default function SimulatorPage() {
                         {r.val} Mrd DZD
                       </span>
                     </div>
-                    <div style={{ height:8, background:'rgba(255,255,255,0.06)', borderRadius:4, overflow:'hidden' }}>
+                    <div style={{ height:8, background:'rgba(128,128,128,0.1)', borderRadius:6, overflow:'hidden' }}>
                       <div style={{ width:r.pct+'%', height:'100%', background:r.color, borderRadius:4, transition:'width 1s ease', boxShadow:`0 0 8px ${r.color}60` }} />
                     </div>
                   </div>
@@ -281,7 +281,7 @@ const S = {
     display:'flex', alignItems:'center', justifyContent:'center',
     boxShadow:'var(--sh-green)',
   },
-  progressBg: { height:5, background:'rgba(255,255,255,0.06)', borderRadius:4, overflow:'hidden' },
+  progressBg: { height:5, background:'rgba(0,0,0,0.07)', borderRadius:4, overflow:'hidden' },
   progressFill: { height:'100%', background:'linear-gradient(90deg,#16a34a,#4ade80)', borderRadius:4, transition:'width 0.1s linear' },
   rightPanel: { flex:1, display:'flex', flexDirection:'column', gap:14, overflowY:'auto' },
   emptyState: {

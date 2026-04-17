@@ -39,7 +39,7 @@ const FEATURES = [
   { Icon:Zap,         color:'#8b5cf6', title:'Simulateur Monte Carlo', desc:'Calcul de PML et VaR sur 8 000 itérations pour chaque scénario catastrophe.' },
   { Icon:Bell,        color:'#ef4444', title:'Alertes Sismiques LIVE', desc:'Flux WebSocket EMSC en temps réel avec calcul automatique d\'impact portefeuille.' },
   { Icon:Scale,       color:'#22c55e', title:'Bilan & Rééquilibrage',  desc:'Score de balance et feuille de route stratégique pour optimiser la concentration.' },
-  { Icon:Bot,         color:'#f59e0b', title:'Recommandations IA',     desc:'Note stratégique générée automatiquement pour la direction générale.' },
+  { Icon:Bot,         color:'#f59e0b', title:'Analyses & Optimisations', desc:'Note stratégique générée automatiquement pour la direction générale.' },
   { Icon:FlaskConical,color:'#ec4899', title:'Sandbox Souscription',   desc:'Test d\'impact d\'une nouvelle police avant approbation définitive.' },
 ]
 
@@ -86,16 +86,16 @@ export default function LandingPage({ onLogin }) {
       <nav style={{
         ...S.navbar,
         boxShadow: scrolled ? 'var(--sh-sm)' : 'none',
-        background: scrolled ? 'rgba(8,13,26,0.96)' : 'transparent',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.07)' : '1px solid transparent',
+        background: scrolled ? 'rgba(248,250,252,0.97)' : 'transparent',
+        borderBottom: scrolled ? '1px solid rgba(0,0,0,0.07)' : '1px solid transparent',
       }}>
-        <div style={S.navBrand}>
-          <div style={S.navLogoBox}>
-            <Shield size={18} color="#22c55e" />
+        <div style={S.logoBrand}>
+          <div style={S.logoIcon}>
+            <Shield size={16} color="var(--g500)" />
           </div>
           <div>
-            <div style={S.navName}>RASED</div>
-            <div style={S.navTagline}>Risque Assurantiel Sismique</div>
+            <div style={{ fontFamily:'Syne,sans-serif', fontWeight:800, fontSize:'1.1rem', color:'var(--text-1)', lineHeight:1 }}>رَصْد RASED</div>
+            <div style={{ fontSize:'0.55rem', color:'var(--text-3)', letterSpacing:'1px', textTransform:'uppercase' }}>Risque Assurantiel Sismique</div>
           </div>
         </div>
         <div style={S.navLinks}>
@@ -110,7 +110,6 @@ export default function LandingPage({ onLogin }) {
 
       {/* ── Hero Section ── */}
       <section style={S.hero}>
-        {/* Background effects */}
         <div style={S.heroBg} />
         <div style={S.heroGlow1} />
         <div style={S.heroGlow2} />
@@ -123,14 +122,11 @@ export default function LandingPage({ onLogin }) {
           </div>
 
           <h1 style={S.heroH1}>
-            Intelligence Sismique
-            <br />
-            <span style={S.heroH1Accent}>pour l'Assurance</span>
+            Gestion Interactive<br/>
+            <span style={S.heroH1Accent}>des Risques</span>
           </h1>
-
           <p style={S.heroSub}>
-            RASED centralise l'exposition de votre portefeuille IARD face aux risques sismiques algériens.
-            Simulez, analysez et rééquilibrez en temps réel avec la puissance de l'IA.
+            RASED centralise l'exposition de votre portefeuille IARD face aux risques sismiques algériens. Simulez, analysez et rééquilibrez vos engagements pour une prise de décision stratégique optimale.
           </p>
 
           <div style={S.heroActions}>
@@ -159,9 +155,9 @@ export default function LandingPage({ onLogin }) {
             animation:'scanLine 4s linear infinite', zIndex:2,
           }} />
           <div style={S.heroCard1}>
-            <div style={{ fontSize:'0.6rem', color:'var(--text-4)', marginBottom:4, textTransform:'uppercase', letterSpacing:'1px' }}>BALANCE SCORE</div>
+            <div style={{ fontSize:'0.6rem', color:'var(--text-3)', marginBottom:4, textTransform:'uppercase', letterSpacing:'1px' }}>BALANCE SCORE</div>
             <div style={{ fontSize:'2.2rem', fontFamily:'JetBrains Mono,monospace', fontWeight:800, color:'#f59e0b', lineHeight:1 }}>47/100</div>
-            <div style={{ fontSize:'0.65rem', color:'var(--g400)', marginTop:4 }}>↑ Objectif 82 en 2028</div>
+            <div style={{ fontSize:'0.65rem', color:'var(--g600)', marginTop:4 }}>↑ Objectif 82 en 2028</div>
           </div>
           <div style={S.heroCard2}>
             <div style={{ display:'flex', alignItems:'center', gap:6, marginBottom:6 }}>
@@ -184,7 +180,7 @@ export default function LandingPage({ onLogin }) {
                   <span>{z.label}</span>
                   <span style={{ color:z.color, fontWeight:700, fontFamily:'JetBrains Mono,monospace' }}>{z.pct}%</span>
                 </div>
-                <div style={{ height:4, background:'rgba(255,255,255,0.06)', borderRadius:3, overflow:'hidden' }}>
+                <div style={{ height:4, background:'rgba(0,0,0,0.06)', borderRadius:3, overflow:'hidden' }}>
                   <div style={{ width:z.pct+'%', height:'100%', background:z.color, borderRadius:3, boxShadow:`0 0 6px ${z.color}80` }} />
                 </div>
               </div>
@@ -259,7 +255,7 @@ export default function LandingPage({ onLogin }) {
 const S = {
   root: {
     minHeight:'100vh', overflowY:'auto', overflowX:'hidden',
-    background:'var(--bg)',
+    background:'#f8fafc',
     height:'100vh',
   },
 
@@ -271,17 +267,15 @@ const S = {
     backdropFilter:'blur(20px)', WebkitBackdropFilter:'blur(20px)',
     transition:'box-shadow 0.3s, background 0.3s, border-color 0.3s',
   },
-  navBrand: { display:'flex', alignItems:'center', gap:12 },
-  navLogoBox: {
+  logoBrand: { display:'flex', alignItems:'center', gap:12 },
+  logoIcon: {
     width:36, height:36, borderRadius:10,
     background:'rgba(34,197,94,0.12)', border:'1px solid rgba(34,197,94,0.25)',
     display:'flex', alignItems:'center', justifyContent:'center',
   },
-  navName:    { fontFamily:'Syne,sans-serif', fontWeight:800, fontSize:'1rem', color:'var(--text-1)', lineHeight:1.1 },
-  navTagline: { fontSize:'0.56rem', color:'var(--text-4)', letterSpacing:'0.5px', marginTop:1 },
   navLinks:   { display:'flex', alignItems:'center', gap:32 },
   navLink: {
-    fontSize:'0.82rem', color:'var(--text-3)', textDecoration:'none',
+    fontSize:'0.82rem', color:'var(--text-2)', textDecoration:'none',
     fontWeight:500, transition:'color 0.15s',
   },
   navCta: {
@@ -293,30 +287,30 @@ const S = {
     fontFamily:'Syne,sans-serif', display:'flex', alignItems:'center',
   },
 
-  /* Hero */
+  /* ── Sections ── */
   hero: {
-    minHeight:'100vh', display:'flex', alignItems:'center',
-    gap:60, padding:'100px 6vw 60px',
+    padding:'60px 5% 40px', display:'flex', alignItems:'center',
+    justifyContent:'space-between', gap:'4vw', minHeight:'calc(100vh - 70px)',
     position:'relative', overflow:'hidden',
   },
   heroBg: {
     position:'absolute', inset:0, zIndex:0,
-    background:'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(34,197,94,0.06) 0%, transparent 70%)',
+    background:'radial-gradient(ellipse 80% 60% at 60% 40%, rgba(34,197,94,0.08) 0%, transparent 70%)',
     pointerEvents:'none',
   },
   heroGlow1: {
     position:'absolute', top:'10%', right:'5%', width:500, height:500,
-    borderRadius:'50%', background:'radial-gradient(circle, rgba(34,197,94,0.05), transparent 70%)',
+    borderRadius:'50%', background:'radial-gradient(circle, rgba(34,197,94,0.07), transparent 70%)',
     pointerEvents:'none', animation:'float 8s ease-in-out infinite',
   },
   heroGlow2: {
     position:'absolute', bottom:'5%', left:'15%', width:300, height:300,
-    borderRadius:'50%', background:'radial-gradient(circle, rgba(59,130,246,0.04), transparent 70%)',
+    borderRadius:'50%', background:'radial-gradient(circle, rgba(59,130,246,0.06), transparent 70%)',
     pointerEvents:'none', animation:'float 12s ease-in-out infinite reverse',
   },
   heroGrid: {
     position:'absolute', inset:0, zIndex:0,
-    backgroundImage:`linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)`,
+    backgroundImage:`linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)`,
     backgroundSize:'40px 40px',
     pointerEvents:'none',
   },
@@ -325,7 +319,7 @@ const S = {
   heroBadge: {
     display:'inline-flex', alignItems:'center', gap:8,
     background:'rgba(34,197,94,0.08)', border:'1px solid rgba(34,197,94,0.2)',
-    color:'var(--g400)', borderRadius:40, padding:'6px 16px',
+    color:'var(--g700)', borderRadius:40, padding:'6px 16px',
     fontSize:'0.72rem', fontWeight:600, marginBottom:26,
   },
   heroBadgeDot: {
@@ -344,23 +338,23 @@ const S = {
     backgroundSize:'200% 200%', animation:'gradientShift 4s ease infinite',
   },
   heroSub: {
-    fontSize:'1rem', color:'var(--text-3)', lineHeight:1.8,
+    fontSize:'1rem', color:'var(--text-2)', lineHeight:1.8,
     marginBottom:34, maxWidth:520,
   },
   heroActions: { display:'flex', gap:12, marginBottom:28, flexWrap:'wrap' },
   heroPrimaryBtn: {
     background:'linear-gradient(135deg,var(--g700),var(--g500))',
     color:'#fff', border:'none', borderRadius:12,
-    padding:'14px 28px', fontSize:'0.9rem', fontWeight:700,
+    padding:'15px 32px', fontSize:'0.95rem', fontWeight:700,
     cursor:'pointer', boxShadow:'var(--sh-green-lg)',
     transition:'transform 0.18s, box-shadow 0.18s',
     fontFamily:'Syne,sans-serif',
   },
   heroSecondaryBtn: {
     background:'rgba(255,255,255,0.05)',
-    color:'var(--text-2)',
-    border:'1px solid rgba(255,255,255,0.1)', borderRadius:12,
-    padding:'14px 28px', fontSize:'0.9rem', fontWeight:600,
+    color:'var(--text-1)',
+    border:'1px solid var(--border)', borderRadius:12,
+    padding:'15px 32px', fontSize:'0.95rem', fontWeight:600,
     cursor:'pointer', transition:'all 0.18s',
     display:'flex', alignItems:'center',
   },
@@ -373,24 +367,24 @@ const S = {
 
   /* Hero visual */
   heroVisual: {
-    position:'relative', zIndex:1, flex:'0 0 360px',
-    display:'flex', flexDirection:'column', gap:12,
-    background:'rgba(18,25,41,0.7)', backdropFilter:'blur(20px)',
-    borderRadius:20, padding:22,
-    boxShadow:'var(--sh-xl)', border:'1px solid rgba(255,255,255,0.08)',
+    position:'relative', zIndex:1, flex:'0 0 520px',
+    display:'flex', flexDirection:'column', gap:18,
+    background:'#ffffff', backdropFilter:'blur(20px)',
+    borderRadius:24, padding:32,
+    boxShadow:'var(--sh-xl)', border:'1px solid rgba(0,0,0,0.08)',
     overflow:'hidden',
   },
   heroCard1: {
     background:'rgba(34,197,94,0.07)', borderRadius:12,
-    border:'1px solid rgba(34,197,94,0.15)', padding:'16px 20px',
+    border:'1px solid rgba(34,197,94,0.18)', padding:'16px 20px',
   },
   heroCard2: {
     background:'rgba(245,158,11,0.07)', borderRadius:12,
-    border:'1px solid rgba(245,158,11,0.15)', padding:'14px 20px',
+    border:'1px solid rgba(245,158,11,0.18)', padding:'14px 20px',
   },
   heroPillars: {
-    background:'rgba(255,255,255,0.03)', borderRadius:12,
-    border:'1px solid rgba(255,255,255,0.06)', padding:'14px 16px',
+    background:'rgba(0,0,0,0.03)', borderRadius:12,
+    border:'1px solid rgba(0,0,0,0.07)', padding:'14px 16px',
   },
 
   /* Stats */
@@ -401,12 +395,12 @@ const S = {
     display:'flex', justifyContent:'center', flexWrap:'wrap',
     gap:0, padding:'48px 6vw',
   },
-  statCard: { textAlign:'center', padding:'0 40px', borderRight:'1px solid rgba(255,255,255,0.07)' },
+  statCard: { textAlign:'center', padding:'0 40px', borderRight:'1px solid rgba(0,0,0,0.07)' },
   statValue: {
     fontFamily:'JetBrains Mono,monospace', fontWeight:800,
-    fontSize:'clamp(1.6rem,3vw,2.5rem)', color:'var(--g400)', lineHeight:1,
+    fontSize:'clamp(1.6rem,3vw,2.5rem)', color:'var(--g600)', lineHeight:1,
   },
-  statLabel: { fontSize:'0.73rem', color:'var(--text-4)', marginTop:6, fontWeight:500 },
+  statLabel: { fontSize:'0.73rem', color:'var(--text-3)', marginTop:6, fontWeight:500 },
 
   /* Features */
   featuresSection: { padding:'80px 6vw', background:'transparent' },
@@ -428,7 +422,7 @@ const S = {
     gap:20, maxWidth:1100, margin:'0 auto',
   },
   featureCard: {
-    background:'var(--surface)', border:'1px solid rgba(255,255,255,0.08)',
+    background:'var(--surface)', border:'1px solid var(--border)',
     borderRadius:16, padding:'26px', cursor:'pointer',
     transition:'transform 0.22s cubic-bezier(0.16,1,0.3,1), box-shadow 0.22s ease, border-color 0.22s',
     position:'relative', overflow:'hidden',
@@ -441,7 +435,7 @@ const S = {
     fontFamily:'Syne,sans-serif', fontWeight:700, fontSize:'1rem',
     color:'var(--text-1)', marginBottom:8,
   },
-  featureDesc: { fontSize:'0.8rem', color:'var(--text-3)', lineHeight:1.7 },
+  featureDesc: { fontSize:'0.8rem', color:'var(--text-2)', lineHeight:1.7 },
   featureArrow: { marginTop:16, transition:'transform 0.2s, opacity 0.2s' },
 
   /* CTA */
@@ -461,8 +455,8 @@ const S = {
 
   /* Footer */
   footer: {
-    background:'rgba(255,255,255,0.02)',
-    borderTop:'1px solid rgba(255,255,255,0.06)',
+    background:'var(--surface)',
+    borderTop:'1px solid var(--border)',
     padding:'24px 6vw', display:'flex',
     alignItems:'center', justifyContent:'space-between',
   },

@@ -45,7 +45,7 @@ export default function LoginPage({ onLogin, onBack }) {
           <button onClick={onBack} style={S.backBtn}>← Retour</button>
 
           <div style={S.brandWrap}>
-            <div style={S.logo}>رَصَد</div>
+            <div style={S.logo}>رَصْد</div>
             <div style={S.brandName}>RASED</div>
             <div style={S.brandTagline}>Risque Assurantiel Sismique<br/>Exposition et Diagnostic</div>
           </div>
@@ -55,7 +55,7 @@ export default function LoginPage({ onLogin, onBack }) {
               { icon: '🗺️', text: 'Carte sismique interactive Leaflet' },
               { icon: '🎲', text: 'Simulation Monte Carlo 10K itérations' },
               { icon: '🔴', text: 'Alertes sismiques en temps réel (EMSC)' },
-              { icon: '🤖', text: 'Recommandations stratégiques IA' },
+              { icon: '📊', text: 'Recommandations stratégiques & Actuariat' },
             ].map(f => (
               <div key={f.text} style={S.featureItem}>
                 <div style={S.featureIconLeft}>{f.icon}</div>
@@ -89,8 +89,8 @@ export default function LoginPage({ onLogin, onBack }) {
             <div style={{ display: 'flex', gap: 8 }}>
               {DEMO_USERS.map(u => (
                 <button key={u.email} onClick={() => fillDemo(u)} style={S.demoBtn}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--g700)' }}>{u.role}</div>
-                  <div style={{ fontSize: '0.62rem', color: 'var(--text-4)' }}>{u.email}</div>
+                  <div style={{ fontSize: '0.72rem', fontWeight: 700, color: '#15803d' }}>{u.role}</div>
+                  <div style={{ fontSize: '0.62rem', color: '#64748b' }}>{u.email}</div>
                 </button>
               ))}
             </div>
@@ -151,7 +151,7 @@ export default function LoginPage({ onLogin, onBack }) {
           </form>
 
           <div style={S.formFooter}>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-4)', textAlign: 'center' }}>
+            <div style={{ fontSize: '0.7rem', color: '#94a3b8', textAlign: 'center' }}>
               🔒 Accès restreint · Données confidentielles IARD
             </div>
           </div>
@@ -208,37 +208,37 @@ const S = {
   /* Right form panel */
   right: {
     flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center',
-    background: '#f8fafc', padding: '40px 24px',
+    background: '#f1f5f9', padding: '40px 24px',
   },
   formCard: {
     background: '#fff', borderRadius: 20, padding: '36px 40px',
-    boxShadow: 'var(--sh-lg)', border: '1px solid var(--border)',
+    boxShadow: '0 8px 32px rgba(0,0,0,0.10)', border: '1px solid rgba(0,0,0,0.07)',
     width: '100%', maxWidth: 440,
   },
   formHeader: { marginBottom: 24 },
-  formTitle: { fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: '1.5rem', color: 'var(--text-1)', marginBottom: 4 },
-  formSub:   { fontSize: '0.82rem', color: 'var(--text-3)' },
+  formTitle: { fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: '1.5rem', color: '#0f172a', marginBottom: 4 },
+  formSub:   { fontSize: '0.82rem', color: '#64748b' },
 
   demoSection: { marginBottom: 20 },
-  demoLabel:   { fontSize: '0.65rem', fontWeight: 700, color: 'var(--text-3)', textTransform: 'uppercase', letterSpacing: '1.2px', marginBottom: 8 },
+  demoLabel:   { fontSize: '0.65rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase', letterSpacing: '1.2px', marginBottom: 8 },
   demoBtn: {
-    flex: 1, background: 'var(--g50)', border: '1px solid var(--g200)',
+    flex: 1, background: '#f0fdf4', border: '1px solid #bbf7d0',
     borderRadius: 10, padding: '10px 12px', cursor: 'pointer',
     textAlign: 'left', transition: 'background 0.15s', display: 'block',
   },
 
   fieldWrap:  { display: 'flex', flexDirection: 'column', gap: 6 },
-  label:      { fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-2)' },
+  label:      { fontSize: '0.72rem', fontWeight: 600, color: '#334155' },
   inputWrap: {
     display: 'flex', alignItems: 'center',
-    border: '1px solid var(--border)', borderRadius: 10,
+    border: '1px solid #e2e8f0', borderRadius: 10,
     background: '#fff', overflow: 'hidden', transition: 'border-color 0.2s, box-shadow 0.2s',
   },
   inputIcon: { padding: '0 12px', fontSize: '0.9rem' },
   input: {
     flex: 1, border: 'none', outline: 'none',
     padding: '12px 12px 12px 0', fontSize: '0.85rem',
-    color: 'var(--text-1)', background: 'transparent',
+    color: '#0f172a', background: 'transparent',
     fontFamily: 'Inter,sans-serif',
   },
   eyeBtn: {

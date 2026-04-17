@@ -70,7 +70,7 @@ function GaugeSVG({ score, target }) {
         </filter>
       </defs>
       {/* Background track */}
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeWidth={strokeW} />
+      <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(0,0,0,0.08)" strokeWidth={strokeW} />
       {/* Target arc */}
       <circle cx={cx} cy={cy} r={r} fill="none" stroke={scoreColor} strokeWidth={strokeW}
         strokeDasharray={`${tPct*circ} ${circ}`}

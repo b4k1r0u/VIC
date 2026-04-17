@@ -20,7 +20,7 @@ const BENCHMARKS = [
 
 const ZONE_DIRECTIVES = [
   {
-    zone:'III', color:'#ef4444', bg:'rgba(239,68,68,0.07)', border:'rgba(239,68,68,0.2)',
+    zone:'III', color:'#ef4444', bg:'var(--surface)', border:'var(--border)',
     rules:[
       'Franchise minimum: 10% de la SI (min 500 000 DZD)',
       'Attestation RPA99 obligatoire pour tout immeuble > R+2',
@@ -30,7 +30,7 @@ const ZONE_DIRECTIVES = [
     ],
   },
   {
-    zone:'IIb', color:'#f59e0b', bg:'rgba(245,158,11,0.07)', border:'rgba(245,158,11,0.2)',
+    zone:'IIb', color:'#f59e0b', bg:'var(--surface)', border:'var(--border)',
     rules:[
       'Franchise minimum: 8% de la SI (min 300 000 DZD)',
       'Vérification RPA99 recommandée pour R+3 et plus',
@@ -39,7 +39,7 @@ const ZONE_DIRECTIVES = [
     ],
   },
   {
-    zone:'IIa', color:'#eab308', bg:'rgba(234,179,8,0.07)', border:'rgba(234,179,8,0.2)',
+    zone:'IIa', color:'#eab308', bg:'var(--surface)', border:'var(--border)',
     rules:[
       'Franchise minimum: 5% de la SI (min 150 000 DZD)',
       'Vérification de conformité recommandée',
@@ -48,7 +48,7 @@ const ZONE_DIRECTIVES = [
     ],
   },
   {
-    zone:'I / 0', color:'#22c55e', bg:'rgba(34,197,94,0.07)', border:'rgba(34,197,94,0.2)',
+    zone:'I / 0', color:'#22c55e', bg:'var(--surface)', border:'var(--border)',
     rules:[
       'Conditions standards du marché',
       'Franchise de base: 3% de la SI',
@@ -104,7 +104,7 @@ export default function AIPage() {
           style={{ ...S.regenBtn, opacity:typing ? 0.7 : 1 }}>
           {typing
             ? <><RefreshCw size={13} style={{ marginRight:7, animation:'spin 1s linear infinite' }} />Génération en cours...</>
-            : <><Sparkles size={13} style={{ marginRight:7 }} />Régénérer avec l'IA</>}
+            : <><Sparkles size={13} style={{ marginRight:7 }} />Actualiser le rapport</>}
         </button>
       </div>
 
@@ -113,7 +113,7 @@ export default function AIPage() {
           <div style={S.typingDots}>
             <span className="typing-dot" /><span className="typing-dot" /><span className="typing-dot" />
           </div>
-          L'IA analyse 113 100 polices et génère la note stratégique...
+          Le moteur analytique croise 113 100 polices pour la mise à jour stratégique...
         </div>
       )}
 
@@ -227,7 +227,7 @@ export default function AIPage() {
                       → {k.target}{k.unit}
                     </span>
                   </div>
-                  <div style={{ height:5, background:'rgba(255,255,255,0.06)', borderRadius:4, overflow:'hidden', marginBottom:5 }}>
+                  <div style={{ height:5, background:'rgba(0,0,0,0.07)', borderRadius:4, overflow:'hidden', marginBottom:5 }}>
                     <div style={{ width:pct+'%', height:'100%', background:k.color, borderRadius:4, transition:'width 1s ease', boxShadow:`0 0 6px ${k.color}60` }} />
                   </div>
                   <div style={{ fontSize:'0.6rem', color:'var(--text-3)' }}>Progression: {pct.toFixed(0)}%</div>
@@ -278,12 +278,14 @@ const S = {
   section: { display:'flex', gap:22, marginBottom:28 },
   sectionContent: { flex:1 },
   calloutRed: {
-    background:'rgba(239,68,68,0.07)', border:'1px solid rgba(239,68,68,0.2)',
+    background:'var(--surface)', borderLeft:'4px solid #ef4444', borderTop:'1px solid var(--border)', borderRight:'1px solid var(--border)', borderBottom:'1px solid var(--border)',
     borderRadius:12, padding:'16px 18px', marginBottom:12,
+    boxShadow:'var(--sh-sm)',
   },
   calloutGreen: {
-    background:'rgba(34,197,94,0.07)', border:'1px solid rgba(34,197,94,0.2)',
+    background:'var(--surface)', borderLeft:'4px solid #22c55e', borderTop:'1px solid var(--border)', borderRight:'1px solid var(--border)', borderBottom:'1px solid var(--border)',
     borderRadius:12, padding:'16px 18px',
+    boxShadow:'var(--sh-sm)',
   },
   tableWrap: {
     background:'var(--surface)', border:'1px solid var(--border)',
@@ -291,13 +293,13 @@ const S = {
   },
   table: { width:'100%', borderCollapse:'collapse' },
   th: {
-    background:'rgba(255,255,255,0.03)', fontSize:'0.62rem', fontWeight:700,
+    background:'rgba(0,0,0,0.02)', fontSize:'0.62rem', fontWeight:700,
     textTransform:'uppercase', letterSpacing:'0.8px', color:'var(--text-3)',
     padding:'11px 16px', textAlign:'left', borderBottom:'1px solid var(--border)',
   },
   td: {
     padding:'11px 16px', fontSize:'0.78rem',
-    color:'var(--text-2)', borderBottom:'1px solid rgba(255,255,255,0.03)',
+    color:'var(--text-2)', borderBottom:'1px solid rgba(0,0,0,0.04)',
   },
   directivesGrid: { display:'grid', gridTemplateColumns:'repeat(2,1fr)', gap:14 },
   directiveCard: { borderRadius:12, padding:'14px 16px' },

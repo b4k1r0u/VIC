@@ -110,7 +110,7 @@ export default function RiskMapPage() {
           >
             <ZoomControl position="bottomright" />
             <TileLayer
-              url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+              url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
               attribution="&copy; OpenStreetMap"
             />
             {showBubbles && filtered.map(w => (
@@ -146,7 +146,7 @@ export default function RiskMapPage() {
                   border:`1px solid ${filterZone === z ? c+'40' : 'transparent'}`,
                 }}>
                 <div style={{ width:8, height:8, borderRadius:'50%', background:c, boxShadow:`0 0 6px ${c}` }} />
-                <span style={{ fontSize:'0.7rem', color:filterZone===z ? c : '#94a3b8', fontWeight:filterZone===z?700:500 }}>
+                <span style={{ fontSize:'0.7rem', color:filterZone===z ? c : '#334155', fontWeight:filterZone===z?700:500 }}>
                   Zone {z}
                 </span>
                 <span style={{ marginLeft:'auto', fontSize:'0.6rem', fontFamily:'JetBrains Mono,monospace', color:'#64748b' }}>
@@ -157,7 +157,7 @@ export default function RiskMapPage() {
           </div>
 
           {/* Map tag */}
-          <div style={S.mapTag}>
+          <div style={{...S.mapTag, color:'#64748b'}}>
             <MapPin size={10} style={{ marginRight:5 }} />
             Carte RPA99 — {filtered.length} wilayas · {filterZone ? `Filtre: Zone ${filterZone}` : 'Toutes zones'}
           </div>
@@ -257,10 +257,10 @@ const S = {
   },
   mapLegend: {
     position:'absolute', top:14, left:14, zIndex:1000,
-    background:'rgba(8,13,26,0.88)',
+    background:'rgba(255,255,255,0.94)',
     backdropFilter:'blur(16px)', WebkitBackdropFilter:'blur(16px)',
-    borderRadius:12, border:'1px solid rgba(255,255,255,0.08)',
-    boxShadow:'var(--sh-lg)', padding:'12px 14px',
+    borderRadius:12, border:'1px solid rgba(0,0,0,0.08)',
+    boxShadow:'var(--sh-md)', padding:'12px 14px',
     display:'flex', flexDirection:'column', gap:5,
     minWidth:140,
   },
@@ -271,9 +271,9 @@ const S = {
   },
   mapTag: {
     position:'absolute', bottom:14, left:14, zIndex:1000,
-    background:'rgba(8,13,26,0.88)',
+    background:'rgba(255,255,255,0.94)',
     backdropFilter:'blur(12px)', WebkitBackdropFilter:'blur(12px)',
-    borderRadius:9, border:'1px solid rgba(255,255,255,0.08)',
+    borderRadius:9, border:'1px solid rgba(0,0,0,0.07)',
     padding:'6px 12px', fontSize:'0.65rem', color:'var(--text-3)',
     fontWeight:500, display:'flex', alignItems:'center',
     boxShadow:'var(--sh-sm)',

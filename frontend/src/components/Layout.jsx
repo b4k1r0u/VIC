@@ -11,7 +11,7 @@ const PAGES = [
   { id:'map',        Icon:Map,             label:'Carte des Risques', group:'main' },
   { id:'simulator',  Icon:Zap,             label:'Simulateur',        group:'main' },
   { id:'balance',    Icon:Scale,           label:'Équilibre',         group:'analyse' },
-  { id:'ai',         Icon:Bot,             label:'Recommandations IA',group:'analyse' },
+  { id:'ai',         Icon:Bot,             label:'Stratégie & Optimisation',group:'analyse' },
   { id:'alerts',     Icon:AlertTriangle,   label:'Alertes Sismiques', group:'live', live:true },
   { id:'sandbox',    Icon:FlaskConical,    label:'Sandbox Souscription',group:'live' },
 ]
@@ -244,11 +244,11 @@ const S = {
     fontWeight:700, fontSize:'0.8rem', flexShrink:0,
   },
   userName: {
-    fontSize:'0.72rem', fontWeight:600, color:'var(--text-2)',
+    fontSize:'0.72rem', fontWeight:600, color:'rgba(255,255,255,0.9)',
     whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis',
   },
   userRole: {
-    fontSize:'0.58rem', color:'var(--text-3)',
+    fontSize:'0.58rem', color:'rgba(255,255,255,0.5)',
     whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis',
   },
   logoutBtn: {
@@ -261,13 +261,13 @@ const S = {
   },
   topbar: {
     height:'var(--topbar-h)',
-    background:'rgba(8,13,26,0.85)',
+    background:'#ffffff',
     backdropFilter:'blur(16px)',
     WebkitBackdropFilter:'blur(16px)',
-    borderBottom:'1px solid rgba(255,255,255,0.06)',
+    borderBottom:'1px solid rgba(0,0,0,0.07)',
     padding:'0 28px', display:'flex', alignItems:'center',
     justifyContent:'space-between', flexShrink:0,
-    boxShadow:'0 1px 0 rgba(255,255,255,0.04)',
+    boxShadow:'0 1px 6px rgba(0,0,0,0.06)',
   },
   topTitle: {
     fontFamily:'Syne, sans-serif', fontWeight:700,
@@ -280,7 +280,7 @@ const S = {
     background:'rgba(34,197,94,0.08)',
     border:'1px solid rgba(34,197,94,0.18)',
     borderRadius:20, padding:'4px 12px',
-    fontSize:'0.68rem', fontWeight:600, color:'var(--g400)',
+    fontSize:'0.68rem', fontWeight:600, color:'var(--g600)',
   },
   pillDot: {
     width:6, height:6, borderRadius:'50%', background:'var(--g500)',
@@ -292,8 +292,8 @@ const S = {
   },
   userChip: {
     display:'flex', alignItems:'center', gap:8,
-    background:'rgba(255,255,255,0.05)',
-    border:'1px solid rgba(255,255,255,0.08)',
+    background:'var(--surface2)',
+    border:'1px solid var(--border)',
     borderRadius:10, padding:'4px 12px 4px 6px',
   },
 }

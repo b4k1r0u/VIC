@@ -33,7 +33,7 @@ const AlgeriaMap = lazy(() => import('../components/map/AlgeriaMap'))
 const MAP_LAYERS = [
   { id: 'risk',       label: 'Zones RPA' },
   { id: 'exposure',   label: 'Exposition' },
-  { id: 'score',      label: 'Score IA' },
+  { id: 'score',      label: 'Score Actuariel' },
   { id: 'simulation', label: 'Simulation' },
 ]
 
@@ -55,7 +55,7 @@ export default function Dashboard() {
           {/* Layer toggle + portfolio KPIs row */}
           <div style={{
             display: 'flex', alignItems: 'center', gap: 12,
-            padding: '10px 16px', borderBottom: '1px solid #1e293b',
+            padding: '10px 16px', borderBottom: '1px solid var(--border)',
             flexWrap: 'wrap',
           }}>
             {/* Layer switcher */}
@@ -117,18 +117,18 @@ export default function Dashboard() {
         {/* ── Right sidebar ── */}
         <div style={{
           width: 340, display: 'flex', flexDirection: 'column',
-          borderLeft: '1px solid #1e293b', overflow: 'hidden',
+          borderLeft: '1px solid var(--border)', overflow: 'hidden',
         }}>
 
           {/* Simulation panel */}
-          <div style={{ padding: 16, borderBottom: '1px solid #1e293b' }}>
+          <div style={{ padding: 16, borderBottom: '1px solid var(--border)' }}>
             <div style={{ fontWeight: 700, fontSize: 13, marginBottom: 12 }}>📊 Monte Carlo</div>
             <ScenarioSelector />
           </div>
 
           {/* Simulation results */}
           {simulationResult && (
-            <div style={{ padding: '12px 16px', borderBottom: '1px solid #1e293b' }}>
+            <div style={{ padding: '12px 16px', borderBottom: '1px solid var(--border)' }}>
               <SimulationKPIs result={simulationResult} />
               <div style={{ marginTop: 12 }}>
                 <LossDistributionChart result={simulationResult} />

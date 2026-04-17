@@ -225,7 +225,7 @@ export default function SandboxPage() {
                     {result.score}<span style={{ fontSize:'1rem', fontWeight:400, color:'var(--text-3)' }}>/100</span>
                   </div>
                   <div style={{ flex:1 }}>
-                    <div style={{ height:8, background:'rgba(255,255,255,0.06)', borderRadius:6, overflow:'hidden' }}>
+                    <div style={{ height:8, background:'rgba(0,0,0,0.07)', borderRadius:6, overflow:'hidden' }}>
                       <div style={{
                         height:'100%', borderRadius:6,
                         width:result.score+'%',
@@ -273,7 +273,7 @@ export default function SandboxPage() {
                         {r.val.toLocaleString('fr-FR')} / 400 000 MDZD ({r.pct.toFixed(1)}%)
                       </span>
                     </div>
-                    <div style={{ height:9, background:'rgba(255,255,255,0.06)', borderRadius:6, overflow:'hidden' }}>
+                    <div style={{ height:9, background:'rgba(0,0,0,0.07)', borderRadius:6, overflow:'hidden' }}>
                       <div style={{
                         width:`${Math.min(r.pct,100)}%`, height:'100%',
                         background:r.pct>90?'#ef4444':r.pct>75?'#f59e0b':'#22c55e',

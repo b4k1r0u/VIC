@@ -199,7 +199,7 @@ export default function AlertsPage() {
             <div style={S.sideCard}>
               <div style={S.sideTitle}>🗺️ Localisation Épicentre</div>
               <svg viewBox="0 0 500 370" style={{ width:'100%', height:175 }}>
-                <rect width="500" height="370" fill="#0a0f1e" />
+                <rect width="500" height="370" fill="#f1f5f9" />
                 <path
                   d="M 45,72 L 95,58 L 175,50 L 255,47 L 330,48 L 408,52 L 452,68 L 462,95 L 455,128 L 440,158 L 432,192 L 424,232 L 416,274 L 405,320 L 385,362 L 348,370 L 295,368 L 240,366 L 187,358 L 148,340 L 122,310 L 100,278 L 80,245 L 62,212 L 48,178 L 42,140 Z"
                   fill="rgba(34,197,94,0.06)"
@@ -217,7 +217,7 @@ export default function AlertsPage() {
                   </g>
                 )}
                 {!epicentre && (
-                  <text x={250} y={185} textAnchor="middle" fontSize={10} fill="#475569" fontFamily="Plus Jakarta Sans">
+                  <text x={250} y={185} textAnchor="middle" fontSize={10} fill="#94a3b8" fontFamily="Plus Jakarta Sans">
                     En attente d'événement...
                   </text>
                 )}
@@ -322,7 +322,7 @@ const S = {
   feedHead: {
     padding:'14px 18px', borderBottom:'1px solid var(--border)',
     display:'flex', alignItems:'center', justifyContent:'space-between',
-    background:'rgba(255,255,255,0.02)', flexShrink:0,
+    background:'var(--surface2)', flexShrink:0,
   },
   countBadge: {
     background:'rgba(34,197,94,0.1)',
@@ -334,6 +334,7 @@ const S = {
   alertRow: {
     borderRadius:10, padding:'11px 13px',
     border:'1px solid var(--border)',
+    background:'var(--surface)',
     transition:'background 0.2s',
   },
   magBadge: {
