@@ -1,326 +1,467 @@
-import React from 'react'
-import { useCountUp, useVisible } from '../hooks/useCountUp'
-import { ZONES, GROWTH, HOTSPOTS } from '../data/constants'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
-  PieChart, Pie, Cell, Tooltip, ResponsiveContainer,
-  AreaChart, Area, XAxis, YAxis, CartesianGrid,
+  Area,
+  AreaChart,
+  CartesianGrid,
+  Cell,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
 } from 'recharts'
+import { AlertTriangle, DollarSign, FileText, Shield, TrendingUp } from 'lucide-react'
+import LoadingSpinner from '../components/shared/LoadingSpinner'
+import ZoneBadge from '../components/shared/ZoneBadge'
+import { geoAPI } from '../api/geo'
+import { policiesAPI } from '../api/policies'
 import {
-  FileText, DollarSign, AlertTriangle, Scale,
-  TrendingDown, TrendingUp,
-} from 'lucide-react'
+  formatCompactDzd,
+  formatInteger,
+  formatPercent,
+} from '../utils/format'
 
-/* ── Zone color map for consistent rendering ── */
-const ZONE_FILL = {
-  'Zone III': '#dc2626',
-  'Zone IIb': '#d97706',
-  'Zone IIa': '#ca8a04',
-  'Zone I': '#059669',
-  'Zone 0': '#2563eb',
+const ZONE_COLORS = {
+  III: '#dc2626',
+  IIb: '#d97706',
+  IIa: '#ca8a04',
+  I: '#059669',
+  '0': '#2563eb',
 }
 
-/* ── KPI definitions ── */
-const KPI_LIST = [
-  { label: 'Total Polices', raw: 113100, fmt: v => Math.round(v).toLocaleString('fr-FR'), unit: 'polices', Icon: FileText },
-  { label: 'Exposition Estimée', raw: 1131, fmt: v => v.toFixed(0), unit: 'Mrd DZD', Icon: DollarSign },
-  { label: 'Zone III Critique', raw: 30.5, fmt: v => v.toFixed(1) + '%', unit: 'du portfolio', Icon: AlertTriangle, status: 'danger' },
-  { label: 'Balance Score', raw: 47, fmt: v => v.toFixed(0) + ' / 100', unit: 'score', Icon: Scale },
-  { label: 'PML 200-ans', raw: 285, fmt: v => '~' + v.toFixed(0), unit: 'Mrd DZD', Icon: TrendingDown, status: 'danger' },
-  { label: 'Prime Annuelle', raw: 351.4, fmt: v => v.toFixed(1), unit: 'M DZD', Icon: TrendingUp, status: 'success' },
-]
+const EMPTY_STATE = { kpis: null, hotspots: [], summary: null }
 
-function KpiCard({ item, delay }) {
-  const val = useCountUp(item.raw, 1200 + delay)
-  const valColor = item.status === 'danger' ? 'var(--danger)' : item.status === 'success' ? 'var(--success)' : 'var(--text-primary)'
+function SectionTitle({ children }) {
+  return <div style={S.sectionTitle}>{children}</div>
+}
 
+function StatCard({ label, value, note, Icon, color = 'var(--text-primary)' }) {
   return (
-    <div style={S.kpiCard} className="card-hover">
-      <div style={S.kpiHeader}>
-        <div style={S.kpiLabel}>{item.label}</div>
-        <div style={S.kpiIcon}>
-          <item.Icon size={14} color="var(--text-quaternary)" strokeWidth={1.8} />
-        </div>
+    <div style={S.statCard}>
+      <div style={S.statHeader}>
+        <span style={S.statLabel}>{label}</span>
+        <Icon size={15} color="var(--text-quaternary)" />
       </div>
-      <div style={{ ...S.kpiValue, color: valColor }}>
-        {item.fmt(val)}
-      </div>
-      <div style={S.kpiUnit}>{item.unit}</div>
+      <div style={{ ...S.statValue, color }}>{value}</div>
+      <div style={S.statNote}>{note}</div>
     </div>
   )
 }
 
-/* ── Custom donut center label ── */
-function DonutCenter({ cx, cy }) {
-  return (
-    <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle">
-      <tspan x={cx} dy="-6" fontSize={14} fontFamily="'JetBrains Mono', monospace" fontWeight="700" fill="var(--text-primary)">
-        113 100
-      </tspan>
-      <tspan x={cx} dy={18} fontSize={10} fill="var(--text-tertiary)" fontFamily="'Plus Jakarta Sans', sans-serif">
-        polices
-      </tspan>
-    </text>
-  )
-}
-
-/* ── Score color ── */
-const scoreColor = s => s >= 85 ? '#dc2626' : s >= 70 ? '#d97706' : '#ca8a04'
-
-/* ── Status label ── */
-const statusInfo = z =>
-  z === 'III' ? ['var(--danger-muted)', 'var(--danger)', 'CRITIQUE']
-    : z === 'IIb' ? ['var(--warning-muted)', 'var(--warning)', 'ÉLEVÉ']
-      : ['rgba(202,138,4,0.08)', '#ca8a04', 'MODÉRÉ']
-
-/* ── Tooltip ── */
-const ChartTooltip = ({ active, payload }) => {
+function ChartTooltip({ active, payload, formatter }) {
   if (!active || !payload?.length) return null
+
   return (
     <div style={S.tooltip}>
-      {payload.map(p => (
-        <div key={p.name} style={{ color: p.color, marginBottom: 2 }}>
-          <strong>{p.name}</strong>: {p.value?.toLocaleString('fr-FR')}
+      {payload.map((entry) => (
+        <div key={entry.name} style={{ marginBottom: 4, color: entry.color }}>
+          <strong>{entry.name}</strong>: {formatter(entry.value, entry.payload)}
         </div>
       ))}
     </div>
   )
 }
 
-const SectionTitle = ({ children }) => (
-  <div style={S.sectionTitle}>
-    {children}
-  </div>
-)
-
-/* ══════════════════════════════════════════════════════════════ */
 export default function OverviewPage() {
-  const barVisible = useVisible(700)
+  const [state, setState] = useState(EMPTY_STATE)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function load() {
+      setLoading(true)
+      setError(null)
+
+      try {
+        const [kpis, hotspots, summary] = await Promise.all([
+          geoAPI.getKPIs(),
+          geoAPI.getHotspots(10),
+          policiesAPI.getSummary(),
+        ])
+
+        if (!cancelled) {
+          setState({ kpis, hotspots, summary })
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(err.message || 'Erreur de chargement')
+        }
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+
+    load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const zoneData = useMemo(() => {
+    if (!state.summary) return []
+
+    return state.summary.by_zone.map((row) => ({
+      name: `Zone ${row.zone}`,
+      zone: row.zone,
+      value: row.policy_count,
+      exposure: row.capital_assure,
+      pct: state.summary.total_policies
+        ? (row.policy_count / state.summary.total_policies) * 100
+        : 0,
+    }))
+  }, [state.summary])
+
+  const yearData = useMemo(() => {
+    if (!state.summary) return []
+
+    return [...state.summary.by_year]
+      .sort((a, b) => a.policy_year - b.policy_year)
+      .map((row) => ({
+        year: row.policy_year,
+        policies: row.policy_count,
+        capital: row.capital_assure,
+        premium: row.prime_nette,
+      }))
+  }, [state.summary])
+
+  const zoneThreeShare = state.kpis?.by_zone.find((row) => row.zone === 'III')?.pct ?? 0
+
+  if (loading) {
+    return (
+      <main style={S.loadingPage}>
+        <LoadingSpinner size={36} />
+      </main>
+    )
+  }
+
+  if (error || !state.kpis || !state.summary) {
+    return (
+      <main style={S.loadingPage}>
+        <div style={S.errorBox}>
+          <strong>Impossible de charger le portefeuille.</strong>
+          <span>{error || 'Réponse backend incomplète.'}</span>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <main style={S.page} className="page-fade">
-      <SectionTitle>Indicateurs Clés — Portefeuille 2025</SectionTitle>
+      <SectionTitle>Portefeuille Live</SectionTitle>
 
-      <div style={S.kpiGrid}>
-        {KPI_LIST.map((k, i) => <KpiCard key={k.label} item={k} delay={i * 90} />)}
+      <div style={S.statsGrid}>
+        <StatCard
+          label="Total Polices"
+          value={formatInteger(state.kpis.total_policies)}
+          note="Portefeuille actuellement chargé depuis le backend"
+          Icon={FileText}
+        />
+        <StatCard
+          label="Capital Assuré"
+          value={formatCompactDzd(state.summary.total_capital_assure)}
+          note="Somme des capitaux assurés"
+          Icon={DollarSign}
+        />
+        <StatCard
+          label="Rétention Nette"
+          value={formatCompactDzd(state.kpis.net_retention)}
+          note="Calcul backend sur les données agrégées"
+          Icon={Shield}
+        />
+        <StatCard
+          label="Prime Nette"
+          value={formatCompactDzd(state.summary.total_prime_nette)}
+          note="Primes annuelles observées"
+          Icon={TrendingUp}
+          color="var(--success)"
+        />
+        <StatCard
+          label="Zone III"
+          value={formatPercent(zoneThreeShare)}
+          note="Part du portefeuille en zone critique"
+          Icon={AlertTriangle}
+          color="var(--danger)"
+        />
       </div>
 
-      <SectionTitle>Répartition &amp; Évolution</SectionTitle>
-      <div style={S.twoCol}>
+      <SectionTitle>Répartition</SectionTitle>
 
-        {/* Donut */}
-        <div style={S.chartCard}>
-          <div style={S.chartTitle}>Distribution par Zone Sismique</div>
-          <div style={S.chartSub}>RPA99 · Répartition du portefeuille</div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
-            <ResponsiveContainer width={180} height={180}>
+      <div style={S.twoCol}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>Distribution par zone sismique</div>
+          <div style={S.cardSub}>Basé sur `/api/policies/summary`</div>
+          <div style={S.pieRow}>
+            <ResponsiveContainer width={190} height={190}>
               <PieChart>
-                <Pie data={ZONES} dataKey="pct" innerRadius={58} outerRadius={82}
-                  paddingAngle={2} startAngle={90} endAngle={-270}>
-                  {ZONES.map((z, i) => (
-                    <Cell key={i} fill={ZONE_FILL[z.name] || z.color} stroke="none" opacity={0.85} />
+                <Pie data={zoneData} dataKey="value" innerRadius={52} outerRadius={82} paddingAngle={2}>
+                  {zoneData.map((row) => (
+                    <Cell key={row.zone} fill={ZONE_COLORS[row.zone] || '#64748b'} />
                   ))}
                 </Pie>
-                <DonutCenter cx={90} cy={90} />
-                <Tooltip
-                  formatter={(v, n, p) => [`${v}% — ${p.payload.policies.toLocaleString('fr-FR')} polices`, '']}
-                  contentStyle={S.tooltipStyle}
-                />
+                <Tooltip content={<ChartTooltip formatter={(value) => `${formatInteger(value)} polices`} />} />
               </PieChart>
             </ResponsiveContainer>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, flex: 1 }}>
-              {ZONES.map(z => {
-                const fill = ZONE_FILL[z.name] || z.color
-                return (
-                  <div key={z.name} style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: '0.78rem' }}>
-                    <div style={{ width: 8, height: 8, borderRadius: 3, background: fill, flexShrink: 0 }} />
-                    <span style={{ color: 'var(--text-secondary)', flex: 1 }}>{z.name}</span>
-                    <span style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, color: 'var(--text-primary)', fontSize: '0.75rem' }}>
-                      {z.pct}%
-                    </span>
-                    <span style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', fontFamily: "'JetBrains Mono', monospace" }}>{z.si} Mrd</span>
+
+            <div style={S.zoneLegend}>
+              {zoneData.map((row) => (
+                <div key={row.zone} style={S.zoneLegendRow}>
+                  <div style={{ ...S.zoneSwatch, background: ZONE_COLORS[row.zone] || '#64748b' }} />
+                  <div style={{ flex: 1 }}>
+                    <div style={S.zoneLegendTitle}>{row.name}</div>
+                    <div style={S.zoneLegendMeta}>
+                      {formatInteger(row.value)} polices · {formatCompactDzd(row.exposure)}
+                    </div>
                   </div>
-                )
-              })}
+                  <strong style={S.zoneLegendPct}>{formatPercent(row.pct)}</strong>
+                </div>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Area Chart */}
-        <div style={S.chartCard}>
-          <div style={S.chartTitle}>Évolution du Portefeuille 2023–2025</div>
-          <div style={S.chartSub}>Nombre de polices par zone sismique</div>
-          <ResponsiveContainer width="100%" height={180}>
-            <AreaChart data={GROWTH} margin={{ top: 4, right: 4, left: -20, bottom: 0 }}>
+        <div style={S.card}>
+          <div style={S.cardTitle}>Évolution annuelle</div>
+          <div style={S.cardSub}>Capital assuré par année de souscription</div>
+          <ResponsiveContainer width="100%" height={220}>
+            <AreaChart data={yearData} margin={{ top: 8, right: 8, left: 8, bottom: 0 }}>
               <defs>
-                {[['III', '#dc2626'], ['IIb', '#d97706'], ['IIa', '#ca8a04'], ['I', '#059669'], ['Z0', '#2563eb']].map(([k, c]) => (
-                  <linearGradient key={k} id={`g${k}`} x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor={c} stopOpacity={0.2} />
-                    <stop offset="95%" stopColor={c} stopOpacity={0.02} />
-                  </linearGradient>
-                ))}
+                <linearGradient id="capitalFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="5%" stopColor="#14b8a6" stopOpacity={0.25} />
+                  <stop offset="95%" stopColor="#14b8a6" stopOpacity={0.03} />
+                </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
               <XAxis dataKey="year" tick={{ fontSize: 11, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 10, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} />
-              <Tooltip content={<ChartTooltip />} />
-              {[['III', '#dc2626'], ['IIb', '#d97706'], ['IIa', '#ca8a04'], ['I', '#059669'], ['Z0', '#2563eb']].map(([k, c]) => (
-                <Area key={k} type="monotone" dataKey={k} stackId="1"
-                  stroke={c} strokeWidth={1.5} fill={`url(#g${k})`} />
-              ))}
+              <YAxis
+                tick={{ fontSize: 11, fill: 'var(--text-tertiary)' }}
+                axisLine={false}
+                tickLine={false}
+                tickFormatter={(value) => `${Math.round(value / 1e9)} Md`}
+              />
+              <Tooltip content={<ChartTooltip formatter={(value) => formatCompactDzd(value)} />} />
+              <Area
+                type="monotone"
+                dataKey="capital"
+                name="Capital"
+                stroke="#14b8a6"
+                strokeWidth={2}
+                fill="url(#capitalFill)"
+              />
             </AreaChart>
           </ResponsiveContainer>
         </div>
       </div>
 
-      {/* Hotspot Table */}
-      <SectionTitle>Top 10 — Points de Concentration</SectionTitle>
-      <div style={S.tableWrap}>
-        <table style={S.table}>
-          <thead>
-            <tr>
-              {['#', 'Wilaya', 'Zone', 'Polices', 'SI Estimé (MDZD)', 'Score Risque', 'Statut'].map(h => (
-                <th key={h} style={S.th}>{h}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {HOTSPOTS.map(h => {
-              const [rowBg, fg, label] = statusInfo(h.zone)
-              const zoneColor = { III: '#dc2626', IIb: '#d97706', IIa: '#ca8a04' }[h.zone] || '#059669'
-              return (
-                <tr key={h.rank} className="table-row-hover"
-                  style={{ transition: 'background 0.15s' }}>
-                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: 'var(--text-quaternary)' }}>
-                    {String(h.rank).padStart(2, '0')}
-                  </td>
-                  <td style={{ ...S.td, fontWeight: 600, color: 'var(--text-primary)' }}>
-                    {h.wilaya} <span style={{ color: 'var(--text-quaternary)', fontWeight: 400 }}>({h.code})</span>
-                  </td>
-                  <td style={S.td}>
-                    <span style={{
-                      background: `${zoneColor}10`, color: zoneColor,
-                      padding: '3px 8px', borderRadius: 4,
-                      fontSize: '0.68rem', fontWeight: 600,
-                      fontFamily: "'JetBrains Mono', monospace",
-                    }}>
-                      {h.zone}
-                    </span>
-                  </td>
-                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-secondary)' }}>{h.policies.toLocaleString('fr-FR')}</td>
-                  <td style={{ ...S.td, fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-secondary)' }}>{h.si.toLocaleString('fr-FR')}</td>
-                  <td style={S.td}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <div style={{ flex: 1, height: 4, background: 'var(--border-subtle)', borderRadius: 2, overflow: 'hidden' }}>
-                        <div style={{
-                          height: '100%', borderRadius: 2,
-                          width: barVisible ? h.score + '%' : '0%',
-                          background: scoreColor(h.score),
-                          transition: 'width 0.8s ease',
-                        }} />
-                      </div>
-                      <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 600, color: scoreColor(h.score), minWidth: 20, textAlign: 'right' }}>
-                        {h.score}
-                      </span>
-                    </div>
-                  </td>
-                  <td style={S.td}>
-                    <span style={{
-                      background: rowBg, color: fg,
-                      padding: '3px 10px', borderRadius: 4,
-                      fontSize: '0.65rem', fontWeight: 600,
-                    }}>
-                      {label}
-                    </span>
-                  </td>
+      <SectionTitle>Hotspots</SectionTitle>
+
+      <div style={S.card}>
+        <div style={S.cardTitle}>Top communes par concentration</div>
+        <div style={S.cardSub}>Source: `/api/geo/hotspots`</div>
+        <div style={S.tableWrap}>
+          <table style={S.table}>
+            <thead>
+              <tr>
+                {['#', 'Commune', 'Wilaya', 'Zone', 'Polices', 'Exposition', 'Score'].map((label) => (
+                  <th key={label} style={S.th}>{label}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {state.hotspots.map((item) => (
+                <tr key={`${item.wilaya_code}-${item.commune_code}`} style={S.row}>
+                  <td style={S.td}>{item.rank}</td>
+                  <td style={S.tdStrong}>{item.commune_name}</td>
+                  <td style={S.td}>{item.wilaya_name}</td>
+                  <td style={S.td}><ZoneBadge zone={item.zone_sismique} /></td>
+                  <td style={S.tdMono}>{formatInteger(item.policy_count)}</td>
+                  <td style={S.tdMono}>{formatCompactDzd(item.total_exposure)}</td>
+                  <td style={{ ...S.tdMono, color: 'var(--warning)' }}>{item.hotspot_score.toFixed(2)}</td>
                 </tr>
-              )
-            })}
-          </tbody>
-        </table>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-      <div style={{ height: 24 }} />
     </main>
   )
 }
 
 const S = {
-  page: { flex: 1, overflowY: 'auto', padding: '20px 24px' },
-  sectionTitle: {
-    fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', fontWeight: 600,
-    textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-quaternary)',
-    marginBottom: 14, marginTop: 28,
-    display: 'flex', alignItems: 'center', gap: 10,
+  page: {
+    flex: 1,
+    overflowY: 'auto',
+    padding: '20px 24px',
   },
-  kpiGrid: {
-    display: 'grid', gridTemplateColumns: 'repeat(6,1fr)',
+  loadingPage: {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  errorBox: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 8,
+    padding: '18px 20px',
+    borderRadius: 12,
+    background: 'var(--danger-muted)',
+    border: '1px solid var(--danger-border)',
+    color: 'var(--text-primary)',
+  },
+  sectionTitle: {
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontSize: '0.72rem',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '1.4px',
+    color: 'var(--text-quaternary)',
+    marginBottom: 12,
+    marginTop: 20,
+  },
+  statsGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
     gap: 12,
   },
-  kpiCard: {
+  statCard: {
     background: 'var(--surface)',
     border: '1px solid var(--border)',
-    borderRadius: 'var(--radius-lg)',
+    borderRadius: 14,
     padding: '16px 18px',
     boxShadow: 'var(--shadow-card)',
-    position: 'relative',
-    overflow: 'hidden',
-    cursor: 'default',
   },
-  kpiHeader: {
-    display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14,
+  statHeader: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 12,
   },
-  kpiLabel: {
-    fontSize: '0.65rem', fontWeight: 600, textTransform: 'uppercase',
-    letterSpacing: '0.8px', color: 'var(--text-tertiary)',
+  statLabel: {
+    fontSize: '0.68rem',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '0.8px',
+    color: 'var(--text-quaternary)',
   },
-  kpiIcon: {
-    width: 28, height: 28, borderRadius: 6, background: 'var(--bg-subtle)',
-    display: 'flex', alignItems: 'center', justifyContent: 'center',
-  },
-  kpiValue: {
+  statValue: {
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: 'clamp(1rem,1.8vw,1.35rem)', fontWeight: 700, lineHeight: 1,
+    fontWeight: 700,
+    fontSize: '1.1rem',
     marginBottom: 6,
   },
-  kpiUnit: { fontSize: '0.65rem', color: 'var(--text-quaternary)', fontWeight: 500 },
-  twoCol: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 },
-  chartCard: {
+  statNote: {
+    fontSize: '0.74rem',
+    color: 'var(--text-tertiary)',
+    lineHeight: 1.5,
+  },
+  twoCol: {
+    display: 'grid',
+    gridTemplateColumns: '1.15fr 1fr',
+    gap: 14,
+  },
+  card: {
     background: 'var(--surface)',
     border: '1px solid var(--border)',
-    borderRadius: 'var(--radius-lg)',
+    borderRadius: 14,
     padding: '18px 20px',
     boxShadow: 'var(--shadow-card)',
   },
-  chartTitle: {
-    fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.85rem',
-    fontWeight: 600, color: 'var(--text-primary)', marginBottom: 2,
+  cardTitle: {
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontWeight: 600,
+    fontSize: '0.9rem',
+    color: 'var(--text-primary)',
   },
-  chartSub: {
-    fontSize: '0.72rem', color: 'var(--text-quaternary)', marginBottom: 16,
+  cardSub: {
+    marginTop: 4,
+    marginBottom: 14,
+    fontSize: '0.74rem',
+    color: 'var(--text-tertiary)',
+  },
+  pieRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 18,
+    flexWrap: 'wrap',
+  },
+  zoneLegend: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: 10,
+    flex: 1,
+    minWidth: 240,
+  },
+  zoneLegendRow: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: 10,
+  },
+  zoneSwatch: {
+    width: 10,
+    height: 10,
+    borderRadius: 4,
+    flexShrink: 0,
+  },
+  zoneLegendTitle: {
+    fontSize: '0.8rem',
+    color: 'var(--text-primary)',
+    fontWeight: 600,
+  },
+  zoneLegendMeta: {
+    fontSize: '0.7rem',
+    color: 'var(--text-tertiary)',
+    marginTop: 2,
+  },
+  zoneLegendPct: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.75rem',
+    color: 'var(--text-primary)',
   },
   tableWrap: {
-    background: 'var(--surface)', border: '1px solid var(--border)',
-    borderRadius: 'var(--radius-lg)', overflow: 'hidden', boxShadow: 'var(--shadow-card)',
+    overflowX: 'auto',
   },
-  table: { width: '100%', borderCollapse: 'collapse' },
+  table: {
+    width: '100%',
+    borderCollapse: 'collapse',
+    fontSize: '0.78rem',
+  },
   th: {
-    background: 'var(--bg-subtle)',
-    fontSize: '0.63rem', fontWeight: 600,
-    textTransform: 'uppercase', letterSpacing: '0.8px',
-    color: 'var(--text-tertiary)', padding: '10px 16px',
-    textAlign: 'left', borderBottom: '1px solid var(--border)',
+    textAlign: 'left',
+    padding: '10px 12px',
+    borderBottom: '1px solid var(--border)',
+    color: 'var(--text-quaternary)',
+    fontSize: '0.68rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.6px',
+  },
+  row: {
+    borderBottom: '1px solid var(--border-subtle)',
   },
   td: {
-    padding: '10px 16px', fontSize: '0.78rem',
-    color: 'var(--text-secondary)', borderBottom: '1px solid var(--border-subtle)',
+    padding: '12px',
+    color: 'var(--text-secondary)',
+  },
+  tdStrong: {
+    padding: '12px',
+    color: 'var(--text-primary)',
+    fontWeight: 600,
+  },
+  tdMono: {
+    padding: '12px',
+    color: 'var(--text-secondary)',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.72rem',
   },
   tooltip: {
-    background: 'var(--surface)', border: '1px solid var(--border)',
-    borderRadius: 8, padding: '10px 14px', fontSize: '0.72rem',
-    boxShadow: 'var(--shadow-lg)',
-  },
-  tooltipStyle: {
-    background: 'var(--surface)', borderRadius: 8,
-    border: '1px solid var(--border)', fontSize: '0.72rem',
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 8,
+    padding: '10px 14px',
+    fontSize: '0.72rem',
     color: 'var(--text-primary)',
+    boxShadow: 'var(--shadow-lg)',
   },
 }

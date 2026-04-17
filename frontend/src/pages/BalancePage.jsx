@@ -1,250 +1,426 @@
-import React from 'react'
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts'
-import { ArrowRight } from 'lucide-react'
+import React, { useEffect, useMemo, useState } from 'react'
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Cell,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
+import LoadingSpinner from '../components/shared/LoadingSpinner'
+import { geoAPI } from '../api/geo'
+import { policiesAPI } from '../api/policies'
+import {
+  formatCompactDzd,
+  formatInteger,
+  formatPercent,
+  formatRate,
+} from '../utils/format'
 
-const ZONE_COMPARISON = [
-  { zone: 'Zone III', current: 30.5, target: 17, color: '#dc2626' },
-  { zone: 'Zone IIb', current: 15.9, target: 19, color: '#d97706' },
-  { zone: 'Zone IIa', current: 43.2, target: 43, color: '#ca8a04' },
-  { zone: 'Zone I', current: 7.9, target: 17, color: '#059669' },
-  { zone: 'Zone 0', current: 2.5, target: 4, color: '#2563eb' },
-]
+const ZONE_COLORS = {
+  III: '#dc2626',
+  IIb: '#d97706',
+  IIa: '#ca8a04',
+  I: '#059669',
+  '0': '#2563eb',
+}
 
-const ROADMAP = [
-  {
-    year: 'Année 1 — 2025/2026', phase: 'TRIAGE', color: '#dc2626',
-    bg: 'var(--danger-muted)', border: 'var(--danger-border)',
-    score: '47 → 60',
-    items: [
-      'Négocier traité XL réassurance Zone III',
-      'Cap dur: Zéro nouvelles polices Zone III',
-      'Objectif Balance Score: 47 → 60',
-      'Réduction exposition: −54 Mrd DZD',
-    ],
-  },
-  {
-    year: 'Année 2 — 2026/2027', phase: 'DIVERSIFICATION', color: '#d97706',
-    bg: 'var(--warning-muted)', border: 'var(--warning-border)',
-    score: '60 → 72',
-    items: [
-      'Campagne Zone I (Laghouat, Batna, Biskra)',
-      'Tarifs incitatifs −15% Zone 0 / Zone I',
-      'Objectif Balance Score: 60 → 72',
-      'Nouvelles polices Zone I: +5 350',
-    ],
-  },
-  {
-    year: 'Année 3 — 2027/2028', phase: 'OPTIMISATION', color: '#059669',
-    bg: 'var(--success-muted)', border: 'var(--success-border)',
-    score: '72 → 82+',
-    items: [
-      'Non-renouvellement sélectif Zone III non-conformes RPA',
-      'Produits paramétriques Zone IIa',
-      'Objectif Balance Score: 72 → 82+',
-      'Zone III final: 30.5% → 17%',
-    ],
-  },
-]
+function SectionTitle({ children }) {
+  return <div style={S.sectionTitle}>{children}</div>
+}
 
-const REINSURANCE_LAYERS = [
-  { label: 'Rétention Compagnie (30%)', range: '0 – 50 Mrd DZD', color: '#dc2626', note: 'Risque porté par la compagnie' },
-  { label: 'XL Treaty — Réassureur', range: '50 – 150 Mrd DZD', color: '#d97706', note: 'Couverture réassureur standard' },
-  { label: 'Cat XL — Swiss Re / Munich', range: '150 – 300 Mrd DZD', color: '#ca8a04', note: 'Spécialiste catastrophes naturelles' },
-  { label: 'Cat Bond / État Algérien', range: '300 Mrd DZD +', color: '#059669', note: 'Marchés des capitaux / souverain' },
-]
-
-function GaugeSVG({ score, target }) {
-  const r = 88, cx = 108, cy = 108, strokeW = 12
-  const circ = 2 * Math.PI * r
-  const pct = score / 100
-  const tPct = target / 100
-  const scoreColor = score < 40 ? '#dc2626' : score < 70 ? '#d97706' : '#059669'
-
+function SummaryCard({ label, value, note, color = 'var(--text-primary)' }) {
   return (
-    <svg viewBox="0 0 216 216" width={180} height={180}>
-      {/* Background track */}
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke="var(--border)" strokeWidth={strokeW} />
-      {/* Target arc */}
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={scoreColor} strokeWidth={strokeW}
-        strokeDasharray={`${tPct * circ} ${circ}`}
-        strokeDashoffset={circ * 0.25}
-        strokeLinecap="round" opacity={0.12}
-      />
-      {/* Score arc */}
-      <circle cx={cx} cy={cy} r={r} fill="none" stroke={scoreColor} strokeWidth={strokeW}
-        strokeDasharray={`${pct * circ} ${(1 - pct) * circ}`}
-        strokeDashoffset={circ * 0.25}
-        strokeLinecap="round"
-        style={{ transition: 'stroke-dasharray 1s ease' }}
-      />
-      {/* Target dot */}
-      <circle
-        cx={cx + r * Math.cos(2 * Math.PI * tPct - Math.PI / 2)}
-        cy={cy + r * Math.sin(2 * Math.PI * tPct - Math.PI / 2)}
-        r={4} fill="#059669"
-      />
-      {/* Center text */}
-      <text x={cx} y={cy - 10} textAnchor="middle" fontSize={36}
-        fontFamily="'JetBrains Mono', monospace" fontWeight="700" fill={scoreColor}>{score}</text>
-      <text x={cx} y={cy + 12} textAnchor="middle" fontSize={10} fill="var(--text-tertiary)" fontFamily="'Plus Jakarta Sans', sans-serif">Score Actuel</text>
-      <text x={cx} y={cy + 28} textAnchor="middle" fontSize={9} fill={scoreColor} fontFamily="'Plus Jakarta Sans', sans-serif">Objectif {target} en 2028</text>
-    </svg>
+    <div style={S.summaryCard}>
+      <div style={S.summaryLabel}>{label}</div>
+      <div style={{ ...S.summaryValue, color }}>{value}</div>
+      <div style={S.summaryNote}>{note}</div>
+    </div>
   )
 }
 
-const SectionTitle = ({ children }) => (
-  <div style={S.sectionTitle}>{children}</div>
-)
-
-const ChartTooltip = ({ active, payload }) => {
+function TooltipCard({ active, payload }) {
   if (!active || !payload?.length) return null
+
   return (
-    <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 8, padding: '10px 14px', fontSize: '0.72rem', boxShadow: 'var(--shadow-lg)', color: 'var(--text-primary)' }}>
-      {payload.map(p => (
-        <div key={p.name} style={{ color: p.color }}><strong>{p.name}</strong>: {p.value?.toFixed(1)}%</div>
+    <div style={S.tooltip}>
+      {payload.map((entry) => (
+        <div key={entry.name} style={{ color: entry.color, marginBottom: 4 }}>
+          <strong>{entry.name}</strong>: {formatPercent(entry.value)}
+        </div>
       ))}
     </div>
   )
 }
 
 export default function BalancePage() {
+  const [adequacyRows, setAdequacyRows] = useState([])
+  const [summary, setSummary] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function load() {
+      setLoading(true)
+      setError(null)
+
+      try {
+        const [premiumAdequacy, policySummary] = await Promise.all([
+          geoAPI.getPremiumAdequacy(),
+          policiesAPI.getSummary(),
+        ])
+
+        if (!cancelled) {
+          setAdequacyRows(premiumAdequacy)
+          setSummary(policySummary)
+        }
+      } catch (err) {
+        if (!cancelled) setError(err.message || 'Erreur de chargement')
+      } finally {
+        if (!cancelled) setLoading(false)
+      }
+    }
+
+    load()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  const zoneShare = useMemo(() => {
+    if (!summary) return []
+
+    return summary.by_zone.map((row) => ({
+      zone: row.zone,
+      share:
+        summary.total_policies > 0
+          ? (row.policy_count / summary.total_policies) * 100
+          : 0,
+    }))
+  }, [summary])
+
+  const worstSegments = useMemo(
+    () => [...adequacyRows].sort((a, b) => a.premium_gap_pct - b.premium_gap_pct).slice(0, 8),
+    [adequacyRows]
+  )
+
+  const worstSegment = worstSegments[0] ?? null
+  const zoneIII = zoneShare.find((row) => row.zone === 'III')?.share ?? 0
+  const zoneIIb = zoneShare.find((row) => row.zone === 'IIb')?.share ?? 0
+
+  if (loading) {
+    return (
+      <main style={S.loadingPage}>
+        <LoadingSpinner size={36} />
+      </main>
+    )
+  }
+
+  if (error || !summary) {
+    return (
+      <main style={S.loadingPage}>
+        <div style={S.errorBox}>{error || 'Réponse backend incomplète.'}</div>
+      </main>
+    )
+  }
+
   return (
     <main style={S.page} className="page-fade">
+      <SectionTitle>Équilibre du portefeuille</SectionTitle>
 
-      {/* Hero Banner */}
-      <div style={S.heroBanner}>
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.15rem', color: 'var(--text-primary)', marginBottom: 6 }}>
-            Score de Bilan du Portefeuille
-          </div>
-          <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', maxWidth: 380, lineHeight: 1.7 }}>
-            Concentration géographique et capacité de rétention par zones sismiques.
-            Objectif cible: <strong style={{ color: 'var(--success)' }}>82 / 100 d'ici 2028</strong>.
+      <div style={S.hero}>
+        <div style={S.heroMain}>
+          <div style={S.heroTitle}>Lecture backend de la concentration et de l’adéquation tarifaire</div>
+          <div style={S.heroText}>
+            Cette vue consolide `/api/policies/summary` et `/api/geo/premium-adequacy` pour repérer
+            les zones les plus concentrées et les segments les plus sous-tarifés.
           </div>
         </div>
-        <GaugeSVG score={47} target={82} />
+
         <div style={S.heroStats}>
-          {[
-            { label: 'Zone III actuelle', val: '30.5%', color: 'var(--danger)' },
-            { label: 'Zone III cible', val: '17%', color: 'var(--success)' },
-            { label: 'Score → 2028', val: '+35 pts', color: 'var(--success)' },
-          ].map(s => (
-            <div key={s.label} style={S.heroStat}>
-              <div style={{ fontSize: '0.62rem', color: 'var(--text-quaternary)', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 4 }}>{s.label}</div>
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: '1.3rem', color: s.color }}>{s.val}</div>
-            </div>
-          ))}
+          <SummaryCard
+            label="Zone III"
+            value={formatPercent(zoneIII)}
+            note="Part du portefeuille en zone critique"
+            color="var(--danger)"
+          />
+          <SummaryCard
+            label="Zone IIb"
+            value={formatPercent(zoneIIb)}
+            note="Part du portefeuille en zone élevée"
+            color="var(--warning)"
+          />
+          <SummaryCard
+            label="Capital assuré"
+            value={formatCompactDzd(summary.total_capital_assure)}
+            note="Exposition globale"
+          />
+          <SummaryCard
+            label="Prime nette"
+            value={formatCompactDzd(summary.total_prime_nette)}
+            note="Prime observée"
+            color="var(--success)"
+          />
         </div>
       </div>
 
-      <SectionTitle>Répartition Actuelle vs Cible</SectionTitle>
-      <div style={S.chartCard}>
-        <ResponsiveContainer width="100%" height={200}>
-          <BarChart data={ZONE_COMPARISON} layout="vertical" margin={{ top: 4, right: 50, left: 64, bottom: 4 }} barGap={4}>
-            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" horizontal={false} />
-            <XAxis type="number" domain={[0, 55]} tick={{ fontSize: 10, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} unit="%" />
-            <YAxis type="category" dataKey="zone" tick={{ fontSize: 11, fill: 'var(--text-tertiary)', fontWeight: 500 }} axisLine={false} tickLine={false} width={60} />
-            <Tooltip content={<ChartTooltip />} />
-            <Bar dataKey="current" name="Actuel" radius={[0, 3, 3, 0]} maxBarSize={12}>
-              {ZONE_COMPARISON.map((z, i) => (
-                <Cell key={i} fill={z.color} />
+      <SectionTitle>Concentration par zone</SectionTitle>
+
+      <div style={S.card}>
+        <ResponsiveContainer width="100%" height={240}>
+          <BarChart data={zoneShare} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" vertical={false} />
+            <XAxis dataKey="zone" tick={{ fontSize: 11, fill: 'var(--text-tertiary)' }} axisLine={false} tickLine={false} />
+            <YAxis
+              tick={{ fontSize: 11, fill: 'var(--text-tertiary)' }}
+              axisLine={false}
+              tickLine={false}
+              unit="%"
+            />
+            <Tooltip content={<TooltipCard />} />
+            <Bar dataKey="share" name="Part du portefeuille" radius={[8, 8, 0, 0]}>
+              {zoneShare.map((row) => (
+                <Cell key={row.zone} fill={ZONE_COLORS[row.zone] || '#64748b'} />
               ))}
             </Bar>
-            <Bar dataKey="target" name="Cible 2028" radius={[0, 3, 3, 0]} fill="#059669" fillOpacity={0.18} maxBarSize={12} />
-            <Legend iconType="square" iconSize={8} wrapperStyle={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }} />
           </BarChart>
         </ResponsiveContainer>
-        <div style={{ display: 'flex', gap: 28, marginTop: 10 }}>
-          {ZONE_COMPARISON.map(z => {
-            const delta = (z.target - z.current).toFixed(1)
-            const positive = delta > 0
-            return (
-              <div key={z.zone} style={{ fontSize: '0.7rem' }}>
-                <div style={{ color: 'var(--text-tertiary)', marginBottom: 2 }}>{z.zone}</div>
-                <div style={{
-                  fontFamily: "'JetBrains Mono', monospace", fontWeight: 600,
-                  color: positive ? 'var(--success)' : Number(delta) < 0 ? 'var(--danger)' : 'var(--text-tertiary)'
-                }}>
-                  {positive ? '+' : ''}{delta}%
-                </div>
-              </div>
-            )
-          })}
-        </div>
       </div>
 
-      <SectionTitle>Plan de Rééquilibrage — Feuille de Route 3 Ans</SectionTitle>
-      <div style={S.roadmapGrid}>
-        {ROADMAP.map((r) => (
-          <div key={r.year} style={{ ...S.roadmapCard, borderColor: r.border, background: r.bg }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
-              <div>
-                <div style={{ fontSize: '0.6rem', fontWeight: 600, color: r.color, textTransform: 'uppercase', letterSpacing: '1.5px', marginBottom: 4 }}>
-                  {r.phase}
-                </div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.82rem', color: 'var(--text-primary)' }}>{r.year}</div>
+      <SectionTitle>Segments les plus sous-tarifés</SectionTitle>
+
+      <div style={S.highlightRow}>
+        <div style={S.highlightCard}>
+          <div style={S.highlightLabel}>Segment le plus sous-tarifé</div>
+          {worstSegment ? (
+            <>
+              <div style={S.highlightTitle}>
+                Zone {worstSegment.zone} · {worstSegment.type_risque}
               </div>
-              <div style={{ background: r.color, color: '#fff', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.68rem', fontWeight: 600, padding: '4px 10px', borderRadius: 6 }}>
-                {r.score}
+              <div style={S.highlightGap}>{formatPercent(worstSegment.premium_gap_pct)}</div>
+              <div style={S.highlightMeta}>
+                Observé {formatRate(worstSegment.observed_rate, 6)} vs adéquat {formatRate(worstSegment.adequate_rate, 6)}
               </div>
-            </div>
-            {r.items.map((it, j) => (
-              <div key={j} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: 7, lineHeight: 1.5 }}>
-                <ArrowRight size={11} color={r.color} style={{ flexShrink: 0, marginTop: 3 }} />
-                {it}
-              </div>
-            ))}
+            </>
+          ) : (
+            <div style={S.highlightMeta}>Aucune donnée.</div>
+          )}
+        </div>
+
+        <div style={S.highlightCard}>
+          <div style={S.highlightLabel}>Exposition concernée</div>
+          <div style={S.highlightTitle}>
+            {worstSegment ? formatCompactDzd(worstSegment.total_exposure) : '—'}
           </div>
-        ))}
-      </div>
-
-      <SectionTitle>Structure de Réassurance — Tour de Protection</SectionTitle>
-      <div style={S.towerCard}>
-        <div style={S.tower}>
-          {[...REINSURANCE_LAYERS].reverse().map((l, i) => (
-            <div key={i} style={{ ...S.towerLayer, borderLeft: `3px solid ${l.color}`, background: `${l.color}05` }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-                <div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: '0.8rem', color: l.color }}>{l.label}</div>
-                  <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', marginTop: 2 }}>{l.note}</div>
-                </div>
-                <div style={{ fontFamily: "'JetBrains Mono', monospace", fontWeight: 600, fontSize: '0.78rem', color: l.color, textAlign: 'right', whiteSpace: 'nowrap' }}>
-                  {l.range}
-                </div>
-              </div>
-            </div>
-          ))}
+          <div style={S.highlightMeta}>
+            {worstSegment ? `${formatInteger(worstSegment.policy_count)} polices` : '—'}
+          </div>
         </div>
       </div>
-      <div style={{ height: 24 }} />
+
+      <div style={S.card}>
+        <div style={S.tableWrap}>
+          <table style={S.table}>
+            <thead>
+              <tr>
+                {['Zone', 'Type', 'Observé', 'Adéquat', 'Gap', 'Polices', 'Exposition'].map((label) => (
+                  <th key={label} style={S.th}>{label}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {worstSegments.map((row) => (
+                <tr key={`${row.zone}-${row.type_risque}`} style={S.row}>
+                  <td style={S.tdStrong}>Zone {row.zone}</td>
+                  <td style={S.td}>{row.type_risque}</td>
+                  <td style={S.tdMono}>{formatRate(row.observed_rate, 6)}</td>
+                  <td style={S.tdMono}>{formatRate(row.adequate_rate, 6)}</td>
+                  <td style={{ ...S.tdMono, color: row.premium_gap_pct < -50 ? 'var(--danger)' : 'var(--warning)' }}>
+                    {formatPercent(row.premium_gap_pct)}
+                  </td>
+                  <td style={S.tdMono}>{formatInteger(row.policy_count)}</td>
+                  <td style={S.tdMono}>{formatCompactDzd(row.total_exposure)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
     </main>
   )
 }
 
 const S = {
-  page: { flex: 1, overflowY: 'auto', padding: '20px 24px' },
+  page: {
+    flex: 1,
+    overflowY: 'auto',
+    padding: '20px 24px',
+  },
+  loadingPage: {
+    flex: 1,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  errorBox: {
+    padding: '16px 18px',
+    borderRadius: 12,
+    background: 'var(--danger-muted)',
+    border: '1px solid var(--danger-border)',
+    color: 'var(--text-primary)',
+  },
   sectionTitle: {
-    fontFamily: "'Space Grotesk', sans-serif", fontSize: '0.7rem', fontWeight: 600,
-    textTransform: 'uppercase', letterSpacing: '1.5px', color: 'var(--text-quaternary)',
-    marginBottom: 12, marginTop: 28,
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontSize: '0.72rem',
+    fontWeight: 600,
+    textTransform: 'uppercase',
+    letterSpacing: '1.4px',
+    color: 'var(--text-quaternary)',
+    marginBottom: 12,
+    marginTop: 20,
   },
-  heroBanner: {
-    background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--radius-xl)',
-    padding: '24px 28px', display: 'flex', alignItems: 'center',
-    gap: 28, boxShadow: 'var(--shadow-md)', marginBottom: 4, flexWrap: 'wrap',
+  hero: {
+    display: 'grid',
+    gridTemplateColumns: '1.2fr 1fr',
+    gap: 14,
+    alignItems: 'stretch',
   },
-  heroStats: { display: 'flex', gap: 32, marginLeft: 'auto', flexWrap: 'wrap' },
-  heroStat: { textAlign: 'right' },
-  chartCard: {
-    background: 'var(--surface)', border: '1px solid var(--border)',
-    borderRadius: 'var(--radius-lg)', padding: '18px 22px', boxShadow: 'var(--shadow-card)',
+  heroMain: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 16,
+    padding: '20px 22px',
   },
-  roadmapGrid: { display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 14 },
-  roadmapCard: { border: '1px solid', borderRadius: 'var(--radius-lg)', padding: '18px 20px', transition: 'transform 0.2s' },
-  towerCard: {
-    background: 'var(--surface)', border: '1px solid var(--border)',
-    borderRadius: 'var(--radius-lg)', padding: '18px 22px', boxShadow: 'var(--shadow-card)',
+  heroTitle: {
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontWeight: 700,
+    fontSize: '1rem',
+    color: 'var(--text-primary)',
   },
-  tower: { display: 'flex', flexDirection: 'column', gap: 6 },
-  towerLayer: { padding: '14px 16px', borderRadius: 'var(--radius)', display: 'flex', alignItems: 'center' },
+  heroText: {
+    marginTop: 10,
+    color: 'var(--text-secondary)',
+    fontSize: '0.8rem',
+    lineHeight: 1.7,
+    maxWidth: 560,
+  },
+  heroStats: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 12,
+  },
+  summaryCard: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 14,
+    padding: '16px 18px',
+  },
+  summaryLabel: {
+    fontSize: '0.66rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.8px',
+    color: 'var(--text-quaternary)',
+    marginBottom: 8,
+  },
+  summaryValue: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontWeight: 700,
+    fontSize: '1rem',
+    marginBottom: 6,
+  },
+  summaryNote: {
+    fontSize: '0.72rem',
+    color: 'var(--text-tertiary)',
+  },
+  card: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 14,
+    padding: '16px 18px',
+  },
+  highlightRow: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 14,
+    marginBottom: 14,
+  },
+  highlightCard: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 14,
+    padding: '18px 20px',
+  },
+  highlightLabel: {
+    fontSize: '0.66rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.8px',
+    color: 'var(--text-quaternary)',
+    marginBottom: 10,
+  },
+  highlightTitle: {
+    fontSize: '0.92rem',
+    fontWeight: 600,
+    color: 'var(--text-primary)',
+  },
+  highlightGap: {
+    marginTop: 8,
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '1.3rem',
+    fontWeight: 700,
+    color: 'var(--danger)',
+  },
+  highlightMeta: {
+    marginTop: 8,
+    color: 'var(--text-tertiary)',
+    fontSize: '0.76rem',
+    lineHeight: 1.6,
+  },
+  tableWrap: {
+    overflowX: 'auto',
+  },
+  table: {
+    width: '100%',
+    borderCollapse: 'collapse',
+    fontSize: '0.78rem',
+  },
+  th: {
+    textAlign: 'left',
+    padding: '10px 12px',
+    borderBottom: '1px solid var(--border)',
+    color: 'var(--text-quaternary)',
+    textTransform: 'uppercase',
+    letterSpacing: '0.7px',
+    fontSize: '0.66rem',
+  },
+  row: {
+    borderBottom: '1px solid var(--border-subtle)',
+  },
+  td: {
+    padding: '12px',
+    color: 'var(--text-secondary)',
+  },
+  tdStrong: {
+    padding: '12px',
+    color: 'var(--text-primary)',
+    fontWeight: 600,
+  },
+  tdMono: {
+    padding: '12px',
+    color: 'var(--text-secondary)',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.72rem',
+  },
+  tooltip: {
+    background: 'var(--surface)',
+    border: '1px solid var(--border)',
+    borderRadius: 8,
+    padding: '10px 14px',
+    fontSize: '0.72rem',
+    color: 'var(--text-primary)',
+    boxShadow: 'var(--shadow-lg)',
+  },
 }
