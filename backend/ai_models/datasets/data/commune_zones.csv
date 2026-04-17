@@ -1,0 +1,1410 @@
+wilaya_code,wilaya_name,commune_name,zone_sismique,zone_source,lat,lon,coordinate_source
+01,ADRAR,ADRAR,0,rpa99_annex,27.873203,-0.2876021,nominatim_commune_wilaya
+01,ADRAR,BIR MOURAD RAIS,0,rpa99_annex,36.7393938,3.0500748,nominatim_commune_only_fallback
+01,ADRAR,BOUKADIR,0,rpa99_annex,36.0650746,1.1278681,nominatim_commune_only_fallback
+01,ADRAR,LES EUCALYPTUS,0,rpa99_annex,36.6567143,3.1472616,nominatim_commune_only_fallback
+01,ADRAR,ORAN,0,rpa99_annex,35.7044415,-0.6502981,nominatim_commune_only_fallback
+01,ADRAR,OULED AHMED TIMI,0,rpa99_annex,,,missing
+01,ADRAR,SIDI MOUSSA,0,rpa99_annex,36.6048275,3.0888,nominatim_commune_only_fallback
+02,CHLEF,ABOU EL HASSEN,III,rpa99_annex,36.4145938,1.1938241,nominatim_commune_wilaya
+02,CHLEF,AIN MERANE,III,rpa99_annex,36.175626,0.9723668,nominatim_commune_wilaya
+02,CHLEF,AIN-DEFLA,III,rpa99_annex,36.1586843,2.0842817,nominatim_commune_only_fallback
+02,CHLEF,BENAIRIA,III,rpa99_annex,36.3844273,1.3743329,nominatim_commune_wilaya
+02,CHLEF,BENI RACHED,III,rpa99_annex,36.2927757,1.5307566,nominatim_commune_wilaya
+02,CHLEF,BOUKADIR,IIb,rpa99_annex,36.0650746,1.1278681,nominatim_commune_wilaya
+02,CHLEF,BOUZEGHAIA,III,rpa99_annex,36.3605876,1.2627232,nominatim_commune_wilaya
+02,CHLEF,CHETTIA,III,rpa99_annex,36.1929178,1.2491044,nominatim_commune_wilaya
+02,CHLEF,CHLEF,III,rpa99_annex,36.164592,1.331499,nominatim_commune_wilaya
+02,CHLEF,DAHRA,III,rpa99_annex,36.2545642,0.8518821,nominatim_commune_wilaya
+02,CHLEF,EL KARIMIA,IIb,rpa99_annex,36.1121742,1.5534446,nominatim_commune_wilaya
+02,CHLEF,EL MARSA CHLEF,III,rpa99_annex,36.4038198,0.9161822,nominatim_commune_wilaya
+02,CHLEF,LABIODH MEDJADJA,III,rpa99_annex,36.2507309,1.3919112,nominatim_commune_wilaya
+02,CHLEF,OUED FODDA,III,rpa99_annex,36.185966,1.5347489,nominatim_commune_wilaya
+02,CHLEF,OUED GHOUSSINE,III,rpa99_annex,36.4934787,1.4520393,nominatim_commune_wilaya
+02,CHLEF,OUED RHIOU,III,rpa99_annex,35.9607535,0.9180664,nominatim_commune_only_fallback
+02,CHLEF,OUED SLY,IIb,rpa99_annex,36.101565,1.1995738,nominatim_commune_wilaya
+02,CHLEF,OULED ABBES,III,rpa99_annex,36.2147686,1.4860684,nominatim_commune_wilaya
+02,CHLEF,OULED BEN ABDELKADER,III,rpa99_annex,36.0238897,1.2761855,nominatim_commune_wilaya
+02,CHLEF,OULED FARES,III,rpa99_annex,36.2303457,1.2084133,nominatim_commune_wilaya
+02,CHLEF,OUM DROU,III,rpa99_annex,36.1966757,1.3913824,nominatim_commune_wilaya
+02,CHLEF,SENDJAS,IIb,rpa99_annex,36.0396655,1.4552069,nominatim_commune_wilaya
+02,CHLEF,SOBHA,III,rpa99_annex,36.1064562,1.0312961,nominatim_commune_wilaya
+02,CHLEF,SOUMAA BLIDA,III,rpa99_annex,36.5184909,2.9084853,nominatim_commune_only_fallback
+02,CHLEF,TAOUGRITE,III,rpa99_annex,36.2472325,0.9222293,nominatim_commune_wilaya
+02,CHLEF,TENES,III,rpa99_annex,36.5080818,1.3078072,nominatim_commune_wilaya
+02,CHLEF,TIMOKTEN,III,rpa99_annex,27.0214579,1.0140877,nominatim_commune_only_fallback
+02,CHLEF,ZEBOUDJA,III,rpa99_annex,36.3540252,1.4302999,nominatim_commune_wilaya
+03,LAGHOUAT,AFLOU,I,rpa99_annex,33.8732625,2.8514283,nominatim_commune_wilaya
+03,LAGHOUAT,AIN MADHI,I,rpa99_annex,33.797062,2.3059156,nominatim_commune_wilaya
+03,LAGHOUAT,BATNA,I,rpa99_annex,35.5544613,6.176799,nominatim_commune_only_fallback
+03,LAGHOUAT,EL ASSAFIA,I,rpa99_annex,33.9018768,3.0953642,nominatim_commune_wilaya
+03,LAGHOUAT,EL IDRISSIA,I,rpa99_annex,34.4486677,2.5312873,nominatim_commune_only_fallback
+03,LAGHOUAT,HASSI DHELAA,I,rpa99_annex,,,missing
+03,LAGHOUAT,HASSI RMEL,I,rpa99_annex,32.9458855,3.273666,nominatim_commune_wilaya
+03,LAGHOUAT,KHENEG,I,rpa99_annex,33.7447402,2.7911348,nominatim_commune_wilaya
+03,LAGHOUAT,KSAR EL HIRANE,I,rpa99_annex,33.7012081,3.2269282,nominatim_commune_wilaya
+03,LAGHOUAT,LAGHOUAT,I,rpa99_annex,33.8063451,2.8802635,nominatim_commune_wilaya
+03,LAGHOUAT,SIDI MAKHLOUF,I,rpa99_annex,34.0676281,2.8669111,nominatim_commune_wilaya
+03,LAGHOUAT,TADJEMOUT,I,rpa99_annex,33.8796356,2.5246794,nominatim_commune_wilaya
+03,LAGHOUAT,TADJROUNA,I,rpa99_annex,33.55447,2.0639215,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,AIN KECHRA,I,rpa99_annex,35.8959742,6.6672585,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,AIN KERCHA,I,rpa99_annex,35.9233662,6.7022898,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,AIN MLILA,I,rpa99_annex,36.0375444,6.570986,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,BATNA,I,rpa99_annex,35.8265743,6.4437203,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,BIR CHOUHADA,I,rpa99_annex,35.9007352,6.2454458,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,DHALAA,I,rpa99_annex,35.460285,7.5500058,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,EL HARMILIA,I,rpa99_annex,35.9250906,6.6223907,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,HANCHIR TOUMGHANI,I,rpa99_annex,35.9346179,6.7412657,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,MAGRA,I,rpa99_annex,35.6163647,5.1014147,nominatim_commune_only_fallback
+04,OUM EL BOUAGHI,OULED GACEM,I,rpa99_annex,36.0327241,6.6880676,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,OULED HAMLA,I,rpa99_annex,36.0795998,6.4720919,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,OULED RAHMOUN,I,rpa99_annex,36.1788485,6.701422,nominatim_commune_only_fallback
+04,OUM EL BOUAGHI,OULED ZOUAI,I,rpa99_annex,35.8402214,6.5114278,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,OUM EL BOUAGHI,I,rpa99_annex,35.8687758,7.1150645,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,SIGUS,I,rpa99_annex,36.1239401,6.7854947,nominatim_commune_wilaya
+04,OUM EL BOUAGHI,SOUK NAAMANE,I,rpa99_annex,35.8953079,6.3925749,nominatim_commune_wilaya
+05,BATNA,AIN DJASSER,I,rpa99_annex,35.8596869,6.0012835,nominatim_commune_wilaya
+05,BATNA,AIN TOUTA,I,rpa99_annex,35.3752089,5.894213,nominatim_commune_wilaya
+05,BATNA,AIN YAGOUT,I,rpa99_annex,35.7866324,6.418212,nominatim_commune_wilaya
+05,BATNA,ALGER,I,rpa99_annex,36.7729333,3.0588445,nominatim_commune_only_fallback
+05,BATNA,ARRIS,I,rpa99_annex,35.258514,6.3449818,nominatim_commune_wilaya
+05,BATNA,BARIKA,I,rpa99_annex,35.5506791,5.6123808,nominatim_commune_wilaya
+05,BATNA,BATHIA,I,rpa99_annex,35.9159891,1.8400969,nominatim_commune_only_fallback
+05,BATNA,BATNA,I,rpa99_annex,35.5544613,6.176799,nominatim_commune_wilaya
+05,BATNA,BEJAIA,I,rpa99_annex,36.7511783,5.0643687,nominatim_commune_only_fallback
+05,BATNA,BELAIBA,I,rpa99_annex,35.527774,5.1546938,nominatim_commune_only_fallback
+05,BATNA,BITAM,I,rpa99_annex,35.3077781,5.3740815,nominatim_commune_only_fallback
+05,BATNA,BOUHMAMA,I,rpa99_annex,35.3188013,6.7466351,nominatim_commune_only_fallback
+05,BATNA,BOULEHILET,I,rpa99_annex,35.737649,6.6305203,nominatim_commune_wilaya
+05,BATNA,BOUZINA,I,rpa99_annex,35.2648362,6.0988647,nominatim_commune_wilaya
+05,BATNA,CHEMORA,I,rpa99_annex,35.6298861,6.6056111,nominatim_commune_wilaya
+05,BATNA,CHIR,I,rpa99_annex,35.2179401,6.132079,nominatim_commune_wilaya
+05,BATNA,DJERMA,I,rpa99_annex,35.6844999,6.2909032,nominatim_commune_wilaya
+05,BATNA,DJEZZAR,I,rpa99_annex,35.5082551,5.2676704,nominatim_commune_only_fallback
+05,BATNA,EL MADHER,I,rpa99_annex,35.6258746,6.3706722,nominatim_commune_wilaya
+05,BATNA,FESDIS,I,rpa99_annex,35.6181167,6.2464392,nominatim_commune_wilaya
+05,BATNA,FOUM TOUB,I,rpa99_annex,35.404396,6.5503509,nominatim_commune_wilaya
+05,BATNA,GHASSIRA,I,rpa99_annex,35.0970768,6.2228071,nominatim_commune_wilaya
+05,BATNA,HIDOUSSA,I,rpa99_annex,35.5283105,5.9188903,nominatim_commune_wilaya
+05,BATNA,ICHEMOUL,I,rpa99_annex,35.3095106,6.5100105,nominatim_commune_wilaya
+05,BATNA,INOUGHISSENE,I,rpa99_annex,,,missing
+05,BATNA,KIMMEL,I,rpa99_annex,35.2166875,6.5449007,nominatim_commune_wilaya
+05,BATNA,MAGRA,I,rpa99_annex,35.6163647,5.1014147,nominatim_commune_only_fallback
+05,BATNA,MENAA BATNA,I,rpa99_annex,35.1762498,6.0039939,nominatim_commune_wilaya
+05,BATNA,MENAA M SILA,I,rpa99_annex,35.1448839,3.6955175,nominatim_commune_only_fallback
+05,BATNA,MEROUANA,I,rpa99_annex,35.6320555,5.913138,nominatim_commune_wilaya
+05,BATNA,MSILA,I,rpa99_annex,35.1300205,4.2003107,nominatim_commune_only_fallback
+05,BATNA,NADOR,I,rpa99_annex,36.5693907,2.3935492,nominatim_commune_only_fallback
+05,BATNA,NGAOUS,I,rpa99_annex,,,missing
+05,BATNA,OUED CHAABA,I,rpa99_annex,35.5238426,6.0346692,nominatim_commune_wilaya
+05,BATNA,OUED TAGA,I,rpa99_annex,35.4323373,6.4146079,nominatim_commune_wilaya
+05,BATNA,OULED FADEL,I,rpa99_annex,35.5558054,6.6785087,nominatim_commune_wilaya
+05,BATNA,OULED HAMLA,I,rpa99_annex,36.0795998,6.4720919,nominatim_commune_only_fallback
+05,BATNA,OULED SELLAM,I,rpa99_annex,35.828613,5.8830702,nominatim_commune_wilaya
+05,BATNA,OUM EL BOUAGHI,I,rpa99_annex,35.8687758,7.1150645,nominatim_commune_only_fallback
+05,BATNA,OUYOUN EL ASSAFIR,I,rpa99_annex,35.5556005,6.3083393,nominatim_commune_wilaya
+05,BATNA,RAS EL AIOUN,I,rpa99_annex,35.6758524,5.6515672,nominatim_commune_wilaya
+05,BATNA,SEFIANE,I,rpa99_annex,35.4379384,5.5597763,nominatim_commune_wilaya
+05,BATNA,SEGGANA,I,rpa99_annex,35.3641602,5.5719001,nominatim_commune_only_fallback
+05,BATNA,SERIANA,I,rpa99_annex,35.6925612,6.1850558,nominatim_commune_wilaya
+05,BATNA,TAGHIT,I,rpa99_annex,35.1328473,6.2424874,nominatim_commune_wilaya
+05,BATNA,TAXLENT,I,rpa99_annex,35.6055933,5.800679,nominatim_commune_wilaya
+05,BATNA,TAZMALT,I,rpa99_annex,36.3885111,4.4000106,nominatim_commune_only_fallback
+05,BATNA,TAZOULT,I,rpa99_annex,35.4860091,6.2536097,nominatim_commune_wilaya
+05,BATNA,THENIET EL ABED,I,rpa99_annex,35.3334048,6.317364,nominatim_commune_wilaya
+05,BATNA,TICHI,I,rpa99_annex,36.4471414,4.7838876,nominatim_commune_only_fallback
+05,BATNA,TIGHANIMINE,I,rpa99_annex,35.1853431,6.249225,nominatim_commune_wilaya
+05,BATNA,TIGHARGHAR,I,rpa99_annex,,,missing
+05,BATNA,TIMGAD,I,rpa99_annex,35.4836328,6.4668121,nominatim_commune_wilaya
+05,BATNA,TKOUT,I,rpa99_annex,35.1403816,6.3085503,nominatim_commune_wilaya
+05,BATNA,YABOUS,I,rpa99_annex,35.3842354,6.6481017,nominatim_commune_wilaya
+05,BATNA,ZANA EL BEIDA,I,rpa99_annex,35.7950928,6.10481,nominatim_commune_wilaya
+06,BEJAIA,ADEKAR,IIa,rpa99_annex,36.6929289,4.6734272,nominatim_commune_wilaya
+06,BEJAIA,AIT R_ZINE,IIa,rpa99_annex,36.368882,4.4866713,nominatim_commune_wilaya
+06,BEJAIA,AIT SMAIL,IIa,rpa99_annex,36.5536461,5.2297301,nominatim_commune_wilaya
+06,BEJAIA,AKBOU,IIa,rpa99_annex,36.4597538,4.5289243,nominatim_commune_wilaya
+06,BEJAIA,AMALOU,IIa,rpa99_annex,36.4774607,4.63266,nominatim_commune_wilaya
+06,BEJAIA,AMIZOUR,IIa,rpa99_annex,36.6439022,4.9036535,nominatim_commune_wilaya
+06,BEJAIA,AOKAS,IIa,rpa99_annex,36.6376518,5.2453122,nominatim_commune_wilaya
+06,BEJAIA,BARBACHA,IIa,rpa99_annex,36.5734726,4.9693825,nominatim_commune_wilaya
+06,BEJAIA,BATNA,IIa,rpa99_annex,35.5544613,6.176799,nominatim_commune_only_fallback
+06,BEJAIA,BEJAIA,IIa,rpa99_annex,36.7511783,5.0643687,nominatim_commune_wilaya
+06,BEJAIA,BENI DJELLIL,IIa,rpa99_annex,36.5728807,4.8104334,nominatim_commune_wilaya
+06,BEJAIA,BENI KSILA BEJAIA,IIa,rpa99_annex,36.881989,4.6643892,nominatim_commune_wilaya
+06,BEJAIA,BENI MAOUCHE,IIa,rpa99_annex,36.4878512,4.787552,nominatim_commune_wilaya
+06,BEJAIA,BENI MELIKECH,IIa,rpa99_annex,,,missing
+06,BEJAIA,BOUDJELLIL,IIa,rpa99_annex,36.3498654,4.4141916,nominatim_commune_wilaya
+06,BEJAIA,BOUHAMZA,IIa,rpa99_annex,36.4450868,4.6855035,nominatim_commune_wilaya
+06,BEJAIA,BOUKHELIFA,IIa,rpa99_annex,36.6368914,5.0749708,nominatim_commune_wilaya
+06,BEJAIA,BOUSSELAM,IIa,rpa99_annex,36.4939112,5.0067912,nominatim_commune_only_fallback
+06,BEJAIA,CHELATA,IIa,rpa99_annex,,,missing
+06,BEJAIA,CHELLALA,IIa,rpa99_annex,33.0170236,0.0896971,nominatim_commune_only_fallback
+06,BEJAIA,CHEMINI,IIa,rpa99_annex,36.5944018,4.6210413,nominatim_commune_wilaya
+06,BEJAIA,DARGUINA,IIa,rpa99_annex,36.564307,5.3063118,nominatim_commune_wilaya
+06,BEJAIA,DRAA EL KAID,IIa,rpa99_annex,36.4400561,5.234867,nominatim_commune_wilaya
+06,BEJAIA,EL KSEUR,IIa,rpa99_annex,36.6794351,4.8523757,nominatim_commune_wilaya
+06,BEJAIA,FERRAOUN,IIa,rpa99_annex,36.5580756,4.8660488,nominatim_commune_wilaya
+06,BEJAIA,IFELAIN ILMATHEN,IIa,rpa99_annex,,,missing
+06,BEJAIA,IGHIL ALI,IIa,rpa99_annex,36.3378593,4.470196,nominatim_commune_wilaya
+06,BEJAIA,IGHRAM,IIa,rpa99_annex,36.4622509,4.5042534,nominatim_commune_wilaya
+06,BEJAIA,KENDIRA,IIa,rpa99_annex,36.5574534,5.0215287,nominatim_commune_wilaya
+06,BEJAIA,KHERRATA,IIa,rpa99_annex,36.4936262,5.2771041,nominatim_commune_wilaya
+06,BEJAIA,LEFLAYE,IIa,rpa99_annex,36.6090456,4.6713413,nominatim_commune_wilaya
+06,BEJAIA,MELBOU,IIa,rpa99_annex,36.6403282,5.3626372,nominatim_commune_wilaya
+06,BEJAIA,OUED GHIR,IIa,rpa99_annex,36.7106296,4.9782915,nominatim_commune_wilaya
+06,BEJAIA,OUZELLAGUEN,IIa,rpa99_annex,36.5478525,4.5766984,nominatim_commune_wilaya
+06,BEJAIA,SEDDOUK,IIa,rpa99_annex,36.5472337,4.6894642,nominatim_commune_wilaya
+06,BEJAIA,SEMAOUNE,IIa,rpa99_annex,36.5926863,4.5833036,nominatim_commune_wilaya
+06,BEJAIA,SETIF,IIa,rpa99_annex,36.7465279,5.0707911,nominatim_commune_wilaya
+06,BEJAIA,SIDI AHMED,IIa,rpa99_annex,36.7611233,5.0614474,nominatim_commune_wilaya
+06,BEJAIA,SIDI AICH,IIa,rpa99_annex,36.6127914,4.6913091,nominatim_commune_wilaya
+06,BEJAIA,SIDI ALI,IIa,rpa99_annex,36.726356,5.0735246,nominatim_commune_wilaya
+06,BEJAIA,SIDI AYAD,IIa,rpa99_annex,36.6119158,4.7151737,nominatim_commune_wilaya
+06,BEJAIA,SOUIDANIA,IIa,rpa99_annex,36.7085304,2.9116721,nominatim_commune_only_fallback
+06,BEJAIA,SOUK EL TENINE,IIa,rpa99_annex,36.5986538,5.4070431,nominatim_commune_wilaya
+06,BEJAIA,SOUK EL THENINE,IIa,rpa99_annex,36.6251894,5.3365523,nominatim_commune_wilaya
+06,BEJAIA,SOUK OUFELLA,IIa,rpa99_annex,36.6054725,4.6382952,nominatim_commune_wilaya
+06,BEJAIA,TALA HAMZA,IIa,rpa99_annex,36.7029253,5.0394177,nominatim_commune_wilaya
+06,BEJAIA,TAMRIDJET,IIa,rpa99_annex,36.5721683,5.3746744,nominatim_commune_wilaya
+06,BEJAIA,TAOURIRT IGHIL,IIa,rpa99_annex,36.6995991,4.6977077,nominatim_commune_wilaya
+06,BEJAIA,TASKRIOUT,IIa,rpa99_annex,36.5558587,5.2799112,nominatim_commune_wilaya
+06,BEJAIA,TAZMALT,IIa,rpa99_annex,36.3885111,4.4000106,nominatim_commune_wilaya
+06,BEJAIA,TIBANE,IIa,rpa99_annex,36.6135798,4.652601,nominatim_commune_wilaya
+06,BEJAIA,TICHI,IIa,rpa99_annex,36.543869,5.443467,nominatim_commune_wilaya
+06,BEJAIA,TIFRA,IIa,rpa99_annex,36.6663065,4.6974299,nominatim_commune_wilaya
+06,BEJAIA,TIMEZRIT,IIa,rpa99_annex,36.6162068,4.7682826,nominatim_commune_wilaya
+06,BEJAIA,TIMZRIT,IIa,rpa99_annex,,,missing
+06,BEJAIA,TINEBDAR,IIa,rpa99_annex,36.6232839,4.6781911,nominatim_commune_wilaya
+06,BEJAIA,TIZI NBERBER,IIa,rpa99_annex,,,missing
+06,BEJAIA,TOUDJA,IIa,rpa99_annex,36.7525317,4.8971215,nominatim_commune_wilaya
+07,BISKRA,AIN ZAATOUT,I,rpa99_annex,35.146374,5.8373678,nominatim_commune_only_fallback
+07,BISKRA,BEN AZZOUZ,I,rpa99_annex,34.6957162,5.3612562,nominatim_commune_wilaya
+07,BISKRA,BISKRA,I,rpa99_annex,34.8508816,5.729074,nominatim_commune_wilaya
+07,BISKRA,BRANIS,I,rpa99_annex,34.9947631,5.772251,nominatim_commune_only_fallback
+07,BISKRA,CHETMA,I,rpa99_annex,34.8447307,5.7939424,nominatim_commune_wilaya
+07,BISKRA,DJEMORAH,I,rpa99_annex,35.0689799,5.8448638,nominatim_commune_only_fallback
+07,BISKRA,EL FEIDH,I,rpa99_annex,34.5005929,6.469635,nominatim_commune_wilaya
+07,BISKRA,EL GHROUS,I,rpa99_annex,34.7054162,5.2854921,nominatim_commune_wilaya
+07,BISKRA,EL HADJEB,I,rpa99_annex,34.7892294,5.5996001,nominatim_commune_wilaya
+07,BISKRA,EL KANTARA,I,rpa99_annex,35.2335682,5.701588,nominatim_commune_wilaya
+07,BISKRA,EL OUTAYA,I,rpa99_annex,35.0402141,5.5877502,nominatim_commune_wilaya
+07,BISKRA,LICHANA,I,rpa99_annex,34.7251766,5.4356505,nominatim_commune_wilaya
+07,BISKRA,MLILI,I,rpa99_annex,34.5760922,5.6243246,nominatim_commune_wilaya
+07,BISKRA,M_CHOUNECHE,I,rpa99_annex,34.9069849,6.0033889,nominatim_commune_wilaya
+07,BISKRA,OUMACHE,I,rpa99_annex,34.6952035,5.6991395,nominatim_commune_wilaya
+07,BISKRA,SIDI OKBA,I,rpa99_annex,34.7497613,5.9107849,nominatim_commune_wilaya
+07,BISKRA,TAZMALT,I,rpa99_annex,36.3885111,4.4000106,nominatim_commune_only_fallback
+07,BISKRA,TOLGA,I,rpa99_annex,34.73212,5.3830752,nominatim_commune_wilaya
+07,BISKRA,ZERIBET EL OUED,I,rpa99_annex,34.6830199,6.5047333,nominatim_commune_wilaya
+08,BECHAR,BECHAR,I,rpa99_annex,31.616312,-2.21841,nominatim_commune_wilaya
+08,BECHAR,GUERROUAOU,I,rpa99_annex,36.5264595,2.886115,nominatim_commune_only_fallback
+08,BECHAR,OULED YAICH BLIDA,I,rpa99_annex,36.4970451,2.8610493,nominatim_commune_only_fallback
+09,BLIDA,AIN ROMANA,IIb,rpa99_annex,36.4065567,2.691004,nominatim_commune_wilaya
+09,BLIDA,ALGER,III,rpa99_annex,36.572519,2.900532,nominatim_commune_wilaya
+09,BLIDA,BARAKI,III,rpa99_annex,36.6697921,3.1001751,nominatim_commune_only_fallback
+09,BLIDA,BEN KHELIL,III,rpa99_annex,36.6729682,3.2114776,nominatim_commune_only_fallback
+09,BLIDA,BENI MERED,III,rpa99_annex,36.523526,2.8616102,nominatim_commune_wilaya
+09,BLIDA,BENI TAMOU,III,rpa99_annex,36.5374705,2.8206529,nominatim_commune_wilaya
+09,BLIDA,BIRTOUTA,III,rpa99_annex,36.6449884,2.9985533,nominatim_commune_only_fallback
+09,BLIDA,BLIDA,III,rpa99_annex,36.4705658,2.8274937,nominatim_commune_wilaya
+09,BLIDA,BOUARFA,III,rpa99_annex,36.4638905,2.8126394,nominatim_commune_wilaya
+09,BLIDA,BOUFARIK,III,rpa99_annex,36.5755523,2.9128963,nominatim_commune_wilaya
+09,BLIDA,BOUGARA BLIDA,IIb,rpa99_annex,36.5448652,3.0869346,nominatim_commune_wilaya
+09,BLIDA,BOUINAN,III,rpa99_annex,36.5322102,2.9918496,nominatim_commune_wilaya
+09,BLIDA,CHEBLI,III,rpa99_annex,36.5774573,3.0090176,nominatim_commune_wilaya
+09,BLIDA,CHIFFA,III,rpa99_annex,36.4622287,2.7409097,nominatim_commune_wilaya
+09,BLIDA,CHREA,III,rpa99_annex,36.4304986,2.8862034,nominatim_commune_wilaya
+09,BLIDA,DELY BRAHIM,III,rpa99_annex,36.7516098,2.9825732,nominatim_commune_only_fallback
+09,BLIDA,DOUERA,III,rpa99_annex,36.6694089,2.9421031,nominatim_commune_only_fallback
+09,BLIDA,DRARIA,III,rpa99_annex,36.713911,2.997737,nominatim_commune_only_fallback
+09,BLIDA,EL AFFROUN,III,rpa99_annex,36.46975,2.6267421,nominatim_commune_wilaya
+09,BLIDA,GUERROUAOU,III,rpa99_annex,36.5264595,2.886115,nominatim_commune_wilaya
+09,BLIDA,HADJOUT,III,rpa99_annex,36.4470276,2.5947665,nominatim_commune_wilaya
+09,BLIDA,HAMMAM MELOUANE,IIb,rpa99_annex,36.4869259,3.0446077,nominatim_commune_wilaya
+09,BLIDA,HAMMEDI,III,rpa99_annex,36.6800253,3.2596049,nominatim_commune_only_fallback
+09,BLIDA,HUSSEIN DEY,III,rpa99_annex,36.7427697,3.0942689,nominatim_commune_only_fallback
+09,BLIDA,KOLEA,III,rpa99_annex,36.5523614,2.7906993,nominatim_commune_wilaya
+09,BLIDA,LARBAA BLIDA,IIb,rpa99_annex,36.5650816,3.1540861,nominatim_commune_wilaya
+09,BLIDA,LARBATACHE,III,rpa99_annex,36.6379144,3.3710566,nominatim_commune_only_fallback
+09,BLIDA,LES EUCALYPTUS,III,rpa99_annex,36.6489351,3.1499757,nominatim_commune_wilaya
+09,BLIDA,MEFTAH,IIb,rpa99_annex,36.620033,3.2229744,nominatim_commune_wilaya
+09,BLIDA,MEURAD,III,rpa99_annex,36.4763774,2.4272954,nominatim_commune_only_fallback
+09,BLIDA,MOUZAIA,III,rpa99_annex,36.4674416,2.6879953,nominatim_commune_wilaya
+09,BLIDA,OUED DJER,III,rpa99_annex,36.4268459,2.5605348,nominatim_commune_wilaya
+09,BLIDA,OUED EL ALLEUG,III,rpa99_annex,36.5558374,2.7896358,nominatim_commune_wilaya
+09,BLIDA,OULED SELLAM,III,rpa99_annex,35.828613,5.8830702,nominatim_commune_only_fallback
+09,BLIDA,OULED SLAMA,III,rpa99_annex,36.5534582,3.1153628,nominatim_commune_wilaya
+09,BLIDA,OULED YAICH BLIDA,III,rpa99_annex,36.4970451,2.8610493,nominatim_commune_wilaya
+09,BLIDA,OULED YAICH RELIZANE,III,rpa99_annex,35.8266939,0.9631855,nominatim_commune_only_fallback
+09,BLIDA,SIDI AISSA,III,rpa99_annex,36.5866839,2.9869601,nominatim_commune_wilaya
+09,BLIDA,SIDI GHILES,III,rpa99_annex,36.5833323,2.1225093,nominatim_commune_only_fallback
+09,BLIDA,SIDI MOUSSA,III,rpa99_annex,36.5006357,2.7732052,nominatim_commune_wilaya
+09,BLIDA,SOUMAA BLIDA,III,rpa99_annex,36.5184909,2.9084853,nominatim_commune_wilaya
+09,BLIDA,TIPAZA,III,rpa99_annex,36.527157,2.1672012,nominatim_commune_only_fallback
+10,BOUIRA,AGHBALOU,IIa,rpa99_annex,36.427009,4.352646,nominatim_commune_wilaya
+10,BOUIRA,AHL EL KSAR,IIa,rpa99_annex,36.2528069,4.0414067,nominatim_commune_wilaya
+10,BOUIRA,AIN BESSAM,IIa,rpa99_annex,36.2929113,3.6735417,nominatim_commune_wilaya
+10,BOUIRA,AIN EL HADJAR BOUIRA,IIa,rpa99_annex,36.3402284,3.8095209,nominatim_commune_wilaya
+10,BOUIRA,AIN LAHDJAR,IIa,rpa99_annex,35.9404062,5.5408781,nominatim_commune_only_fallback
+10,BOUIRA,AIN LALOUI,IIa,rpa99_annex,36.3208019,3.7485441,nominatim_commune_wilaya
+10,BOUIRA,AIN TURK BOUIRA,IIa,rpa99_annex,36.3932061,3.8246043,nominatim_commune_wilaya
+10,BOUIRA,AIT LAAZIZ,IIa,rpa99_annex,36.4445645,3.8807851,nominatim_commune_wilaya
+10,BOUIRA,AOMAR,IIa,rpa99_annex,36.492393,3.7711939,nominatim_commune_wilaya
+10,BOUIRA,ATH MANSOUR,IIa,rpa99_annex,36.3278259,4.3172601,nominatim_commune_wilaya
+10,BOUIRA,BECHLOUL,IIa,rpa99_annex,36.312195,4.0749566,nominatim_commune_wilaya
+10,BOUIRA,BIR GHBALOU,IIa,rpa99_annex,36.2628812,3.5850113,nominatim_commune_wilaya
+10,BOUIRA,BOGHNI,IIa,rpa99_annex,36.5407471,3.9571285,nominatim_commune_only_fallback
+10,BOUIRA,BORDJ MENAIEL,IIa,rpa99_annex,36.7432364,3.7175665,nominatim_commune_only_fallback
+10,BOUIRA,BORDJ OUKHRISS,IIa,rpa99_annex,,,missing
+10,BOUIRA,BOUINAN,IIa,rpa99_annex,36.5322102,2.9918496,nominatim_commune_only_fallback
+10,BOUIRA,BOUIRA,IIa,rpa99_annex,36.3739012,3.9007007,nominatim_commune_wilaya
+10,BOUIRA,BOUKRAM,IIa,rpa99_annex,36.5416035,3.3971591,nominatim_commune_wilaya
+10,BOUIRA,CHABET EL AMEUR,IIa,rpa99_annex,36.6374131,3.6957712,nominatim_commune_only_fallback
+10,BOUIRA,CHELLALAT EL ADHAOURA,IIa,rpa99_annex,35.9396178,3.4140092,nominatim_commune_only_fallback
+10,BOUIRA,CHERAGA ALGER,IIa,rpa99_annex,36.7555504,2.974436,nominatim_commune_only_fallback
+10,BOUIRA,CHEURFA,IIa,rpa99_annex,36.3709185,4.3449806,nominatim_commune_wilaya
+10,BOUIRA,CHORFA BOUIRA,IIa,rpa99_annex,36.3596242,4.3236528,nominatim_commune_wilaya
+10,BOUIRA,DECHMIA,IIa,rpa99_annex,36.1304762,3.5765765,nominatim_commune_wilaya
+10,BOUIRA,DIRAH,IIa,rpa99_annex,35.9976386,3.7542319,nominatim_commune_wilaya
+10,BOUIRA,DJEBAHIA,IIa,rpa99_annex,36.4768208,3.758111,nominatim_commune_wilaya
+10,BOUIRA,DJISR KSENTINA,IIa,rpa99_annex,,,missing
+10,BOUIRA,EL ADJIBA,IIa,rpa99_annex,36.3293456,4.1586858,nominatim_commune_wilaya
+10,BOUIRA,EL ASNAM,IIa,rpa99_annex,36.3212726,4.0130501,nominatim_commune_wilaya
+10,BOUIRA,EL HACHIMIA,IIa,rpa99_annex,36.2194302,3.8161128,nominatim_commune_wilaya
+10,BOUIRA,EL MOKRANI,IIa,rpa99_annex,36.4244079,3.6121625,nominatim_commune_wilaya
+10,BOUIRA,GUERROUMA,IIa,rpa99_annex,36.4326797,3.4277272,nominatim_commune_wilaya
+10,BOUIRA,HADJERA ZERGA,IIa,rpa99_annex,35.947624,3.8225334,nominatim_commune_wilaya
+10,BOUIRA,HAIZER,IIa,rpa99_annex,36.3979925,3.9994448,nominatim_commune_wilaya
+10,BOUIRA,HAMMEDI,IIa,rpa99_annex,36.6800253,3.2596049,nominatim_commune_only_fallback
+10,BOUIRA,HANIF,IIa,rpa99_annex,36.3347997,4.2617798,nominatim_commune_wilaya
+10,BOUIRA,IGHRAM,IIa,rpa99_annex,36.4622509,4.5042534,nominatim_commune_only_fallback
+10,BOUIRA,KADIRIA,IIa,rpa99_annex,36.525576,3.6235562,nominatim_commune_wilaya
+10,BOUIRA,KOUBA,IIa,rpa99_annex,36.7323557,3.0874783,nominatim_commune_only_fallback
+10,BOUIRA,LAKHDARIA,IIa,rpa99_annex,36.5644827,3.5967523,nominatim_commune_wilaya
+10,BOUIRA,MCHEDALLAH,IIa,rpa99_annex,36.361266,4.2707836,nominatim_commune_wilaya
+10,BOUIRA,OUED EL BERDI,IIa,rpa99_annex,36.2885851,3.9180743,nominatim_commune_wilaya
+10,BOUIRA,OULED RACHED,IIa,rpa99_annex,36.2100292,4.1097138,nominatim_commune_wilaya
+10,BOUIRA,RAOURAOUA,IIa,rpa99_annex,36.2362601,3.6463352,nominatim_commune_wilaya
+10,BOUIRA,SAHARIDJ,IIa,rpa99_annex,36.3974847,4.2482336,nominatim_commune_wilaya
+10,BOUIRA,SOUK EL KHEMIS,IIa,rpa99_annex,36.3912273,3.631778,nominatim_commune_wilaya
+10,BOUIRA,SOUR EL GHOZLANE,IIa,rpa99_annex,36.147376,3.691797,nominatim_commune_wilaya
+10,BOUIRA,TAGHZOUT BOUIRA,IIa,rpa99_annex,36.407633,3.958772,nominatim_commune_wilaya
+10,BOUIRA,TAGUEDIT,IIa,rpa99_annex,35.953245,3.9556239,nominatim_commune_wilaya
+10,BOUIRA,TAMANRASSET,IIa,rpa99_annex,22.7859372,5.5291395,nominatim_commune_only_fallback
+10,BOUIRA,TIZI OUZOU,IIa,rpa99_annex,36.5164491,3.7897568,nominatim_commune_wilaya
+11,TAMENRASSET,ABALESSA,0,rpa99_annex,22.8896277,4.8476861,nominatim_commune_wilaya
+11,TAMENRASSET,DELDOUL ADRAR,0,rpa99_annex,,,missing
+11,TAMENRASSET,EL EULMA,0,rpa99_annex,36.1529057,5.6911588,nominatim_commune_only_fallback
+11,TAMENRASSET,GUERROUAOU,0,rpa99_annex,36.5264595,2.886115,nominatim_commune_only_fallback
+11,TAMENRASSET,IDLES,0,rpa99_annex,23.8204317,5.935768,nominatim_commune_wilaya
+11,TAMENRASSET,IN GUEZZAM,0,rpa99_annex,19.5696707,5.7725744,nominatim_commune_only_fallback
+11,TAMENRASSET,SETIF,0,rpa99_annex,36.1893494,5.4046876,nominatim_commune_only_fallback
+11,TAMENRASSET,SI MAHDJOUB,0,rpa99_annex,36.1613133,2.7215517,nominatim_commune_only_fallback
+11,TAMENRASSET,TAMANRASSET,0,rpa99_annex,22.7859372,5.5291395,nominatim_commune_wilaya
+11,TAMENRASSET,TAMEST,0,rpa99_annex,27.4237416,-0.2457959,nominatim_commune_only_fallback
+11,TAMENRASSET,TAZROUK,0,rpa99_annex,23.4196225,6.2658907,nominatim_commune_wilaya
+11,TAMENRASSET,TIN ZAOUATINE,0,rpa99_annex,19.9541906,2.9694782,nominatim_commune_only_fallback
+12,TEBESSA,AIN ZERGA,I,rpa99_annex,35.6480159,8.2603257,nominatim_commune_wilaya
+12,TEBESSA,BEKKARIA,I,rpa99_annex,35.3746584,8.2407034,nominatim_commune_wilaya
+12,TEBESSA,BIR EL ATER,I,rpa99_annex,34.7441882,8.0584012,nominatim_commune_only_fallback
+12,TEBESSA,BIR MOKADEM,I,rpa99_annex,35.3704032,7.8085014,nominatim_commune_wilaya
+12,TEBESSA,BOUKHADRA,I,rpa99_annex,35.7449518,8.0346837,nominatim_commune_wilaya
+12,TEBESSA,BOULHAF DYR,I,rpa99_annex,35.4883881,8.0696888,nominatim_commune_wilaya
+12,TEBESSA,CHERAIA,I,rpa99_annex,37.0017763,6.5133033,nominatim_commune_only_fallback
+12,TEBESSA,CHERIA,I,rpa99_annex,35.2706778,7.7527115,nominatim_commune_wilaya
+12,TEBESSA,EL AOUINET TEBESSA,I,rpa99_annex,35.8628373,7.8888473,nominatim_commune_wilaya
+12,TEBESSA,EL HOUIDJBET,I,rpa99_annex,35.2930512,8.2801524,nominatim_commune_wilaya
+12,TEBESSA,EL KOUIF,I,rpa99_annex,35.500823,8.321967,nominatim_commune_wilaya
+12,TEBESSA,EL MERIDJ,I,rpa99_annex,35.8236435,8.2033515,nominatim_commune_wilaya
+12,TEBESSA,EL OGLA TEBESSA,I,rpa99_annex,35.1887497,7.4688516,nominatim_commune_wilaya
+12,TEBESSA,EL OUENZA,I,rpa99_annex,35.9537262,8.1283088,nominatim_commune_wilaya
+12,TEBESSA,FERKANE,I,rpa99_annex,34.4930295,7.3645623,nominatim_commune_only_fallback
+12,TEBESSA,HAMMAMET,I,rpa99_annex,35.4492907,7.9503219,nominatim_commune_wilaya
+12,TEBESSA,MORSOT,I,rpa99_annex,,,missing
+12,TEBESSA,NEGRINE,I,rpa99_annex,34.4855133,7.5219594,nominatim_commune_only_fallback
+12,TEBESSA,RAS EL AIOUN,I,rpa99_annex,35.5189358,8.2892663,nominatim_commune_wilaya
+12,TEBESSA,SAFSAF EL OUESRA,I,rpa99_annex,34.9564825,8.2071255,nominatim_commune_wilaya
+12,TEBESSA,TEBESSA,I,rpa99_annex,35.4035956,8.1212322,nominatim_commune_wilaya
+12,TEBESSA,THLIDJENE,I,rpa99_annex,35.9512469,5.0405101,nominatim_commune_only_fallback
+13,TLEMCEN,AIN FEZZA,I,rpa99_annex,34.8780405,-1.2348586,nominatim_commune_wilaya
+13,TLEMCEN,AIN YOUCEF,I,rpa99_annex,35.0472865,-1.3739319,nominatim_commune_wilaya
+13,TLEMCEN,BENI MESTER,I,rpa99_annex,34.8704485,-1.4210036,nominatim_commune_wilaya
+13,TLEMCEN,BENI SNOUS,I,rpa99_annex,34.6246281,-1.5551957,nominatim_commune_wilaya
+13,TLEMCEN,BENSEKRANE,I,rpa99_annex,35.1109,-1.1998396,nominatim_commune_wilaya
+13,TLEMCEN,CHETOUANE,I,rpa99_annex,34.9207591,-1.2910642,nominatim_commune_wilaya
+13,TLEMCEN,EL MANSOURA,I,rpa99_annex,34.8674319,-1.3281223,nominatim_commune_wilaya
+13,TLEMCEN,GHAZAOUET,I,rpa99_annex,35.093863,-1.86322,nominatim_commune_wilaya
+13,TLEMCEN,HAMMAM BOUGHRARA,I,rpa99_annex,34.8936813,-1.6382574,nominatim_commune_wilaya
+13,TLEMCEN,HENAYA,I,rpa99_annex,34.9185961,-1.3734152,nominatim_commune_wilaya
+13,TLEMCEN,LES EUCALYPTUS,I,rpa99_annex,36.6567143,3.1472616,nominatim_commune_only_fallback
+13,TLEMCEN,MAGHNIA,I,rpa99_annex,34.8498681,-1.7296796,nominatim_commune_wilaya
+13,TLEMCEN,MANSOURA,I,rpa99_annex,34.8733172,-1.3302647,nominatim_commune_wilaya
+13,TLEMCEN,MANSOURAH TLEMCEN,I,rpa99_annex,34.8733172,-1.3302647,nominatim_commune_wilaya
+13,TLEMCEN,MERSA BEN MHIDI,I,rpa99_annex,35.0817992,-2.2043971,nominatim_commune_wilaya
+13,TLEMCEN,NEDROMA,I,rpa99_annex,35.0107602,-1.74805,nominatim_commune_wilaya
+13,TLEMCEN,OULED MIMOUN,I,rpa99_annex,34.904794,-1.0281674,nominatim_commune_wilaya
+13,TLEMCEN,REMCHI,I,rpa99_annex,35.0617268,-1.4318326,nominatim_commune_wilaya
+13,TLEMCEN,SABRA,I,rpa99_annex,34.8260248,-1.530335,nominatim_commune_wilaya
+13,TLEMCEN,TLEMCEN,I,rpa99_annex,34.881789,-1.316699,nominatim_commune_wilaya
+14,TIARET,AIN BOUCHEKIF,I,rpa99_annex,35.3307092,1.4846026,nominatim_commune_wilaya
+14,TIARET,AIN KERMES,I,rpa99_annex,34.9288006,1.07039,nominatim_commune_wilaya
+14,TIARET,AIN ZARIT,I,rpa99_annex,35.3533903,1.6669943,nominatim_commune_wilaya
+14,TIARET,BOGHNI,I,rpa99_annex,36.5407471,3.9571285,nominatim_commune_only_fallback
+14,TIARET,CHELLALA,I,rpa99_annex,33.0170236,0.0896971,nominatim_commune_only_fallback
+14,TIARET,DAHMOUNI,I,rpa99_annex,35.4493097,1.4244372,nominatim_commune_wilaya
+14,TIARET,DJILLALI BEN AMAR,I,rpa99_annex,35.4459222,0.8499086,nominatim_commune_wilaya
+14,TIARET,FRENDA,I,rpa99_annex,35.0655965,1.0566092,nominatim_commune_wilaya
+14,TIARET,HAMADIA,I,rpa99_annex,35.4649659,1.874994,nominatim_commune_wilaya
+14,TIARET,KSAR CHELLALA,I,rpa99_annex,35.2143453,2.3129403,nominatim_commune_only_fallback
+14,TIARET,MACHRAA SFA,I,rpa99_annex,,,missing
+14,TIARET,MAHDIA,I,rpa99_annex,35.4569852,1.741478,nominatim_commune_wilaya
+14,TIARET,MEDRISSA,I,rpa99_annex,34.8924859,1.2458048,nominatim_commune_wilaya
+14,TIARET,MEDROUSSA,I,rpa99_annex,35.1830659,1.1552709,nominatim_commune_wilaya
+14,TIARET,MEGHILA,I,rpa99_annex,35.6062255,1.4353918,nominatim_commune_wilaya
+14,TIARET,MELLAKOU,I,rpa99_annex,35.2380662,1.2807715,nominatim_commune_wilaya
+14,TIARET,OUED LILLI,I,rpa99_annex,35.5070619,1.2673933,nominatim_commune_wilaya
+14,TIARET,RAHOUIA,I,rpa99_annex,35.53032,1.0237833,nominatim_commune_wilaya
+14,TIARET,SEBAINE,I,rpa99_annex,35.4589895,1.608022,nominatim_commune_wilaya
+14,TIARET,SIDI HOSNI,I,rpa99_annex,35.5288935,1.5065668,nominatim_commune_wilaya
+14,TIARET,SOUGUEUR,I,rpa99_annex,35.1856739,1.4960929,nominatim_commune_wilaya
+14,TIARET,TIARET,I,rpa99_annex,35.3661448,1.3194687,nominatim_commune_wilaya
+14,TIARET,TIGZIRT,I,rpa99_annex,36.8926614,4.126179,nominatim_commune_only_fallback
+15,TIZI OUZOU,ABI YOUCEF,IIa,rpa99_annex,36.5384746,4.3438612,nominatim_commune_wilaya
+15,TIZI OUZOU,ADRAR,IIa,rpa99_annex,36.8144421,4.2944548,nominatim_commune_wilaya
+15,TIZI OUZOU,AFIR,IIa,rpa99_annex,36.810418,4.1733248,nominatim_commune_wilaya
+15,TIZI OUZOU,AGHNI GOUGHRAN,IIa,rpa99_annex,,,missing
+15,TIZI OUZOU,AGHRIB,IIa,rpa99_annex,36.8045313,4.3230947,nominatim_commune_wilaya
+15,TIZI OUZOU,AIN EL HAMMAM,IIa,rpa99_annex,36.5704326,4.3111366,nominatim_commune_wilaya
+15,TIZI OUZOU,AIN ZAOUIA,IIa,rpa99_annex,36.5502351,3.8948674,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT AGGOUACHA,IIa,rpa99_annex,36.6178136,4.232488,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT AISSA MIMOUN,IIa,rpa99_annex,36.7506544,4.1103247,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT BOUADOU,IIa,rpa99_annex,36.5032098,4.0612545,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT BOUMAHDI,IIa,rpa99_annex,36.4988813,4.2019993,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT CHAFFAA,IIa,rpa99_annex,,,missing
+15,TIZI OUZOU,AIT KHELILI,IIa,rpa99_annex,36.6757921,4.30882,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT MAHMOUD,IIa,rpa99_annex,36.6101802,4.119514,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT OUMALOU,IIa,rpa99_annex,36.6551697,4.2284389,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT TOUDERT,IIa,rpa99_annex,36.5203106,4.1844513,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT YAHIA,IIa,rpa99_annex,36.5992546,4.3434679,nominatim_commune_wilaya
+15,TIZI OUZOU,AIT YAHIA MOUSSA,IIa,rpa99_annex,36.6379122,3.8862283,nominatim_commune_wilaya
+15,TIZI OUZOU,AKBIL,IIa,rpa99_annex,36.5040238,4.310016,nominatim_commune_wilaya
+15,TIZI OUZOU,AKBOU,IIa,rpa99_annex,36.4597538,4.5289243,nominatim_commune_only_fallback
+15,TIZI OUZOU,AKERROU,IIa,rpa99_annex,36.8074389,4.4421846,nominatim_commune_wilaya
+15,TIZI OUZOU,ASSI YOUCEF,IIa,rpa99_annex,36.5055421,4.0145154,nominatim_commune_wilaya
+15,TIZI OUZOU,AZAZGA,IIa,rpa99_annex,36.744738,4.3716399,nominatim_commune_wilaya
+15,TIZI OUZOU,AZEFFOUN,IIa,rpa99_annex,36.8930725,4.4203917,nominatim_commune_wilaya
+15,TIZI OUZOU,AZZABA,IIa,rpa99_annex,36.7388133,7.1062378,nominatim_commune_only_fallback
+15,TIZI OUZOU,BAGHLIA,IIa,rpa99_annex,36.7959552,3.8675211,nominatim_commune_only_fallback
+15,TIZI OUZOU,BEB EZZOUAR,IIa,rpa99_annex,36.7249185,3.199012,nominatim_commune_only_fallback
+15,TIZI OUZOU,BEJAIA,IIa,rpa99_annex,36.7616084,4.3967935,nominatim_commune_wilaya
+15,TIZI OUZOU,BENI AISSI,IIa,rpa99_annex,36.6577044,4.0893302,nominatim_commune_wilaya
+15,TIZI OUZOU,BENI DOUALA,IIa,rpa99_annex,36.6188796,4.0824933,nominatim_commune_wilaya
+15,TIZI OUZOU,BENI KSILA BEJAIA,IIa,rpa99_annex,36.881989,4.6643892,nominatim_commune_only_fallback
+15,TIZI OUZOU,BENI MESSOUS,IIa,rpa99_annex,36.7800963,2.974557,nominatim_commune_only_fallback
+15,TIZI OUZOU,BENI YENNI,IIa,rpa99_annex,36.5829452,4.1964738,nominatim_commune_wilaya
+15,TIZI OUZOU,BENI ZIKI,IIa,rpa99_annex,36.565846,4.5068005,nominatim_commune_wilaya
+15,TIZI OUZOU,BENI ZMENZER,IIa,rpa99_annex,36.6370642,4.039063,nominatim_commune_wilaya
+15,TIZI OUZOU,BIRTOUTA,IIa,rpa99_annex,36.6449884,2.9985533,nominatim_commune_only_fallback
+15,TIZI OUZOU,BOGHAR,IIa,rpa99_annex,35.910616,2.7173772,nominatim_commune_only_fallback
+15,TIZI OUZOU,BOGHNI,IIa,rpa99_annex,36.5407471,3.9571285,nominatim_commune_wilaya
+15,TIZI OUZOU,BOU ISMAIL,IIa,rpa99_annex,36.642758,2.6899362,nominatim_commune_only_fallback
+15,TIZI OUZOU,BOUDA,IIa,rpa99_annex,36.6148847,4.4758167,nominatim_commune_wilaya
+15,TIZI OUZOU,BOUDJIMA,IIa,rpa99_annex,36.8047072,4.14884,nominatim_commune_wilaya
+15,TIZI OUZOU,BOUIRA,IIa,rpa99_annex,36.5431088,3.9520218,nominatim_commune_wilaya
+15,TIZI OUZOU,BOUKHELIFA,IIa,rpa99_annex,36.6368914,5.0749708,nominatim_commune_only_fallback
+15,TIZI OUZOU,BOUMERDES,IIa,rpa99_annex,36.7154322,3.5852932,nominatim_commune_wilaya
+15,TIZI OUZOU,BOUNOUH,IIa,rpa99_annex,36.493265,3.9375656,nominatim_commune_wilaya
+15,TIZI OUZOU,BOUZGUEN,IIa,rpa99_annex,36.6179239,4.4761469,nominatim_commune_wilaya
+15,TIZI OUZOU,CHABET EL AMEUR,IIa,rpa99_annex,36.6374131,3.6957712,nominatim_commune_only_fallback
+15,TIZI OUZOU,CHERAGA ALGER,IIa,rpa99_annex,36.7555504,2.974436,nominatim_commune_only_fallback
+15,TIZI OUZOU,CHIFFA,IIa,rpa99_annex,36.4622287,2.7409097,nominatim_commune_only_fallback
+15,TIZI OUZOU,DELLYS,IIa,rpa99_annex,36.9140699,3.9129556,nominatim_commune_only_fallback
+15,TIZI OUZOU,DELY BRAHIM,IIa,rpa99_annex,36.7516098,2.9825732,nominatim_commune_only_fallback
+15,TIZI OUZOU,DRAA BEN KHEDDA,IIa,rpa99_annex,36.7333317,3.9587692,nominatim_commune_wilaya
+15,TIZI OUZOU,DRAA EL MIZAN,IIa,rpa99_annex,36.5350648,3.8380358,nominatim_commune_wilaya
+15,TIZI OUZOU,FREHA,IIa,rpa99_annex,36.757399,4.3194454,nominatim_commune_wilaya
+15,TIZI OUZOU,FRIKAT,IIa,rpa99_annex,36.5133532,3.8856598,nominatim_commune_wilaya
+15,TIZI OUZOU,HARAOUA,IIa,rpa99_annex,,,missing
+15,TIZI OUZOU,HASNAOUA,IIa,rpa99_annex,36.7005695,4.0518357,nominatim_commune_wilaya
+15,TIZI OUZOU,HYDRA,IIa,rpa99_annex,36.7474259,3.0401832,nominatim_commune_only_fallback
+15,TIZI OUZOU,IBOUDRAREN,IIa,rpa99_annex,36.5093387,4.251257,nominatim_commune_wilaya
+15,TIZI OUZOU,IDJEUR,IIa,rpa99_annex,36.673917,4.536323,nominatim_commune_wilaya
+15,TIZI OUZOU,IFERHOUNENE,IIa,rpa99_annex,36.5209675,4.3695222,nominatim_commune_wilaya
+15,TIZI OUZOU,IFIGHA,IIa,rpa99_annex,36.6714929,4.4137989,nominatim_commune_wilaya
+15,TIZI OUZOU,IFLISSEN TIZI OUZOU,IIa,rpa99_annex,36.8722166,4.2221877,nominatim_commune_wilaya
+15,TIZI OUZOU,IGHIL ALI,IIa,rpa99_annex,36.6406601,4.0307087,nominatim_commune_wilaya
+15,TIZI OUZOU,ILLILTEN,IIa,rpa99_annex,36.5160617,4.3944151,nominatim_commune_wilaya
+15,TIZI OUZOU,ILOULA OUMALOU,IIa,rpa99_annex,36.5649995,4.4487366,nominatim_commune_wilaya
+15,TIZI OUZOU,IMSOUHAL,IIa,rpa99_annex,36.5802779,4.3927117,nominatim_commune_wilaya
+15,TIZI OUZOU,IRDJEN,IIa,rpa99_annex,36.6683028,4.1464762,nominatim_commune_wilaya
+15,TIZI OUZOU,LAKHDARIA,IIa,rpa99_annex,36.5644827,3.5967523,nominatim_commune_only_fallback
+15,TIZI OUZOU,LARBA NAIT IRATHEN,IIa,rpa99_annex,36.6374918,4.2028466,nominatim_commune_wilaya
+15,TIZI OUZOU,LAYOUNE,IIa,rpa99_annex,35.6683622,2.0645059,nominatim_commune_only_fallback
+15,TIZI OUZOU,LES EUCALYPTUS,IIa,rpa99_annex,36.6567143,3.1472616,nominatim_commune_only_fallback
+15,TIZI OUZOU,MAATKA,IIa,rpa99_annex,,,missing
+15,TIZI OUZOU,MAKOUDA,IIa,rpa99_annex,36.7919734,4.0624221,nominatim_commune_wilaya
+15,TIZI OUZOU,MECHTRASS,IIa,rpa99_annex,36.5438917,4.011092,nominatim_commune_wilaya
+15,TIZI OUZOU,MEKLA,IIa,rpa99_annex,36.6876391,4.2681185,nominatim_commune_wilaya
+15,TIZI OUZOU,MIZRANA,IIb,rpa99_annex,36.8447164,4.0962588,nominatim_commune_wilaya
+15,TIZI OUZOU,MKIRA,IIa,rpa99_annex,36.6315675,3.7830006,nominatim_commune_wilaya
+15,TIZI OUZOU,NACIRIA,IIa,rpa99_annex,36.753547,3.8409636,nominatim_commune_wilaya
+15,TIZI OUZOU,OUACIF,IIa,rpa99_annex,36.523854,4.2049176,nominatim_commune_wilaya
+15,TIZI OUZOU,OUADHIA,IIa,rpa99_annex,36.555223,4.0867217,nominatim_commune_wilaya
+15,TIZI OUZOU,OUAGUENOUN,IIa,rpa99_annex,36.7588492,4.1844109,nominatim_commune_wilaya
+15,TIZI OUZOU,OUM EL BOUAGHI,IIa,rpa99_annex,35.8687758,7.1150645,nominatim_commune_only_fallback
+15,TIZI OUZOU,REGHAIA,IIa,rpa99_annex,36.7207228,3.424961,nominatim_commune_wilaya
+15,TIZI OUZOU,SIDI MHAMED ALGER,IIa,rpa99_annex,36.7584001,3.0627161,nominatim_commune_only_fallback
+15,TIZI OUZOU,SIDI NAAMANE TIZI OUZOU,IIa,rpa99_annex,36.7586177,3.9814233,nominatim_commune_wilaya
+15,TIZI OUZOU,SOUAMAA,IIa,rpa99_annex,36.6422876,4.3422178,nominatim_commune_wilaya
+15,TIZI OUZOU,SOUK EL KHEMIS,IIa,rpa99_annex,36.6121897,3.9856402,nominatim_commune_wilaya
+15,TIZI OUZOU,SOUK EL TENINE,IIa,rpa99_annex,36.5950832,4.007301,nominatim_commune_wilaya
+15,TIZI OUZOU,SOUK EL THENINE,IIa,rpa99_annex,36.5950832,4.007301,nominatim_commune_wilaya
+15,TIZI OUZOU,SOUK OUFELLA,IIa,rpa99_annex,36.6054725,4.6382952,nominatim_commune_only_fallback
+15,TIZI OUZOU,TADMAIT,IIa,rpa99_annex,36.7446573,3.9012256,nominatim_commune_wilaya
+15,TIZI OUZOU,TAMANRASSET,IIa,rpa99_annex,22.7859372,5.5291395,nominatim_commune_only_fallback
+15,TIZI OUZOU,TAMRIDJET,IIa,rpa99_annex,36.5721683,5.3746744,nominatim_commune_only_fallback
+15,TIZI OUZOU,TIFRA,IIa,rpa99_annex,36.8537517,4.1611759,nominatim_commune_wilaya
+15,TIZI OUZOU,TIGHENNIF,IIa,rpa99_annex,35.4143144,0.3292328,nominatim_commune_only_fallback
+15,TIZI OUZOU,TIGZIRT,IIa,rpa99_annex,36.8926614,4.126179,nominatim_commune_wilaya
+15,TIZI OUZOU,TIMIZART,IIa,rpa99_annex,36.7978208,4.2461875,nominatim_commune_wilaya
+15,TIZI OUZOU,TIRMITINE,IIa,rpa99_annex,36.6686811,3.9653731,nominatim_commune_wilaya
+15,TIZI OUZOU,TIZI,IIa,rpa99_annex,36.7076692,3.9286841,nominatim_commune_wilaya
+15,TIZI OUZOU,TIZI GHENIF,IIa,rpa99_annex,36.5872274,3.7742759,nominatim_commune_wilaya
+15,TIZI OUZOU,TIZI NTHLETA,IIa,rpa99_annex,,,missing
+15,TIZI OUZOU,TIZI OUZOU,IIa,rpa99_annex,36.7137843,4.0493919,nominatim_commune_wilaya
+15,TIZI OUZOU,TIZI RACHED,IIa,rpa99_annex,36.6789662,4.2086164,nominatim_commune_wilaya
+15,TIZI OUZOU,YAKOUREN,IIa,rpa99_annex,36.7335937,4.4389944,nominatim_commune_wilaya
+15,TIZI OUZOU,YATAFEN,IIa,rpa99_annex,36.5519079,4.2557573,nominatim_commune_wilaya
+15,TIZI OUZOU,ZEKRI,IIa,rpa99_annex,36.7803397,4.5895193,nominatim_commune_wilaya
+15,TIZI OUZOU,ZEMMOURI,IIa,rpa99_annex,36.7278302,3.6409569,nominatim_commune_wilaya
+16,ALGER,ADRAR,III,rpa99_annex,36.7911104,3.0589614,nominatim_commune_wilaya
+16,ALGER,AIN BENIAN (AIN DEFLA),III,rpa99_annex,36.3523428,2.3899539,nominatim_commune_only_fallback
+16,ALGER,AIN BENIAN (ALGER),III,rpa99_annex,36.8028919,2.9123473,nominatim_commune_wilaya
+16,ALGER,AIN EL MELH,III,rpa99_annex,34.8470491,4.1634964,nominatim_commune_only_fallback
+16,ALGER,AIN LAGRADJ,III,rpa99_annex,36.4111145,4.9033097,nominatim_commune_only_fallback
+16,ALGER,AIN NAGA,III,rpa99_annex,34.6535415,6.1416099,nominatim_commune_only_fallback
+16,ALGER,AIN TAYA,III,rpa99_annex,36.7912902,3.2926194,nominatim_commune_wilaya
+16,ALGER,AIN TEDLES,III,rpa99_annex,35.9990969,0.294879,nominatim_commune_only_fallback
+16,ALGER,AKABILI,III,rpa99_annex,,,missing
+16,ALGER,ALGER,III,rpa99_annex,36.7729333,3.0588445,nominatim_commune_wilaya
+16,ALGER,ANNABA,III,rpa99_annex,36.7309668,3.1356943,nominatim_commune_wilaya
+16,ALGER,AZAZGA,III,rpa99_annex,36.7408256,4.0099991,nominatim_commune_wilaya
+16,ALGER,BAB EL OUED,III,rpa99_annex,36.7907677,3.0530812,nominatim_commune_wilaya
+16,ALGER,BABA HASSEN,III,rpa99_annex,36.6946975,2.9735467,nominatim_commune_wilaya
+16,ALGER,BABAR,III,rpa99_annex,35.1688559,7.1054786,nominatim_commune_only_fallback
+16,ALGER,BACH DJERRAH,III,rpa99_annex,,,missing
+16,ALGER,BAINS ROMAINS,III,rpa99_annex,36.8137612,2.9712554,nominatim_commune_wilaya
+16,ALGER,BARAKI,III,rpa99_annex,36.6697921,3.1001751,nominatim_commune_wilaya
+16,ALGER,BARBACHA,III,rpa99_annex,36.5734726,4.9693825,nominatim_commune_only_fallback
+16,ALGER,BATNA,III,rpa99_annex,36.7155911,3.1277693,nominatim_commune_wilaya
+16,ALGER,BEB EZZOUAR,III,rpa99_annex,36.7249185,3.199012,nominatim_commune_wilaya
+16,ALGER,BEJAIA,III,rpa99_annex,36.7511783,5.0643687,nominatim_commune_only_fallback
+16,ALGER,BEN AKNOUN,III,rpa99_annex,36.7565214,3.0084296,nominatim_commune_wilaya
+16,ALGER,BENDJERRAH,III,rpa99_annex,,,missing
+16,ALGER,BENI AMRANE,III,rpa99_annex,36.6678481,3.5918611,nominatim_commune_only_fallback
+16,ALGER,BENI MESSOUS,III,rpa99_annex,36.7800963,2.974557,nominatim_commune_wilaya
+16,ALGER,BIR KHADEM,III,rpa99_annex,36.6837401,3.0651964,nominatim_commune_wilaya
+16,ALGER,BIR MOURAD RAIS,III,rpa99_annex,36.7393938,3.0500748,nominatim_commune_wilaya
+16,ALGER,BIRTOUTA,III,rpa99_annex,36.6449884,2.9985533,nominatim_commune_wilaya
+16,ALGER,BLIDA,III,rpa99_annex,36.7048595,3.2077659,nominatim_commune_wilaya
+16,ALGER,BOGHNI,III,rpa99_annex,36.5407471,3.9571285,nominatim_commune_only_fallback
+16,ALGER,BOLOGHINE IBN ZIRI,III,rpa99_annex,36.810521,2.9790211,nominatim_commune_wilaya
+16,ALGER,BORDJ BOU ARRERIDJ,III,rpa99_annex,36.0741121,4.7613476,nominatim_commune_only_fallback
+16,ALGER,BORDJ EL BAHRI,III,rpa99_annex,36.7906241,3.2501614,nominatim_commune_wilaya
+16,ALGER,BORDJ EL HAOUES,III,rpa99_annex,,,missing
+16,ALGER,BORDJ EL KIFFAN,III,rpa99_annex,36.747273,3.1908953,nominatim_commune_wilaya
+16,ALGER,BORDJ MENAIEL,III,rpa99_annex,36.7536145,3.7198315,nominatim_commune_wilaya
+16,ALGER,BOU ISMAIL,III,rpa99_annex,36.6407081,2.7039135,nominatim_commune_wilaya
+16,ALGER,BOUDOUAOU,III,rpa99_annex,36.7153381,3.3057557,nominatim_commune_wilaya
+16,ALGER,BOUDOUAOU EL BAHRI,III,rpa99_annex,36.7713008,3.405641,nominatim_commune_only_fallback
+16,ALGER,BOUFARIK,III,rpa99_annex,36.7511274,3.0522667,nominatim_commune_wilaya
+16,ALGER,BOUGARA BLIDA,III,rpa99_annex,36.5448652,3.0869346,nominatim_commune_only_fallback
+16,ALGER,BOUHAROUN,III,rpa99_annex,36.6248757,2.657232,nominatim_commune_only_fallback
+16,ALGER,BOUINAN,III,rpa99_annex,36.5322102,2.9918496,nominatim_commune_only_fallback
+16,ALGER,BOUIRA,III,rpa99_annex,36.6507537,3.0125079,nominatim_commune_wilaya
+16,ALGER,BOUMERDES,III,rpa99_annex,36.6507537,3.0125079,nominatim_commune_wilaya
+16,ALGER,BOUROUBA,III,rpa99_annex,36.7138232,3.1125789,nominatim_commune_wilaya
+16,ALGER,BOUZAREAH,III,rpa99_annex,36.7903098,3.0172742,nominatim_commune_wilaya
+16,ALGER,BOUZGUEN,III,rpa99_annex,36.6179239,4.4761469,nominatim_commune_only_fallback
+16,ALGER,CASBAH,III,rpa99_annex,36.7844706,3.0578458,nominatim_commune_wilaya
+16,ALGER,CHAIBA,III,rpa99_annex,36.6095154,2.7330752,nominatim_commune_only_fallback
+16,ALGER,CHEBLI,III,rpa99_annex,36.7521352,2.8911009,nominatim_commune_wilaya
+16,ALGER,CHERAGA ALGER,III,rpa99_annex,36.7555504,2.974436,nominatim_commune_wilaya
+16,ALGER,CHERAGA MILA,III,rpa99_annex,,,missing
+16,ALGER,CHERAIA,III,rpa99_annex,37.0017763,6.5133033,nominatim_commune_only_fallback
+16,ALGER,CHERCHAR,III,rpa99_annex,36.1364518,0.7909415,nominatim_commune_only_fallback
+16,ALGER,CHERCHEL,III,rpa99_annex,36.6075021,2.1901982,nominatim_commune_only_fallback
+16,ALGER,CONSTANTINE,III,rpa99_annex,36.6942248,3.1663139,nominatim_commune_wilaya
+16,ALGER,CORSO,III,rpa99_annex,36.7649441,2.8475882,nominatim_commune_wilaya
+16,ALGER,DAR CHIOUKH,III,rpa99_annex,34.8972924,3.4897249,nominatim_commune_only_fallback
+16,ALGER,DAR EL BEIDA,III,rpa99_annex,36.7149768,3.2094611,nominatim_commune_wilaya
+16,ALGER,DARGUINA,III,rpa99_annex,36.564307,5.3063118,nominatim_commune_only_fallback
+16,ALGER,DELLYS,III,rpa99_annex,36.742149,3.0660119,nominatim_commune_wilaya
+16,ALGER,DELY BRAHIM,III,rpa99_annex,36.7516098,2.9825732,nominatim_commune_wilaya
+16,ALGER,DIDOUCHE MOURAD,III,rpa99_annex,36.767186,3.0533595,nominatim_commune_wilaya
+16,ALGER,DJELFA,III,rpa99_annex,34.0262635,3.7503371,nominatim_commune_only_fallback
+16,ALGER,DJISR KSENTINA,III,rpa99_annex,,,missing
+16,ALGER,DOUAOUDA,III,rpa99_annex,36.6864788,2.7961382,nominatim_commune_wilaya
+16,ALGER,DOUERA,III,rpa99_annex,36.6694089,2.9421031,nominatim_commune_wilaya
+16,ALGER,DRAA ESSMAR,III,rpa99_annex,,,missing
+16,ALGER,DRARIA,III,rpa99_annex,36.713911,2.997737,nominatim_commune_wilaya
+16,ALGER,ECH CHAIBA,III,rpa99_annex,34.8407894,4.9234598,nominatim_commune_only_fallback
+16,ALGER,EL ACHIR,III,rpa99_annex,36.0632388,4.6294961,nominatim_commune_only_fallback
+16,ALGER,EL ACHOUR,III,rpa99_annex,36.7337583,2.9921061,nominatim_commune_wilaya
+16,ALGER,EL BIAR,III,rpa99_annex,36.7688818,3.030651,nominatim_commune_wilaya
+16,ALGER,EL BORDJ,III,rpa99_annex,36.747273,3.1908953,nominatim_commune_wilaya
+16,ALGER,EL HARRACH,III,rpa99_annex,36.7207974,3.1373893,nominatim_commune_wilaya
+16,ALGER,EL KHROUB,III,rpa99_annex,36.2603681,6.6970014,nominatim_commune_only_fallback
+16,ALGER,EL MADANIA,III,rpa99_annex,36.7420067,3.0665715,nominatim_commune_wilaya
+16,ALGER,EL MAGHARIA,III,rpa99_annex,36.7313349,3.1085569,nominatim_commune_wilaya
+16,ALGER,EL MARSA ALGER,III,rpa99_annex,36.7821291,3.2492296,nominatim_commune_wilaya
+16,ALGER,EL MEHARA,III,rpa99_annex,33.2678794,0.2035833,nominatim_commune_only_fallback
+16,ALGER,EL MOURADIA,III,rpa99_annex,36.7473392,3.0506705,nominatim_commune_wilaya
+16,ALGER,FOUKA,III,rpa99_annex,36.6782139,2.7606097,nominatim_commune_wilaya
+16,ALGER,GHARDAIA,III,rpa99_annex,32.485588,3.6771496,nominatim_commune_only_fallback
+16,ALGER,GUERROUAOU,III,rpa99_annex,36.5264595,2.886115,nominatim_commune_only_fallback
+16,ALGER,HAMMA ANASSERS,III,rpa99_annex,,,missing
+16,ALGER,HAMMAMET,III,rpa99_annex,36.8137612,2.9712554,nominatim_commune_wilaya
+16,ALGER,HAMMEDI,III,rpa99_annex,36.6800253,3.2596049,nominatim_commune_only_fallback
+16,ALGER,HARAOUA,III,rpa99_annex,,,missing
+16,ALGER,HUSSEIN DEY,III,rpa99_annex,36.7427697,3.0942689,nominatim_commune_wilaya
+16,ALGER,HYDRA,III,rpa99_annex,36.7474259,3.0401832,nominatim_commune_wilaya
+16,ALGER,KHEMIS EL KHECHNA,III,rpa99_annex,36.7161117,3.2833268,nominatim_commune_wilaya
+16,ALGER,KHEMIS MILIANA,III,rpa99_annex,36.2560052,2.2206013,nominatim_commune_only_fallback
+16,ALGER,KHRAISSIA,III,rpa99_annex,36.6771908,2.9823355,nominatim_commune_wilaya
+16,ALGER,KOLEA,III,rpa99_annex,36.6447629,2.7773393,nominatim_commune_wilaya
+16,ALGER,KOUBA,III,rpa99_annex,36.7323557,3.0874783,nominatim_commune_wilaya
+16,ALGER,LAGHOUAT,III,rpa99_annex,33.8063451,2.8802635,nominatim_commune_only_fallback
+16,ALGER,LARBAA BLIDA,III,rpa99_annex,36.5650816,3.1540861,nominatim_commune_only_fallback
+16,ALGER,LARBATACHE,III,rpa99_annex,36.6379144,3.3710566,nominatim_commune_only_fallback
+16,ALGER,LES EUCALYPTUS,III,rpa99_annex,36.6567143,3.1472616,nominatim_commune_wilaya
+16,ALGER,MAHELMA,III,rpa99_annex,36.6823629,2.87765,nominatim_commune_wilaya
+16,ALGER,MEDEA,III,rpa99_annex,36.265344,2.766957,nominatim_commune_only_fallback
+16,ALGER,MEFTAH,III,rpa99_annex,36.6956696,3.1644293,nominatim_commune_wilaya
+16,ALGER,MILA,III,rpa99_annex,36.451941,6.262331,nominatim_commune_only_fallback
+16,ALGER,MOHAMMADIA ALGER,III,rpa99_annex,36.7369295,3.139959,nominatim_commune_wilaya
+16,ALGER,MOSTAGANEM,III,rpa99_annex,35.928808,0.089978,nominatim_commune_only_fallback
+16,ALGER,MSILA,III,rpa99_annex,35.1300205,4.2003107,nominatim_commune_only_fallback
+16,ALGER,ORAN,III,rpa99_annex,36.6960422,3.1388583,nominatim_commune_wilaya
+16,ALGER,OUED EL ALLEUG,III,rpa99_annex,36.6339239,2.8003331,nominatim_commune_wilaya
+16,ALGER,OUED KORICHE,III,rpa99_annex,36.7857731,3.0438543,nominatim_commune_wilaya
+16,ALGER,OUED SMAR,III,rpa99_annex,36.7044199,3.1681561,nominatim_commune_wilaya
+16,ALGER,OULED CHEBEL,III,rpa99_annex,36.5981574,2.9949504,nominatim_commune_wilaya
+16,ALGER,OULED FAYET,III,rpa99_annex,36.7355249,2.9509064,nominatim_commune_wilaya
+16,ALGER,OULED HADJADJ,III,rpa99_annex,35.9929585,1.333718,nominatim_commune_only_fallback
+16,ALGER,OULED MOUSSA,III,rpa99_annex,36.7229179,3.3462145,nominatim_commune_wilaya
+16,ALGER,OULED SLAMA,III,rpa99_annex,36.5534582,3.1153628,nominatim_commune_only_fallback
+16,ALGER,OULED YAICH BLIDA,III,rpa99_annex,36.4970451,2.8610493,nominatim_commune_only_fallback
+16,ALGER,RAHMANIA,III,rpa99_annex,36.6805367,2.9064684,nominatim_commune_wilaya
+16,ALGER,RAIS HAMIDOU,III,rpa99_annex,36.8174128,3.0114701,nominatim_commune_wilaya
+16,ALGER,REGHAIA,III,rpa99_annex,36.7387813,3.3421179,nominatim_commune_wilaya
+16,ALGER,ROUIBA,III,rpa99_annex,36.7364237,3.2826417,nominatim_commune_wilaya
+16,ALGER,ROUINA,III,rpa99_annex,36.2448216,1.8055909,nominatim_commune_only_fallback
+16,ALGER,SAOULA,III,rpa99_annex,36.7027016,3.0238994,nominatim_commune_wilaya
+16,ALGER,SEHAILIA,III,rpa99_annex,35.4470807,0.3951191,nominatim_commune_only_fallback
+16,ALGER,SETIF,III,rpa99_annex,36.7301728,3.1415552,nominatim_commune_wilaya
+16,ALGER,SIDI AHMED,III,rpa99_annex,36.7636306,3.0516114,nominatim_commune_wilaya
+16,ALGER,SIDI FREDJ,III,rpa99_annex,36.7611014,2.8442839,nominatim_commune_wilaya
+16,ALGER,SIDI LAKHDAR AIN DEFLA,III,rpa99_annex,36.2656357,2.1617628,nominatim_commune_only_fallback
+16,ALGER,SIDI MHAMED ALGER,III,rpa99_annex,36.7584001,3.0627161,nominatim_commune_wilaya
+16,ALGER,SIDI MOUSSA,III,rpa99_annex,36.6048275,3.0888,nominatim_commune_wilaya
+16,ALGER,SKIKDA,III,rpa99_annex,36.8801317,6.9077363,nominatim_commune_only_fallback
+16,ALGER,SOUIDANIA,III,rpa99_annex,36.7085304,2.9116721,nominatim_commune_wilaya
+16,ALGER,SOUMAA BLIDA,III,rpa99_annex,36.5184909,2.9084853,nominatim_commune_only_fallback
+16,ALGER,STAOUELI,III,rpa99_annex,36.7532755,2.8881822,nominatim_commune_wilaya
+16,ALGER,TADJENANET,III,rpa99_annex,36.1192994,5.9857948,nominatim_commune_only_fallback
+16,ALGER,TAMANRASSET,III,rpa99_annex,22.7859372,5.5291395,nominatim_commune_only_fallback
+16,ALGER,TASSALA EL MERDJA,III,rpa99_annex,36.6272776,2.9448383,nominatim_commune_wilaya
+16,ALGER,TERRAI BAINEM,III,rpa99_annex,,,missing
+16,ALGER,TESSALA,III,rpa99_annex,36.6307193,2.9455174,nominatim_commune_wilaya
+16,ALGER,TIPAZA,III,rpa99_annex,36.6513169,3.0143269,nominatim_commune_wilaya
+16,ALGER,TIZI OUZOU,III,rpa99_annex,36.7181156,3.2543886,nominatim_commune_wilaya
+16,ALGER,ZEDDINE,III,rpa99_annex,36.1562103,1.8201697,nominatim_commune_only_fallback
+16,ALGER,ZEMMOURI,III,rpa99_annex,36.7074357,3.0182238,nominatim_commune_wilaya
+16,ALGER,ZERALDA,III,rpa99_annex,36.7120392,2.8407894,nominatim_commune_wilaya
+17,DJELFA,AIN OUESSARA,I,rpa99_annex,,,missing
+17,DJELFA,BEB EZZOUAR,I,rpa99_annex,36.7249185,3.199012,nominatim_commune_only_fallback
+17,DJELFA,BENHAR,I,rpa99_annex,35.484908,3.00944,nominatim_commune_only_fallback
+17,DJELFA,BOUSAADA,I,rpa99_annex,35.2133123,4.1809702,nominatim_commune_only_fallback
+17,DJELFA,DAR CHIOUKH,I,rpa99_annex,34.8972924,3.4897249,nominatim_commune_wilaya
+17,DJELFA,DAR EL BEIDA,I,rpa99_annex,36.7149768,3.2094611,nominatim_commune_only_fallback
+17,DJELFA,DJELFA,I,rpa99_annex,34.671359,3.254037,nominatim_commune_wilaya
+17,DJELFA,DJISR KSENTINA,I,rpa99_annex,,,missing
+17,DJELFA,HAD SAHARY,I,rpa99_annex,35.3506602,3.3640573,nominatim_commune_only_fallback
+17,DJELFA,HASSI BAHBAH,I,rpa99_annex,35.0747536,3.0270488,nominatim_commune_wilaya
+17,DJELFA,LAGHOUAT,I,rpa99_annex,34.1817767,3.4131844,nominatim_commune_wilaya
+17,DJELFA,LES EUCALYPTUS,I,rpa99_annex,36.6567143,3.1472616,nominatim_commune_only_fallback
+17,DJELFA,MOHAMMADIA ALGER,I,rpa99_annex,36.7369295,3.139959,nominatim_commune_only_fallback
+17,DJELFA,REGHAIA,I,rpa99_annex,36.7387813,3.3421179,nominatim_commune_only_fallback
+17,DJELFA,SIDI LAADJEL,I,rpa99_annex,,,missing
+17,DJELFA,SOUIDANIA,I,rpa99_annex,36.7085304,2.9116721,nominatim_commune_only_fallback
+18,JIJEL,BORDJ TAHER,IIa,rpa99_annex,,,missing
+18,JIJEL,BOURAOUI BELHADEF,IIa,rpa99_annex,36.6955352,6.09517,nominatim_commune_wilaya
+18,JIJEL,BOUSSIF OULED AKSEUR,IIa,rpa99_annex,,,missing
+18,JIJEL,CHAHNA,IIa,rpa99_annex,36.658667,5.9442005,nominatim_commune_wilaya
+18,JIJEL,CHEBBALA MILAT,IIa,rpa99_annex,,,missing
+18,JIJEL,CHEKFA,IIa,rpa99_annex,36.7712723,5.9612456,nominatim_commune_wilaya
+18,JIJEL,DJEMAA BENI HABIBI,IIa,rpa99_annex,36.8010447,6.0932644,nominatim_commune_wilaya
+18,JIJEL,EL ANCER,IIa,rpa99_annex,36.7941634,6.1770786,nominatim_commune_wilaya
+18,JIJEL,EL AOUANA,IIa,rpa99_annex,36.7716565,5.6114699,nominatim_commune_wilaya
+18,JIJEL,EL EULMA,IIa,rpa99_annex,36.7983987,5.8816978,nominatim_commune_wilaya
+18,JIJEL,EL KENNAR NOUCHFI,IIa,rpa99_annex,36.8125018,5.9862932,nominatim_commune_wilaya
+18,JIJEL,EL MILIA,IIa,rpa99_annex,36.7514104,6.2744614,nominatim_commune_wilaya
+18,JIJEL,EMIR ABDELKADER,IIa,rpa99_annex,36.7546904,5.8443228,nominatim_commune_wilaya
+18,JIJEL,ERRAGUENE,IIa,rpa99_annex,36.5864588,5.5812865,nominatim_commune_wilaya
+18,JIJEL,JIJEL,IIa,rpa99_annex,36.8167305,5.771494,nominatim_commune_wilaya
+18,JIJEL,KAOUS,IIa,rpa99_annex,36.7701723,5.8136168,nominatim_commune_wilaya
+18,JIJEL,KIMIR OUED ADJOUL,IIa,rpa99_annex,,,missing
+18,JIJEL,MAHELMA,IIa,rpa99_annex,36.6823629,2.87765,nominatim_commune_only_fallback
+18,JIJEL,MILA,IIa,rpa99_annex,36.451941,6.262331,nominatim_commune_only_fallback
+18,JIJEL,OUDJANA,IIa,rpa99_annex,36.6754271,5.8837994,nominatim_commune_wilaya
+18,JIJEL,SETTARA,IIa,rpa99_annex,36.7052717,6.3591657,nominatim_commune_wilaya
+18,JIJEL,SIDI ABDELAZIZ,IIa,rpa99_annex,36.853261,6.051473,nominatim_commune_wilaya
+18,JIJEL,SIDI MAAROUF,IIa,rpa99_annex,36.6400065,6.2741706,nominatim_commune_wilaya
+18,JIJEL,TAHER,IIa,rpa99_annex,36.7712912,5.897589,nominatim_commune_wilaya
+18,JIJEL,TEXENNA,IIa,rpa99_annex,36.6605708,5.7909778,nominatim_commune_wilaya
+18,JIJEL,ZIAMA MANSOURIA JIJEL,IIa,rpa99_annex,36.6721506,5.4808312,nominatim_commune_wilaya
+19,SETIF,AIN ABESSA,IIa,rpa99_annex,36.3000482,5.2953337,nominatim_commune_wilaya
+19,SETIF,AIN ARNAT,IIa,rpa99_annex,36.1849367,5.3144869,nominatim_commune_wilaya
+19,SETIF,AIN AZAL,IIa,rpa99_annex,35.817372,5.4918644,nominatim_commune_wilaya
+19,SETIF,AIN EL ARBAA,IIa,rpa99_annex,35.4058264,-0.8811572,nominatim_commune_only_fallback
+19,SETIF,AIN EL KEBIRA,IIa,rpa99_annex,36.3648446,5.5069356,nominatim_commune_wilaya
+19,SETIF,AIN KEBIRA,IIa,rpa99_annex,36.3648446,5.5069356,nominatim_commune_wilaya
+19,SETIF,AIN LAGRADJ,IIa,rpa99_annex,36.4111145,4.9033097,nominatim_commune_wilaya
+19,SETIF,AIN LAHDJAR,IIa,rpa99_annex,35.9404062,5.5408781,nominatim_commune_wilaya
+19,SETIF,AIN OULMANE,IIa,rpa99_annex,35.9231689,5.2959232,nominatim_commune_wilaya
+19,SETIF,AIN ROMANA,IIa,rpa99_annex,36.4065567,2.691004,nominatim_commune_only_fallback
+19,SETIF,AIN ROUA,IIa,rpa99_annex,36.3343734,5.1836626,nominatim_commune_wilaya
+19,SETIF,AIN SEBT,IIa,rpa99_annex,36.4864183,5.7113671,nominatim_commune_wilaya
+19,SETIF,ALGER,IIa,rpa99_annex,36.1626697,5.3352784,nominatim_commune_wilaya
+19,SETIF,AMOUCHA,IIa,rpa99_annex,36.3766245,5.4181884,nominatim_commune_wilaya
+19,SETIF,BABAR,IIa,rpa99_annex,35.1688559,7.1054786,nominatim_commune_only_fallback
+19,SETIF,BABOR,IIa,rpa99_annex,36.4898622,5.5378293,nominatim_commune_wilaya
+19,SETIF,BAZER SAKRA,IIa,rpa99_annex,36.1163229,5.7111139,nominatim_commune_wilaya
+19,SETIF,BEIDHA BORDJ,IIa,rpa99_annex,35.837695,5.6318487,nominatim_commune_wilaya
+19,SETIF,BELAAS,IIa,rpa99_annex,35.9825995,1.8510081,nominatim_commune_only_fallback
+19,SETIF,BELLAA,IIa,rpa99_annex,36.220694,5.8690571,nominatim_commune_wilaya
+19,SETIF,BENI AZIZ,IIa,rpa99_annex,36.4645062,5.6490139,nominatim_commune_wilaya
+19,SETIF,BENI CHEBANA,IIa,rpa99_annex,36.4684262,4.8684047,nominatim_commune_wilaya
+19,SETIF,BENI FOUDA,IIa,rpa99_annex,36.2855197,5.6093601,nominatim_commune_wilaya
+19,SETIF,BENI FOUDHALA EL HAKANIA,IIa,rpa99_annex,35.3781586,6.0607501,nominatim_commune_only_fallback
+19,SETIF,BENI MOUHLI,IIa,rpa99_annex,36.5132135,4.8940032,nominatim_commune_wilaya
+19,SETIF,BENI OUARTILANE,IIa,rpa99_annex,36.4422585,4.8557425,nominatim_commune_wilaya
+19,SETIF,BIR EL ARCH,IIa,rpa99_annex,36.1303925,5.8392064,nominatim_commune_wilaya
+19,SETIF,BIR HADDADA,IIa,rpa99_annex,35.9630462,5.4308609,nominatim_commune_wilaya
+19,SETIF,BIR KHADEM,IIa,rpa99_annex,36.6837401,3.0651964,nominatim_commune_only_fallback
+19,SETIF,BIR MOURAD RAIS,IIa,rpa99_annex,36.7393938,3.0500748,nominatim_commune_only_fallback
+19,SETIF,BOUANDAS,IIa,rpa99_annex,36.5045859,5.1036165,nominatim_commune_wilaya
+19,SETIF,BOUGAA,IIa,rpa99_annex,36.3322264,5.0895897,nominatim_commune_wilaya
+19,SETIF,BOUSSELAM,IIa,rpa99_annex,36.4939112,5.0067912,nominatim_commune_wilaya
+19,SETIF,CHELGHOUM LAID,IIa,rpa99_annex,36.1605629,6.1673286,nominatim_commune_only_fallback
+19,SETIF,CONSTANTINE,IIa,rpa99_annex,36.1747558,5.6742115,nominatim_commune_wilaya
+19,SETIF,DAR EL BEIDA,IIa,rpa99_annex,36.7149768,3.2094611,nominatim_commune_only_fallback
+19,SETIF,DEHAMCHA,IIa,rpa99_annex,36.3835662,5.5924952,nominatim_commune_wilaya
+19,SETIF,DJEMILA,IIa,rpa99_annex,36.3208994,5.7367902,nominatim_commune_wilaya
+19,SETIF,DJMILA,IIa,rpa99_annex,36.3170155,5.7361728,nominatim_commune_wilaya
+19,SETIF,DRAA KEBILA,IIa,rpa99_annex,36.4223095,4.9977651,nominatim_commune_wilaya
+19,SETIF,EL BAYADH,IIa,rpa99_annex,33.684319,1.0182453,nominatim_commune_only_fallback
+19,SETIF,EL BELALA,IIa,rpa99_annex,35.6685225,7.7630889,nominatim_commune_only_fallback
+19,SETIF,EL EUCH,IIa,rpa99_annex,36.3174272,4.8060291,nominatim_commune_wilaya
+19,SETIF,EL EULMA,IIa,rpa99_annex,36.1529057,5.6911588,nominatim_commune_wilaya
+19,SETIF,EL HADJAR,IIa,rpa99_annex,36.8039598,7.7371328,nominatim_commune_only_fallback
+19,SETIF,EL OUELDJA SETIF,IIa,rpa99_annex,36.088243,5.9221989,nominatim_commune_wilaya
+19,SETIF,EL OURICIA,IIa,rpa99_annex,36.2836269,5.4095741,nominatim_commune_wilaya
+19,SETIF,EMIR ABDELKADER,IIa,rpa99_annex,36.1895861,5.4019861,nominatim_commune_wilaya
+19,SETIF,EULMA,IIa,rpa99_annex,36.1529057,5.6911588,nominatim_commune_wilaya
+19,SETIF,FERDJIOUA,IIa,rpa99_annex,36.4073812,5.9419603,nominatim_commune_only_fallback
+19,SETIF,GUELLAL,IIa,rpa99_annex,36.0339934,5.3387839,nominatim_commune_wilaya
+19,SETIF,GUELTA ZERGA,IIa,rpa99_annex,36.20575,5.6799343,nominatim_commune_wilaya
+19,SETIF,GUENZET TASSAMEURT,IIa,rpa99_annex,,,missing
+19,SETIF,GUIDJEL,IIa,rpa99_annex,36.081278,5.4920263,nominatim_commune_wilaya
+19,SETIF,HAMMAM GUERGOUR,IIa,rpa99_annex,36.3222697,5.0548526,nominatim_commune_wilaya
+19,SETIF,HAMMAM SKHOUNA,IIa,rpa99_annex,,,missing
+19,SETIF,HARBIL,IIa,rpa99_annex,36.3473445,4.9251967,nominatim_commune_wilaya
+19,SETIF,JIJEL,IIa,rpa99_annex,36.1886058,5.6700729,nominatim_commune_wilaya
+19,SETIF,MAAOUIA,IIa,rpa99_annex,36.388427,5.7111236,nominatim_commune_wilaya
+19,SETIF,MANSOURA,IIa,rpa99_annex,36.1003544,4.4715751,nominatim_commune_only_fallback
+19,SETIF,MAOUKLANE,IIa,rpa99_annex,36.424463,5.1138394,nominatim_commune_wilaya
+19,SETIF,MEZLOUG,IIa,rpa99_annex,36.1076801,5.3376975,nominatim_commune_wilaya
+19,SETIF,OUED EL ANEB,IIa,rpa99_annex,36.9345945,7.5212403,nominatim_commune_only_fallback
+19,SETIF,OULED SABOR,IIa,rpa99_annex,36.1819425,5.5403857,nominatim_commune_wilaya
+19,SETIF,RAS EL AIOUN,IIa,rpa99_annex,35.6758524,5.6515672,nominatim_commune_only_fallback
+19,SETIF,RAS EL MA,IIa,rpa99_annex,36.1174542,5.5314017,nominatim_commune_wilaya
+19,SETIF,SALAH BEY,IIa,rpa99_annex,35.8520786,5.2904883,nominatim_commune_wilaya
+19,SETIF,SERDJ EL GHOUL,IIa,rpa99_annex,36.4778394,5.5804802,nominatim_commune_wilaya
+19,SETIF,SETIF,IIa,rpa99_annex,36.1893494,5.4046876,nominatim_commune_wilaya
+19,SETIF,TACHOUDA,IIa,rpa99_annex,36.267485,5.7400239,nominatim_commune_wilaya
+19,SETIF,TADJENANET,IIa,rpa99_annex,36.1515345,5.7473784,nominatim_commune_wilaya
+19,SETIF,TAYA,IIa,rpa99_annex,35.9584611,5.9675897,nominatim_commune_wilaya
+19,SETIF,TELLA,IIa,rpa99_annex,36.00827,5.7188856,nominatim_commune_wilaya
+19,SETIF,TIZI NBECHAR,IIa,rpa99_annex,,,missing
+19,SETIF,TIZI NBERBER,IIa,rpa99_annex,,,missing
+20,SAIDA,EL EULMA,I,rpa99_annex,36.1529057,5.6911588,nominatim_commune_only_fallback
+20,SAIDA,HAMADI KROUMA,I,rpa99_annex,36.8441177,6.929106,nominatim_commune_only_fallback
+20,SAIDA,SAIDA,I,rpa99_annex,34.8302067,0.1502692,nominatim_commune_wilaya
+20,SAIDA,SKIKDA,I,rpa99_annex,36.8801317,6.9077363,nominatim_commune_only_fallback
+20,SAIDA,TACHOUDA,I,rpa99_annex,36.267485,5.7400239,nominatim_commune_only_fallback
+21,SKIKDA,AIN BOUZIANE,IIa,rpa99_annex,36.6043041,6.7323529,nominatim_commune_wilaya
+21,SKIKDA,AIN KECHRA,IIa,rpa99_annex,36.801318,6.4610872,nominatim_commune_wilaya
+21,SKIKDA,AZZABA,IIa,rpa99_annex,36.7388133,7.1062378,nominatim_commune_wilaya
+21,SKIKDA,BEN AZZOUZ,IIa,rpa99_annex,36.8600024,7.2917539,nominatim_commune_wilaya
+21,SKIKDA,BENI BACHIR,IIa,rpa99_annex,36.774669,6.9376557,nominatim_commune_wilaya
+21,SKIKDA,BENI OULBANE,IIa,rpa99_annex,36.6439118,6.6281274,nominatim_commune_wilaya
+21,SKIKDA,BENI ZID,IIa,rpa99_annex,36.9124122,6.4762934,nominatim_commune_wilaya
+21,SKIKDA,CHERAIA,IIa,rpa99_annex,37.0017763,6.5133033,nominatim_commune_wilaya
+21,SKIKDA,COLLO,IIa,rpa99_annex,37.0065806,6.5690345,nominatim_commune_wilaya
+21,SKIKDA,EL GHEDIR,IIa,rpa99_annex,36.687176,6.9771347,nominatim_commune_wilaya
+21,SKIKDA,EL HADAIEK,IIa,rpa99_annex,36.8252292,6.8890251,nominatim_commune_wilaya
+21,SKIKDA,EL HAMMA,IIa,rpa99_annex,36.7899582,7.2825722,nominatim_commune_wilaya
+21,SKIKDA,EL HAOUCH,IIa,rpa99_annex,34.5609494,6.0459519,nominatim_commune_only_fallback
+21,SKIKDA,EL HARRACH,IIa,rpa99_annex,36.7207974,3.1373893,nominatim_commune_only_fallback
+21,SKIKDA,EL HARROUCH,IIa,rpa99_annex,36.6514052,6.8360907,nominatim_commune_wilaya
+21,SKIKDA,EMDJEZ EDCHICH,IIa,rpa99_annex,36.7051396,6.8043312,nominatim_commune_wilaya
+21,SKIKDA,EMIR ABDELKADER,IIa,rpa99_annex,36.7396791,7.1041007,nominatim_commune_wilaya
+21,SKIKDA,FIL FILA,IIa,rpa99_annex,,,missing
+21,SKIKDA,FOUM TOUB,IIa,rpa99_annex,35.404396,6.5503509,nominatim_commune_only_fallback
+21,SKIKDA,HAMADI KROUMA,IIa,rpa99_annex,36.8441177,6.929106,nominatim_commune_wilaya
+21,SKIKDA,KERKERA,IIa,rpa99_annex,36.9304439,6.5842202,nominatim_commune_wilaya
+21,SKIKDA,OUED ZHOUR,IIa,rpa99_annex,36.9267502,6.3158927,nominatim_commune_wilaya
+21,SKIKDA,OULED HEBABA,IIa,rpa99_annex,36.5037216,6.9583356,nominatim_commune_wilaya
+21,SKIKDA,OUM TOUB,IIa,rpa99_annex,36.7003588,6.5076167,nominatim_commune_wilaya
+21,SKIKDA,RAMDANE DJAMEL,IIa,rpa99_annex,36.7558331,6.9259068,nominatim_commune_wilaya
+21,SKIKDA,SALAH BOUCHAOUR,IIa,rpa99_annex,36.7044252,6.8563693,nominatim_commune_wilaya
+21,SKIKDA,SIDI MEZGHICHE,IIa,rpa99_annex,36.7082508,6.7042844,nominatim_commune_wilaya
+21,SKIKDA,SKIKDA,IIa,rpa99_annex,36.8801317,6.9077363,nominatim_commune_wilaya
+21,SKIKDA,TAMALOUS SKIKDA,IIa,rpa99_annex,36.8361791,6.6427952,nominatim_commune_wilaya
+21,SKIKDA,ZERDEZAS,IIa,rpa99_annex,,,missing
+22,SIDI BEL ABBES,AIN EL BERD,I,rpa99_annex,35.3671349,-0.5120201,nominatim_commune_wilaya
+22,SIDI BEL ABBES,LAMTAR,I,rpa99_annex,35.0713025,-0.7994003,nominatim_commune_wilaya
+22,SIDI BEL ABBES,MAAFA,I,rpa99_annex,35.2663121,5.9018467,nominatim_commune_only_fallback
+22,SIDI BEL ABBES,OUED SEFIOUN,I,rpa99_annex,35.0667195,-0.3574097,nominatim_commune_wilaya
+22,SIDI BEL ABBES,SETIF,I,rpa99_annex,35.1854026,-0.639228,nominatim_commune_wilaya
+22,SIDI BEL ABBES,SIDI ALI BENYOUB,I,rpa99_annex,34.94681,-0.7195938,nominatim_commune_wilaya
+22,SIDI BEL ABBES,SIDI BEL ABBES,I,rpa99_annex,35.1907399,-0.6341153,nominatim_commune_wilaya
+22,SIDI BEL ABBES,SIDI BRAHIM,I,rpa99_annex,35.260678,-0.567467,nominatim_commune_wilaya
+22,SIDI BEL ABBES,SIDI LAHCENE,I,rpa99_annex,35.1651869,-0.6944968,nominatim_commune_wilaya
+22,SIDI BEL ABBES,TELAGH,I,rpa99_annex,34.7797863,-0.5715147,nominatim_commune_wilaya
+23,ANNABA,ADRAR,IIa,rpa99_annex,27.873203,-0.2876021,nominatim_commune_only_fallback
+23,ANNABA,AIN BERDA,IIa,rpa99_annex,36.672304,7.6360029,nominatim_commune_wilaya
+23,ANNABA,AIN EL BERD,IIa,rpa99_annex,35.3671349,-0.5120201,nominatim_commune_only_fallback
+23,ANNABA,ANNABA,IIa,rpa99_annex,36.8982165,7.7549272,nominatim_commune_wilaya
+23,ANNABA,AOULEF,IIa,rpa99_annex,26.9722077,1.0786817,nominatim_commune_only_fallback
+23,ANNABA,BERRAHEL,IIa,rpa99_annex,,,missing
+23,ANNABA,BOUTELDJA,IIa,rpa99_annex,36.7855823,8.1990268,nominatim_commune_only_fallback
+23,ANNABA,CHAIBA,IIa,rpa99_annex,36.8276943,7.7189892,nominatim_commune_wilaya
+23,ANNABA,DAR EL BEIDA,IIa,rpa99_annex,36.7149768,3.2094611,nominatim_commune_only_fallback
+23,ANNABA,DRARIA,IIa,rpa99_annex,36.713911,2.997737,nominatim_commune_only_fallback
+23,ANNABA,DREAN,IIa,rpa99_annex,36.6851201,7.7470888,nominatim_commune_only_fallback
+23,ANNABA,ECHATT,IIa,rpa99_annex,36.8303087,7.8727514,nominatim_commune_only_fallback
+23,ANNABA,EL BOUNI,IIa,rpa99_annex,36.8548275,7.7413708,nominatim_commune_wilaya
+23,ANNABA,EL EULMA,IIa,rpa99_annex,36.7459043,7.409244,nominatim_commune_wilaya
+23,ANNABA,EL HADJAR,IIa,rpa99_annex,36.8039598,7.7371328,nominatim_commune_wilaya
+23,ANNABA,EULMA,IIa,rpa99_annex,36.7397345,7.4629454,nominatim_commune_wilaya
+23,ANNABA,OUED EL ANEB,IIa,rpa99_annex,36.9345945,7.5212403,nominatim_commune_wilaya
+23,ANNABA,SERAIDI,IIa,rpa99_annex,36.9115192,7.6752692,nominatim_commune_wilaya
+23,ANNABA,SIDI AMAR SAIDA,IIa,rpa99_annex,34.999902,0.134016,nominatim_commune_only_fallback
+23,ANNABA,SIDI AMER,IIa,rpa99_annex,36.5223193,2.3648239,nominatim_commune_only_fallback
+24,GUELMA,AIN BEN BEIDA,IIa,rpa99_annex,36.5869396,7.6456669,nominatim_commune_wilaya
+24,GUELMA,AIN MAKHLOUF,IIa,rpa99_annex,36.2427266,7.2491244,nominatim_commune_wilaya
+24,GUELMA,BELKHEIR,IIa,rpa99_annex,36.4634182,7.4763788,nominatim_commune_wilaya
+24,GUELMA,BENDJERRAH,IIa,rpa99_annex,,,missing
+24,GUELMA,BOUATI MAHMOUD,IIa,rpa99_annex,36.6088533,7.3480243,nominatim_commune_wilaya
+24,GUELMA,BOUCHEGOUF,IIa,rpa99_annex,36.4704821,7.7290561,nominatim_commune_wilaya
+24,GUELMA,BOUMAHRA AHMED,IIa,rpa99_annex,36.4604068,7.5143095,nominatim_commune_wilaya
+24,GUELMA,DJEBALLAH KHEMISSI,IIa,rpa99_annex,36.4991084,7.5570042,nominatim_commune_wilaya
+24,GUELMA,EL KHROUB,IIa,rpa99_annex,36.2603681,6.6970014,nominatim_commune_only_fallback
+24,GUELMA,GUELAAT BOUSBAA,IIa,rpa99_annex,36.549069,7.4894268,nominatim_commune_wilaya
+24,GUELMA,GUELMA,IIa,rpa99_annex,36.465084,7.430647,nominatim_commune_wilaya
+24,GUELMA,HAMMAM DEBAGH,IIa,rpa99_annex,36.4602654,7.2676947,nominatim_commune_wilaya
+24,GUELMA,HAMMAM NBAIL,IIa,rpa99_annex,36.3255156,7.640326,nominatim_commune_wilaya
+24,GUELMA,HELIOPOLIS,IIa,rpa99_annex,36.5306233,7.4348224,nominatim_commune_wilaya
+24,GUELMA,MEDJEZ SFA,IIa,rpa99_annex,36.4441932,7.824483,nominatim_commune_wilaya
+24,GUELMA,MESAOUD BOUDJERIOU,IIa,rpa99_annex,,,missing
+24,GUELMA,NADOR,IIa,rpa99_annex,36.3580164,7.6946043,nominatim_commune_wilaya
+24,GUELMA,NECHMAYA,IIa,rpa99_annex,36.6111841,7.5132917,nominatim_commune_wilaya
+24,GUELMA,OUED CHEHAM,IIa,rpa99_annex,36.3526366,7.7909725,nominatim_commune_wilaya
+24,GUELMA,OUED FRAGHA,IIa,rpa99_annex,36.5384712,7.6854268,nominatim_commune_wilaya
+24,GUELMA,OUED ZENATI,IIa,rpa99_annex,36.3130761,7.164528,nominatim_commune_wilaya
+24,GUELMA,ROKNIA,IIa,rpa99_annex,36.58132,7.1826574,nominatim_commune_wilaya
+24,GUELMA,TAMLOUKA,IIa,rpa99_annex,36.1241985,7.1239242,nominatim_commune_wilaya
+25,CONSTANTINE,AIN ABID,IIa,rpa99_annex,36.2489875,6.9419888,nominatim_commune_wilaya
+25,CONSTANTINE,AIN SMARA,IIa,rpa99_annex,36.266467,6.4969576,nominatim_commune_wilaya
+25,CONSTANTINE,BEN BADIS CONSTANTINE,IIa,rpa99_annex,36.3166261,6.8349785,nominatim_commune_wilaya
+25,CONSTANTINE,BENI HAMIDENE,IIa,rpa99_annex,36.5069941,6.5489049,nominatim_commune_wilaya
+25,CONSTANTINE,BOUDA,IIa,rpa99_annex,28.0051734,-0.4223955,nominatim_commune_only_fallback
+25,CONSTANTINE,CONSTANTINE,IIa,rpa99_annex,36.3641642,6.6084281,nominatim_commune_wilaya
+25,CONSTANTINE,DIDOUCHE MOURAD,IIa,rpa99_annex,36.4446761,6.6330811,nominatim_commune_wilaya
+25,CONSTANTINE,EL BOUNI,IIa,rpa99_annex,36.8548275,7.7413708,nominatim_commune_only_fallback
+25,CONSTANTINE,EL KHEMIS,IIa,rpa99_annex,35.4050761,2.7048777,nominatim_commune_only_fallback
+25,CONSTANTINE,EL KHROUB,IIa,rpa99_annex,36.2603681,6.6970014,nominatim_commune_wilaya
+25,CONSTANTINE,HAMMA BOUZIANE,IIa,rpa99_annex,36.4248981,6.6008903,nominatim_commune_wilaya
+25,CONSTANTINE,IBN ZIAD,IIa,rpa99_annex,36.3829267,6.4720589,nominatim_commune_wilaya
+25,CONSTANTINE,MANSOURA,IIa,rpa99_annex,36.3667623,6.6333548,nominatim_commune_wilaya
+25,CONSTANTINE,MESAOUD BOUDJERIOU,IIa,rpa99_annex,,,missing
+25,CONSTANTINE,OUED SEGUEN,IIa,rpa99_annex,36.1811194,6.3883093,nominatim_commune_only_fallback
+25,CONSTANTINE,OULED RAHMOUN,IIa,rpa99_annex,36.1788485,6.701422,nominatim_commune_wilaya
+25,CONSTANTINE,SETIF,IIa,rpa99_annex,36.3506427,6.6862992,nominatim_commune_wilaya
+25,CONSTANTINE,TAMLOUKA,IIa,rpa99_annex,36.1241985,7.1239242,nominatim_commune_only_fallback
+25,CONSTANTINE,ZIGHOUD YOUCEF,IIa,rpa99_annex,36.5292375,6.7336958,nominatim_commune_wilaya
+26,MEDEA,AIN BOUCHEKIF,IIb,rpa99_annex,35.3307092,1.4846026,nominatim_commune_only_fallback
+26,MEDEA,AIN BOUCIF,I,rpa99_annex,35.8354145,3.1577821,nominatim_commune_wilaya
+26,MEDEA,BABA HASSEN,IIb,rpa99_annex,36.6946975,2.9735467,nominatim_commune_only_fallback
+26,MEDEA,BEN CHICAO,IIb,rpa99_annex,36.2284661,2.8740929,nominatim_commune_wilaya
+26,MEDEA,BENI SLIMANE,IIb,rpa99_annex,36.230723,3.3104153,nominatim_commune_wilaya
+26,MEDEA,BERROUAGHIA,IIb,rpa99_annex,36.1352805,2.9172738,nominatim_commune_wilaya
+26,MEDEA,BIR KHADEM,IIb,rpa99_annex,36.6837401,3.0651964,nominatim_commune_only_fallback
+26,MEDEA,BOUCHRAHIL,IIb,rpa99_annex,36.274231,3.19346,nominatim_commune_wilaya
+26,MEDEA,BOUGHZOUL,I,rpa99_annex,,,missing
+26,MEDEA,BOUSKENE,IIb,rpa99_annex,36.1951317,3.2157348,nominatim_commune_wilaya
+26,MEDEA,CHELLALAT EL ADHAOURA,IIb,rpa99_annex,35.9396178,3.4140092,nominatim_commune_wilaya
+26,MEDEA,CHENIGUEL,I,rpa99_annex,35.9234302,3.5668505,nominatim_commune_wilaya
+26,MEDEA,CONSTANTINE,IIb,rpa99_annex,36.3641642,6.6084281,nominatim_commune_only_fallback
+26,MEDEA,DERRAG,IIb,rpa99_annex,35.9079962,2.3881316,nominatim_commune_wilaya
+26,MEDEA,DJOUAB,IIb,rpa99_annex,36.112315,3.4400244,nominatim_commune_wilaya
+26,MEDEA,DRAA ESSMAR,IIb,rpa99_annex,,,missing
+26,MEDEA,EL AOUINET MEDEA,IIa,rpa99_annex,35.8932925,3.035866,nominatim_commune_wilaya
+26,MEDEA,EL AZIZIA,IIb,rpa99_annex,36.316014,3.4915483,nominatim_commune_wilaya
+26,MEDEA,EL GUELBELKEBIR,IIb,rpa99_annex,36.2556406,3.4168521,nominatim_commune_wilaya
+26,MEDEA,EL HAMDANIA,IIa,rpa99_annex,36.3620816,2.767105,nominatim_commune_wilaya
+26,MEDEA,EL OMARIA,IIb,rpa99_annex,36.2671619,3.0270877,nominatim_commune_wilaya
+26,MEDEA,KHAMS DJOUAMAA,IIb,rpa99_annex,36.1474693,3.1331309,nominatim_commune_wilaya
+26,MEDEA,KSAR EL BOUKHARI,IIb,rpa99_annex,35.8863227,2.750158,nominatim_commune_wilaya
+26,MEDEA,MAHELMA,IIb,rpa99_annex,36.6823629,2.87765,nominatim_commune_only_fallback
+26,MEDEA,MEDEA,IIa,rpa99_annex,36.265344,2.766957,nominatim_commune_wilaya
+26,MEDEA,MOUDJEBEUR,IIb,rpa99_annex,35.9534707,2.8254889,nominatim_commune_wilaya
+26,MEDEA,OUAMRI,IIb,rpa99_annex,36.2317529,2.56547,nominatim_commune_wilaya
+26,MEDEA,OUED HARBIL,IIb,rpa99_annex,36.2267996,2.632787,nominatim_commune_wilaya
+26,MEDEA,OULED ANTAR,IIb,rpa99_annex,35.9461818,2.6009942,nominatim_commune_wilaya
+26,MEDEA,OULED BOUACHRA,IIb,rpa99_annex,36.1019093,2.7121868,nominatim_commune_wilaya
+26,MEDEA,OULED BRAHEM,IIb,rpa99_annex,35.896618,5.0804017,nominatim_commune_only_fallback
+26,MEDEA,OULED BRAHIM MEDEA,IIa,rpa99_annex,36.2437886,2.9350635,nominatim_commune_wilaya
+26,MEDEA,OULED DEIDE,IIb,rpa99_annex,36.112135,3.0142787,nominatim_commune_wilaya
+26,MEDEA,OULED MAAREF,IIb,rpa99_annex,35.8156097,3.0336045,nominatim_commune_wilaya
+26,MEDEA,OUZERA,IIb,rpa99_annex,36.2526315,2.8466043,nominatim_commune_wilaya
+26,MEDEA,REBAIA,IIb,rpa99_annex,36.0278906,3.1381565,nominatim_commune_wilaya
+26,MEDEA,SEDRAIA,IIb,rpa99_annex,36.2345179,3.520256,nominatim_commune_wilaya
+26,MEDEA,SEGHOUANE,IIb,rpa99_annex,36.0008943,2.905162,nominatim_commune_wilaya
+26,MEDEA,SI MAHDJOUB,IIb,rpa99_annex,36.1613133,2.7215517,nominatim_commune_wilaya
+26,MEDEA,SIDI NAAMANE MEDEA,IIa,rpa99_annex,36.2147224,3.1265784,nominatim_commune_wilaya
+26,MEDEA,SIDI ZAHAR,IIb,rpa99_annex,36.0663761,3.3326983,nominatim_commune_wilaya
+26,MEDEA,SOUAGUI,IIb,rpa99_annex,36.1255019,3.265101,nominatim_commune_wilaya
+26,MEDEA,TABLAT,IIb,rpa99_annex,36.4127653,3.3097893,nominatim_commune_wilaya
+26,MEDEA,TAFRAOUT,IIb,rpa99_annex,35.9721175,3.3527874,nominatim_commune_wilaya
+26,MEDEA,TLATET ED DOUAIR,IIb,rpa99_annex,,,missing
+26,MEDEA,ZOUBIRIA,IIb,rpa99_annex,36.0697903,2.9044757,nominatim_commune_wilaya
+27,MOSTAGANEM,ACHAACHA,III,rpa99_annex,36.2445994,0.6355803,nominatim_commune_wilaya
+27,MOSTAGANEM,AIN BOUDINAR,IIa,rpa99_annex,35.9885604,0.2157357,nominatim_commune_wilaya
+27,MOSTAGANEM,AIN NOUISSI,IIa,rpa99_annex,,,missing
+27,MOSTAGANEM,AIN SIDI CHERIF,IIa,rpa99_annex,35.814396,0.139876,nominatim_commune_wilaya
+27,MOSTAGANEM,AIN TEDLES,IIa,rpa99_annex,35.9990969,0.294879,nominatim_commune_wilaya
+27,MOSTAGANEM,BELKHEIR,IIa,rpa99_annex,36.4634182,7.4763788,nominatim_commune_only_fallback
+27,MOSTAGANEM,BIR EL DJIR,IIa,rpa99_annex,35.719874,-0.5675118,nominatim_commune_only_fallback
+27,MOSTAGANEM,BOUGUIRAT,IIa,rpa99_annex,35.7502319,0.2566146,nominatim_commune_wilaya
+27,MOSTAGANEM,EL HADJADJ,IIa,rpa99_annex,36.1747029,0.3719311,nominatim_commune_wilaya
+27,MOSTAGANEM,EL HESSIANE,IIa,rpa99_annex,,,missing
+27,MOSTAGANEM,EL KHARROUBA,IIa,rpa99_annex,36.6564534,3.4068647,nominatim_commune_only_fallback
+27,MOSTAGANEM,FORNAKA,IIa,rpa99_annex,35.7519675,-0.0167043,nominatim_commune_wilaya
+27,MOSTAGANEM,HADJADJ,IIa,rpa99_annex,36.0953239,0.3256437,nominatim_commune_wilaya
+27,MOSTAGANEM,HASSI MAAMECHE,IIa,rpa99_annex,,,missing
+27,MOSTAGANEM,KHEIR EDDINE,IIa,rpa99_annex,35.9510576,0.1799828,nominatim_commune_wilaya
+27,MOSTAGANEM,MANSOURA,IIa,rpa99_annex,36.1003544,4.4715751,nominatim_commune_only_fallback
+27,MOSTAGANEM,MANSOURAH MOSTAGANEM,IIa,rpa99_annex,35.8637284,0.2475903,nominatim_commune_wilaya
+27,MOSTAGANEM,MESRA,IIa,rpa99_annex,35.8372794,0.1693314,nominatim_commune_wilaya
+27,MOSTAGANEM,MEZAGHRANE,IIa,rpa99_annex,,,missing
+27,MOSTAGANEM,MOSTAGANEM,IIa,rpa99_annex,35.928808,0.089978,nominatim_commune_wilaya
+27,MOSTAGANEM,OUED EL KHEIR,IIa,rpa99_annex,35.9398123,0.3849409,nominatim_commune_wilaya
+27,MOSTAGANEM,OULED BOUGHALEM,III,rpa99_annex,36.3189929,0.6693715,nominatim_commune_wilaya
+27,MOSTAGANEM,OULED MAALAH,IIb,rpa99_annex,,,missing
+27,MOSTAGANEM,SAFSAF,IIa,rpa99_annex,35.8657307,0.4045066,nominatim_commune_wilaya
+27,MOSTAGANEM,SAYADA,IIa,rpa99_annex,35.9334015,0.13593,nominatim_commune_wilaya
+27,MOSTAGANEM,SIDI ALI,IIa,rpa99_annex,36.0997945,0.4206226,nominatim_commune_wilaya
+27,MOSTAGANEM,SIDI LAKHDAR MOSTAGANEM,IIb,rpa99_annex,36.1643449,0.4406587,nominatim_commune_wilaya
+27,MOSTAGANEM,SIRAT,IIa,rpa99_annex,35.731748,0.172439,nominatim_commune_wilaya
+27,MOSTAGANEM,SOUAFLIA,IIa,rpa99_annex,35.8460196,0.3123305,nominatim_commune_wilaya
+27,MOSTAGANEM,SOUR,IIa,rpa99_annex,35.9586043,0.315475,nominatim_commune_wilaya
+27,MOSTAGANEM,STIDIA,IIa,rpa99_annex,35.8329584,-0.0035725,nominatim_commune_wilaya
+27,MOSTAGANEM,TAZGAIT,IIa,rpa99_annex,36.1273895,0.5439889,nominatim_commune_wilaya
+27,MOSTAGANEM,TOUAHRIA,IIa,rpa99_annex,35.8106097,0.2109301,nominatim_commune_wilaya
+28,M SILA,AIN EL HADJEL,I,rpa99_annex,35.6746597,3.8821519,nominatim_commune_wilaya
+28,M SILA,AIN KHADRA,I,rpa99_annex,35.5452659,4.9354504,nominatim_commune_wilaya
+28,M SILA,BABA HASSEN,I,rpa99_annex,36.6946975,2.9735467,nominatim_commune_only_fallback
+28,M SILA,BELAIBA,IIa,rpa99_annex,35.527774,5.1546938,nominatim_commune_wilaya
+28,M SILA,BEN SROUR,I,rpa99_annex,34.991345,4.5550981,nominatim_commune_wilaya
+28,M SILA,BENI ILMENE,I,rpa99_annex,35.9443702,4.0809144,nominatim_commune_wilaya
+28,M SILA,BERHOUM,IIa,rpa99_annex,35.654979,5.0344441,nominatim_commune_wilaya
+28,M SILA,BOUIRA,I,rpa99_annex,35.9516371,4.3185399,nominatim_commune_wilaya
+28,M SILA,BOUROUBA,I,rpa99_annex,36.7138232,3.1125789,nominatim_commune_only_fallback
+28,M SILA,BOUSAADA,I,rpa99_annex,35.2133123,4.1809702,nominatim_commune_wilaya
+28,M SILA,BOUTI SAYEH,I,rpa99_annex,,,missing
+28,M SILA,CASBAH,I,rpa99_annex,36.7844706,3.0578458,nominatim_commune_only_fallback
+28,M SILA,CHELLAL,I,rpa99_annex,35.5138695,4.3785487,nominatim_commune_wilaya
+28,M SILA,CHELLALAT EL ADHAOURA,I,rpa99_annex,35.9396178,3.4140092,nominatim_commune_only_fallback
+28,M SILA,DEHAHNA,I,rpa99_annex,35.7334477,5.0300374,nominatim_commune_wilaya
+28,M SILA,DIRAH,I,rpa99_annex,35.9976386,3.7542319,nominatim_commune_only_fallback
+28,M SILA,DJAAFRA,I,rpa99_annex,35.7008237,4.5516026,nominatim_commune_wilaya
+28,M SILA,HAMMAM BOUGHRARA,I,rpa99_annex,34.8936813,-1.6382574,nominatim_commune_only_fallback
+28,M SILA,HAMMAM DHALAA,I,rpa99_annex,35.9281238,4.3742303,nominatim_commune_wilaya
+28,M SILA,KHETTOUTI SED EL DJIR,I,rpa99_annex,35.6790741,4.2599517,nominatim_commune_wilaya
+28,M SILA,KHOUBANA,I,rpa99_annex,35.3244533,4.4831929,nominatim_commune_wilaya
+28,M SILA,MAADID,IIa,rpa99_annex,35.7974466,4.7564949,nominatim_commune_wilaya
+28,M SILA,MAGRA,IIa,rpa99_annex,35.6163647,5.1014147,nominatim_commune_wilaya
+28,M SILA,MCIF,I,rpa99_annex,,,missing
+28,M SILA,METARFA,I,rpa99_annex,35.6787556,4.5901394,nominatim_commune_wilaya
+28,M SILA,MSILA,I,rpa99_annex,35.7087096,4.5371411,nominatim_commune_wilaya
+28,M SILA,MTARFA,I,rpa99_annex,35.6975998,4.618693,nominatim_commune_wilaya
+28,M SILA,OUENOUGHA,I,rpa99_annex,,,missing
+28,M SILA,OULED ADDI GUEBALA,IIa,rpa99_annex,35.675496,4.9072115,nominatim_commune_wilaya
+28,M SILA,OULED DERRADJ,IIa,rpa99_annex,35.6721703,4.7876916,nominatim_commune_wilaya
+28,M SILA,OULED MADHI,I,rpa99_annex,35.4901754,4.6041787,nominatim_commune_wilaya
+28,M SILA,OULED MANSOUR,IIa,rpa99_annex,35.7314425,4.3867504,nominatim_commune_wilaya
+28,M SILA,OULED SIDI BRAHIM M SILA,I,rpa99_annex,35.3510379,4.1387382,nominatim_commune_wilaya
+28,M SILA,SIDI AISSA,I,rpa99_annex,35.8838359,3.7803723,nominatim_commune_wilaya
+28,M SILA,SIDI HADJERES,I,rpa99_annex,35.7013305,4.0641659,nominatim_commune_wilaya
+28,M SILA,TAMENTIT,I,rpa99_annex,27.7613334,-0.2657533,nominatim_commune_only_fallback
+28,M SILA,TARMOUNT,IIa,rpa99_annex,35.8190907,4.2859961,nominatim_commune_wilaya
+29,MASCARA,AIN FARES MASCARA,I,rpa99_annex,35.4771078,0.245587,nominatim_commune_wilaya
+29,MASCARA,AIN FEKAN,IIa,rpa99_annex,35.1763942,-0.024915,nominatim_commune_wilaya
+29,MASCARA,AIN FRASS,IIa,rpa99_annex,35.2052754,-0.1553257,nominatim_commune_wilaya
+29,MASCARA,ALAIMIA,IIa,rpa99_annex,35.6739515,-0.2205391,nominatim_commune_wilaya
+29,MASCARA,BIR EL DJIR,IIa,rpa99_annex,35.719874,-0.5675118,nominatim_commune_only_fallback
+29,MASCARA,BOUHANIFIA,I,rpa99_annex,35.3151029,-0.0486241,nominatim_commune_wilaya
+29,MASCARA,EL HACHEM,I,rpa99_annex,35.3376558,0.5055374,nominatim_commune_wilaya
+29,MASCARA,EL KEURT,IIa,rpa99_annex,35.3809268,0.0921516,nominatim_commune_wilaya
+29,MASCARA,EL MAMOUNIA,IIa,rpa99_annex,35.4247978,0.141363,nominatim_commune_wilaya
+29,MASCARA,FROHA,IIa,rpa99_annex,35.27606,0.120643,nominatim_commune_wilaya
+29,MASCARA,GHRISS,I,rpa99_annex,35.2481745,0.1604511,nominatim_commune_wilaya
+29,MASCARA,HACINE,IIa,rpa99_annex,35.4572062,-0.0024555,nominatim_commune_wilaya
+29,MASCARA,MAOUSSA,IIa,rpa99_annex,35.3782884,0.2457041,nominatim_commune_wilaya
+29,MASCARA,MASCARA,IIa,rpa99_annex,35.394081,0.1379568,nominatim_commune_wilaya
+29,MASCARA,MOHAMMADIA MASCARA,IIa,rpa99_annex,35.5892003,0.0670398,nominatim_commune_wilaya
+29,MASCARA,OUED EL ABTAL,I,rpa99_annex,35.4552913,0.687517,nominatim_commune_wilaya
+29,MASCARA,OUED TAGHIA,IIa,rpa99_annex,,,missing
+29,MASCARA,SIDI KADA,IIa,rpa99_annex,35.328545,0.3394322,nominatim_commune_wilaya
+29,MASCARA,SIG,IIa,rpa99_annex,35.5305119,-0.1906822,nominatim_commune_wilaya
+29,MASCARA,TIGHENNIF,IIa,rpa99_annex,35.4143144,0.3292328,nominatim_commune_wilaya
+29,MASCARA,TIZI,IIa,rpa99_annex,35.3161396,0.0739093,nominatim_commune_wilaya
+29,MASCARA,ZAHANA,IIa,rpa99_annex,35.517616,-0.410225,nominatim_commune_wilaya
+30,OURGLA,AIN BEIDA OUARGLA,0,rpa99_annex,31.9392925,5.3915209,nominatim_commune_wilaya
+30,OURGLA,ARZEW ORAN,0,rpa99_annex,35.8584138,-0.3087964,nominatim_commune_only_fallback
+30,OURGLA,EL BORMA,0,rpa99_annex,31.5948858,9.1635246,nominatim_commune_wilaya
+30,OURGLA,HASSI MESSAOUD,0,rpa99_annex,31.6957444,6.0604297,nominatim_commune_wilaya
+30,OURGLA,NGOUSSA,0,rpa99_annex,,,missing
+30,OURGLA,OUARGLA,0,rpa99_annex,31.9444998,5.3217813,nominatim_commune_wilaya
+30,OURGLA,ROUISSAT,0,rpa99_annex,31.9239554,5.3498372,nominatim_commune_wilaya
+30,OURGLA,SIDI AMRANE,0,rpa99_annex,33.4972965,6.0111235,nominatim_commune_only_fallback
+30,OURGLA,SIDI KHOUILED,0,rpa99_annex,31.9786887,5.4190448,nominatim_commune_wilaya
+30,OURGLA,TAIBET,0,rpa99_annex,33.0979751,6.4050945,nominatim_commune_only_fallback
+30,OURGLA,TOUGGOURT,0,rpa99_annex,32.6495059,5.827599,nominatim_commune_wilaya
+31,ORAN,AFIR,IIa,rpa99_annex,36.8423443,3.9871505,nominatim_commune_only_fallback
+31,ORAN,AIN KERMA ORAN,IIa,rpa99_annex,35.6434497,-0.9765427,nominatim_commune_wilaya
+31,ORAN,AIN TORKI,IIa,rpa99_annex,36.3348803,2.3032371,nominatim_commune_only_fallback
+31,ORAN,AIN TURK,IIa,rpa99_annex,35.7400353,-0.7539496,nominatim_commune_wilaya
+31,ORAN,ARZEW ORAN,IIa,rpa99_annex,35.8584138,-0.3087964,nominatim_commune_wilaya
+31,ORAN,BEN DAOUD,IIa,rpa99_annex,36.0515335,4.1723061,nominatim_commune_only_fallback
+31,ORAN,BEN FREHA,IIa,rpa99_annex,35.6937209,-0.4186546,nominatim_commune_wilaya
+31,ORAN,BETHIOUA,IIa,rpa99_annex,35.805837,-0.267936,nominatim_commune_wilaya
+31,ORAN,BIR EL ARCH,IIa,rpa99_annex,36.1303925,5.8392064,nominatim_commune_only_fallback
+31,ORAN,BIR EL DJIR,IIa,rpa99_annex,35.719874,-0.5675118,nominatim_commune_wilaya
+31,ORAN,BIR FODDA,IIa,rpa99_annex,34.815708,3.8554247,nominatim_commune_only_fallback
+31,ORAN,BOUFATIS,IIa,rpa99_annex,35.6791406,-0.4117684,nominatim_commune_wilaya
+31,ORAN,BOUSFER,IIa,rpa99_annex,35.7012331,-0.8103918,nominatim_commune_wilaya
+31,ORAN,BOUTLELIS,IIa,rpa99_annex,35.5729399,-0.8998452,nominatim_commune_wilaya
+31,ORAN,DAR EL BEIDA,IIa,rpa99_annex,35.6970608,-0.6132027,nominatim_commune_wilaya
+31,ORAN,DAR YAGHMOURASSENE,IIa,rpa99_annex,,,missing
+31,ORAN,EL AMRIA,IIa,rpa99_annex,35.5189971,-1.0276465,nominatim_commune_wilaya
+31,ORAN,EL ANCOR ORAN,IIa,rpa99_annex,35.6848518,-0.8699583,nominatim_commune_wilaya
+31,ORAN,EL ANSEUR,IIa,rpa99_annex,36.0404413,4.8186386,nominatim_commune_only_fallback
+31,ORAN,EL BAYADH,IIa,rpa99_annex,35.6786565,-0.6650609,nominatim_commune_wilaya
+31,ORAN,EL BRAYA,IIa,rpa99_annex,35.6291461,-0.5191909,nominatim_commune_wilaya
+31,ORAN,EL FEIDH,IIa,rpa99_annex,34.5005929,6.469635,nominatim_commune_only_fallback
+31,ORAN,EL KARIMIA,IIa,rpa99_annex,36.1121742,1.5534446,nominatim_commune_only_fallback
+31,ORAN,EL KARMA,IIa,rpa99_annex,35.6117814,-0.5795504,nominatim_commune_wilaya
+31,ORAN,EMIR ABDELKADER,IIa,rpa99_annex,35.6710444,-0.5740891,nominatim_commune_wilaya
+31,ORAN,ES SENIA,IIa,rpa99_annex,35.6500999,-0.6241804,nominatim_commune_wilaya
+31,ORAN,EULMA,IIa,rpa99_annex,36.7397345,7.4629454,nominatim_commune_only_fallback
+31,ORAN,FELLAOUCENE,IIa,rpa99_annex,35.684449,-0.6008562,nominatim_commune_wilaya
+31,ORAN,FENOUGHIL,IIa,rpa99_annex,27.6060965,-0.3021104,nominatim_commune_only_fallback
+31,ORAN,GDYEL,IIa,rpa99_annex,35.7824852,-0.4242038,nominatim_commune_wilaya
+31,ORAN,HASSI BEN OKBA,IIa,rpa99_annex,35.726419,-0.4671047,nominatim_commune_wilaya
+31,ORAN,HASSI BOUNIF,IIa,rpa99_annex,35.6912811,-0.4979622,nominatim_commune_wilaya
+31,ORAN,LIOUA,IIa,rpa99_annex,34.6392137,5.4009134,nominatim_commune_only_fallback
+31,ORAN,MAHDIA,IIa,rpa99_annex,35.4569852,1.741478,nominatim_commune_only_fallback
+31,ORAN,MARSAT EL HADJADJ,IIa,rpa99_annex,35.7948853,-0.1652125,nominatim_commune_wilaya
+31,ORAN,MERS EL KEBIR,IIa,rpa99_annex,35.7277218,-0.7085452,nominatim_commune_wilaya
+31,ORAN,MISSERGHIN,IIa,rpa99_annex,35.6179905,-0.7343553,nominatim_commune_wilaya
+31,ORAN,MOHAMED BOUDIAF,IIa,rpa99_annex,35.6990183,-0.6284593,nominatim_commune_wilaya
+31,ORAN,ORAN,IIa,rpa99_annex,35.7044415,-0.6502981,nominatim_commune_wilaya
+31,ORAN,OUED TLELAT,IIa,rpa99_annex,35.5519239,-0.4522604,nominatim_commune_wilaya
+31,ORAN,SAIDA,IIa,rpa99_annex,35.7045284,-0.6519328,nominatim_commune_wilaya
+31,ORAN,SALI,IIa,rpa99_annex,26.9612527,-0.0251553,nominatim_commune_only_fallback
+31,ORAN,SIDI CHAMI,IIa,rpa99_annex,35.6579939,-0.5220152,nominatim_commune_wilaya
+31,ORAN,SIDI MAAROUF,IIa,rpa99_annex,35.6815212,-0.5403625,nominatim_commune_wilaya
+31,ORAN,SIG,IIa,rpa99_annex,35.5305119,-0.1906822,nominatim_commune_only_fallback
+31,ORAN,STILL,IIa,rpa99_annex,34.2591866,5.9149716,nominatim_commune_only_fallback
+31,ORAN,TAFRAOUI,IIa,rpa99_annex,35.444756,-0.5542336,nominatim_commune_wilaya
+31,ORAN,TAFRAOUT,IIa,rpa99_annex,35.9721175,3.3527874,nominatim_commune_only_fallback
+31,ORAN,TENDLA,IIa,rpa99_annex,33.6734168,6.0331753,nominatim_commune_only_fallback
+31,ORAN,TIT,IIa,rpa99_annex,26.9383021,1.4910197,nominatim_commune_only_fallback
+31,ORAN,TLEMCEN,IIa,rpa99_annex,35.6951906,-0.6528364,nominatim_commune_wilaya
+31,ORAN,ZAHANA,IIa,rpa99_annex,35.5447554,-0.3824935,nominatim_commune_wilaya
+32,EL BAYADH,BOUGTOUB,I,rpa99_annex,34.0405202,0.087067,nominatim_commune_wilaya
+32,EL BAYADH,EL BAYADH,I,rpa99_annex,33.684319,1.0182453,nominatim_commune_wilaya
+32,EL BAYADH,EL BORDJ,I,rpa99_annex,34.4073071,0.4261032,nominatim_commune_wilaya
+32,EL BAYADH,KEF EL AHMAR,I,rpa99_annex,33.8504062,0.6332841,nominatim_commune_wilaya
+33,ILLIZI,ILLIZI,0,rpa99_annex,26.504191,8.479926,nominatim_commune_wilaya
+34,B.B ARRERIDJ,AIN TAGHROUT,IIa,rpa99_annex,36.1445264,5.1132662,nominatim_commune_wilaya
+34,B.B ARRERIDJ,AIN TASSERA,IIa,rpa99_annex,36.0179598,4.9695974,nominatim_commune_wilaya
+34,B.B ARRERIDJ,ALGER,IIa,rpa99_annex,36.0781117,4.8156756,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BELIMOUR,IIa,rpa99_annex,35.9800721,4.8818115,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BEN DAOUD,IIa,rpa99_annex,36.0515335,4.1723061,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BENDAOUD,IIa,rpa99_annex,36.0515335,4.1723061,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BIR KASDALI,IIa,rpa99_annex,36.1314462,5.007946,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BORDJ BEN AZZOUZ,IIa,rpa99_annex,34.6957162,5.3612562,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,BORDJ BOU ARRERIDJ,IIa,rpa99_annex,36.0741121,4.7613476,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BORDJ GHDIR,IIa,rpa99_annex,35.8991893,4.899182,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BORDJ ZEMOURA,IIa,rpa99_annex,36.2690807,4.8402663,nominatim_commune_wilaya
+34,B.B ARRERIDJ,BOUMERDES,IIa,rpa99_annex,36.7590403,3.473102,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,CHERAGA ALGER,IIa,rpa99_annex,36.7555504,2.974436,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,DJAAFRA,IIa,rpa99_annex,36.2895829,4.6261691,nominatim_commune_wilaya
+34,B.B ARRERIDJ,DRARIA,IIa,rpa99_annex,36.713911,2.997737,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,EL ACHIR,IIa,rpa99_annex,36.0632388,4.6294961,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL ANCER,IIa,rpa99_annex,36.7941634,6.1770786,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,EL ANSEUR,IIa,rpa99_annex,36.0404413,4.8186386,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL BORDJ,IIa,rpa99_annex,36.0694751,4.7304583,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL EUCH,IIa,rpa99_annex,35.8990321,4.5984311,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL EULMA,IIa,rpa99_annex,36.1529057,5.6911588,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,EL GHEDIR,IIa,rpa99_annex,36.0404413,4.8186386,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL HAMMADIA,IIa,rpa99_annex,35.972194,4.7704828,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL KSEUR,IIa,rpa99_annex,36.6794351,4.8523757,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,EL MAIN,IIa,rpa99_annex,36.382437,4.7442779,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL MANSOURA,IIa,rpa99_annex,36.0950685,4.4240463,nominatim_commune_wilaya
+34,B.B ARRERIDJ,EL MHIR,IIa,rpa99_annex,,,missing
+34,B.B ARRERIDJ,GHILASSA,IIa,rpa99_annex,35.847568,4.9083006,nominatim_commune_wilaya
+34,B.B ARRERIDJ,GUENZET TASSAMEURT,IIa,rpa99_annex,,,missing
+34,B.B ARRERIDJ,HAMADIA,IIa,rpa99_annex,35.972194,4.7704828,nominatim_commune_wilaya
+34,B.B ARRERIDJ,HAMMA ANASSERS,IIa,rpa99_annex,,,missing
+34,B.B ARRERIDJ,HARAZA,IIa,rpa99_annex,36.1554527,4.2252617,nominatim_commune_wilaya
+34,B.B ARRERIDJ,HASNAOUA,IIa,rpa99_annex,36.160523,4.825215,nominatim_commune_wilaya
+34,B.B ARRERIDJ,HASSASNA,IIa,rpa99_annex,35.2474884,-0.9447994,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,KHELIL,IIa,rpa99_annex,36.2362029,5.0157162,nominatim_commune_wilaya
+34,B.B ARRERIDJ,KOLEA,IIa,rpa99_annex,36.6373657,2.769126,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,KSOUR,IIa,rpa99_annex,35.9853662,4.565032,nominatim_commune_wilaya
+34,B.B ARRERIDJ,MANSOURA,IIa,rpa99_annex,36.1003544,4.4715751,nominatim_commune_wilaya
+34,B.B ARRERIDJ,MEDJANA,IIa,rpa99_annex,36.1311024,4.669174,nominatim_commune_wilaya
+34,B.B ARRERIDJ,OULED BRAHEM,IIa,rpa99_annex,35.896618,5.0804017,nominatim_commune_wilaya
+34,B.B ARRERIDJ,OULED DAHMANE,IIa,rpa99_annex,36.2303398,4.7756321,nominatim_commune_wilaya
+34,B.B ARRERIDJ,OULED HADJADJ,IIa,rpa99_annex,35.9929585,1.333718,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,OULED SIDI BRAHIM B.B ARRERIDJ,IIa,rpa99_annex,,,missing
+34,B.B ARRERIDJ,OULED SIDI BRAHIM M SILA,IIa,rpa99_annex,35.3510379,4.1387382,nominatim_commune_only_fallback
+34,B.B ARRERIDJ,RABTA,IIa,rpa99_annex,35.9101108,4.7830133,nominatim_commune_wilaya
+34,B.B ARRERIDJ,RAS EL OUED,IIa,rpa99_annex,35.9445677,5.0319396,nominatim_commune_wilaya
+34,B.B ARRERIDJ,SEDRATA,IIa,rpa99_annex,36.0833053,5.0326793,nominatim_commune_wilaya
+34,B.B ARRERIDJ,SETIF,IIa,rpa99_annex,36.1917081,4.4104502,nominatim_commune_wilaya
+34,B.B ARRERIDJ,SIDI EMBAREK,IIa,rpa99_annex,36.1181276,4.9041488,nominatim_commune_wilaya
+34,B.B ARRERIDJ,TAFREG,IIa,rpa99_annex,36.300658,4.7143979,nominatim_commune_wilaya
+34,B.B ARRERIDJ,TAGLAIT,IIa,rpa99_annex,35.7719161,5.0011451,nominatim_commune_wilaya
+34,B.B ARRERIDJ,THENIA,IIa,rpa99_annex,35.8466898,4.9580782,nominatim_commune_wilaya
+34,B.B ARRERIDJ,THENIET EL ANSEUR,IIa,rpa99_annex,,,missing
+34,B.B ARRERIDJ,TIXTER,IIa,rpa99_annex,36.0291572,5.1117578,nominatim_commune_wilaya
+35,BOUMERDES,AFIR,IIb,rpa99_annex,36.8423443,3.9871505,nominatim_commune_wilaya
+35,BOUMERDES,BAGHLIA,IIb,rpa99_annex,36.7959552,3.8675211,nominatim_commune_wilaya
+35,BOUMERDES,BELIMOUR,III,rpa99_annex,35.9800721,4.8818115,nominatim_commune_only_fallback
+35,BOUMERDES,BEN CHOUD,III,rpa99_annex,36.8641433,3.8801313,nominatim_commune_wilaya
+35,BOUMERDES,BENI AMRANE,IIb,rpa99_annex,36.6678481,3.5918611,nominatim_commune_wilaya
+35,BOUMERDES,BORDJ BOU ARRERIDJ,III,rpa99_annex,36.0741121,4.7613476,nominatim_commune_only_fallback
+35,BOUMERDES,BORDJ EL BAHRI,III,rpa99_annex,36.7906241,3.2501614,nominatim_commune_only_fallback
+35,BOUMERDES,BORDJ MENAIEL,III,rpa99_annex,36.7432364,3.7175665,nominatim_commune_wilaya
+35,BOUMERDES,BOUDOUAOU,III,rpa99_annex,36.7271127,3.4085912,nominatim_commune_wilaya
+35,BOUMERDES,BOUDOUAOU EL BAHRI,III,rpa99_annex,36.7713008,3.405641,nominatim_commune_wilaya
+35,BOUMERDES,BOUMERDES,III,rpa99_annex,36.7590403,3.473102,nominatim_commune_wilaya
+35,BOUMERDES,BOUZEGZA KEDDARA,III,rpa99_annex,36.6250914,3.4807733,nominatim_commune_wilaya
+35,BOUMERDES,CHABET EL AMEUR,III,rpa99_annex,36.6374131,3.6957712,nominatim_commune_wilaya
+35,BOUMERDES,CORSO,III,rpa99_annex,36.7547423,3.4433833,nominatim_commune_wilaya
+35,BOUMERDES,DELLYS,III,rpa99_annex,36.9140699,3.9129556,nominatim_commune_wilaya
+35,BOUMERDES,DJANET,III,rpa99_annex,24.5538847,9.484194,nominatim_commune_only_fallback
+35,BOUMERDES,DJINET,III,rpa99_annex,36.8779905,3.720138,nominatim_commune_wilaya
+35,BOUMERDES,EL KHARROUBA,III,rpa99_annex,36.6564534,3.4068647,nominatim_commune_wilaya
+35,BOUMERDES,HAMADI KROUMA,III,rpa99_annex,36.8441177,6.929106,nominatim_commune_only_fallback
+35,BOUMERDES,HAMADIA,III,rpa99_annex,35.4584077,1.8723935,nominatim_commune_only_fallback
+35,BOUMERDES,HAMMEDI,III,rpa99_annex,36.6800253,3.2596049,nominatim_commune_wilaya
+35,BOUMERDES,HARAOUA,III,rpa99_annex,,,missing
+35,BOUMERDES,ISSER,IIb,rpa99_annex,36.6935557,3.6915459,nominatim_commune_wilaya
+35,BOUMERDES,KHEMIS EL KHECHNA,IIb,rpa99_annex,36.6505384,3.3317211,nominatim_commune_wilaya
+35,BOUMERDES,KHEMIS MILIANA,III,rpa99_annex,36.2560052,2.2206013,nominatim_commune_only_fallback
+35,BOUMERDES,LAGHATA,III,rpa99_annex,,,missing
+35,BOUMERDES,LARBATACHE,IIb,rpa99_annex,36.6379144,3.3710566,nominatim_commune_wilaya
+35,BOUMERDES,NACIRIA,IIb,rpa99_annex,36.7471933,3.836858,nominatim_commune_wilaya
+35,BOUMERDES,OULED AISSA,III,rpa99_annex,36.8064756,3.8093139,nominatim_commune_wilaya
+35,BOUMERDES,OULED AISSA BOUMERDES,III,rpa99_annex,36.8064756,3.8093139,nominatim_commune_wilaya
+35,BOUMERDES,OULED BRAHEM,III,rpa99_annex,35.896618,5.0804017,nominatim_commune_only_fallback
+35,BOUMERDES,OULED HADJADJ,III,rpa99_annex,35.9929585,1.333718,nominatim_commune_only_fallback
+35,BOUMERDES,OULED HEDADJ,III,rpa99_annex,36.7100229,3.3350807,nominatim_commune_wilaya
+35,BOUMERDES,OULED MOUSSA,IIb,rpa99_annex,36.6857409,3.3642924,nominatim_commune_wilaya
+35,BOUMERDES,REGHAIA,III,rpa99_annex,36.7207228,3.424961,nominatim_commune_wilaya
+35,BOUMERDES,ROUIBA,III,rpa99_annex,36.6748774,3.2951515,nominatim_commune_wilaya
+35,BOUMERDES,SI MUSTAPHA,III,rpa99_annex,36.7336375,3.6253479,nominatim_commune_wilaya
+35,BOUMERDES,SIDI DAOUD,III,rpa99_annex,36.8567267,3.8581586,nominatim_commune_wilaya
+35,BOUMERDES,SIDI MOUSSA,III,rpa99_annex,36.9012438,3.8707022,nominatim_commune_wilaya
+35,BOUMERDES,SOUK EL HAD BOUMERDES,IIb,rpa99_annex,36.6919747,3.5915607,nominatim_commune_wilaya
+35,BOUMERDES,SOUK EL KHEMIS,III,rpa99_annex,36.3912273,3.631778,nominatim_commune_only_fallback
+35,BOUMERDES,TAOURGA,III,rpa99_annex,36.7935601,3.9500124,nominatim_commune_wilaya
+35,BOUMERDES,THENIA,III,rpa99_annex,36.724986,3.556935,nominatim_commune_wilaya
+35,BOUMERDES,TIDJELABINE,III,rpa99_annex,36.7321389,3.4956358,nominatim_commune_wilaya
+35,BOUMERDES,TIMEZRIT,IIa,rpa99_annex,36.6642218,3.7884864,nominatim_commune_wilaya
+35,BOUMERDES,TIMZRIT,III,rpa99_annex,,,missing
+35,BOUMERDES,ZEMMOURI,III,rpa99_annex,36.7864064,3.6012209,nominatim_commune_wilaya
+36,EL TAREF,AIN KERMA EL TARF,IIa,rpa99_annex,36.5629345,8.1985116,nominatim_commune_wilaya
+36,EL TAREF,AKABILI,IIa,rpa99_annex,,,missing
+36,EL TAREF,ASFOUR,IIa,rpa99_annex,36.6728695,7.9760642,nominatim_commune_wilaya
+36,EL TAREF,BEN MHIDI,IIa,rpa99_annex,36.7704579,7.9053142,nominatim_commune_wilaya
+36,EL TAREF,BERRIHANE,IIa,rpa99_annex,36.8376854,8.1257847,nominatim_commune_wilaya
+36,EL TAREF,BESBES,IIa,rpa99_annex,36.7008806,7.8454765,nominatim_commune_wilaya
+36,EL TAREF,BESBES EL TARF,IIa,rpa99_annex,36.6879822,7.8511467,nominatim_commune_wilaya
+36,EL TAREF,CHIHANI,IIa,rpa99_annex,36.6473548,7.7780261,nominatim_commune_wilaya
+36,EL TAREF,DREAN,IIa,rpa99_annex,36.6851201,7.7470888,nominatim_commune_wilaya
+36,EL TAREF,ECHATT,IIa,rpa99_annex,36.8303087,7.8727514,nominatim_commune_wilaya
+36,EL TAREF,EL KALA,IIa,rpa99_annex,36.8961359,8.4430673,nominatim_commune_wilaya
+36,EL TAREF,EL-TARF,IIa,rpa99_annex,36.754211,8.3134751,nominatim_commune_wilaya
+36,EL TAREF,LAC DES OISEAUX,IIa,rpa99_annex,36.7759247,8.1185433,nominatim_commune_wilaya
+36,EL TAREF,OULED RAHMOUN,IIa,rpa99_annex,36.1788485,6.701422,nominatim_commune_only_fallback
+36,EL TAREF,ZERIZER,IIa,rpa99_annex,36.7222365,7.9065934,nominatim_commune_wilaya
+38,TISSEMSILT,BORDJ EL EMIR ABDELKADER,IIa,rpa99_annex,35.8222005,2.23692,nominatim_commune_wilaya
+38,TISSEMSILT,BOUDA,IIa,rpa99_annex,28.0051734,-0.4223955,nominatim_commune_only_fallback
+38,TISSEMSILT,EL EULMA,IIa,rpa99_annex,36.1529057,5.6911588,nominatim_commune_only_fallback
+38,TISSEMSILT,FENOUGHIL,IIa,rpa99_annex,27.6060965,-0.3021104,nominatim_commune_only_fallback
+38,TISSEMSILT,HAMADIA,IIa,rpa99_annex,35.4584077,1.8723935,nominatim_commune_only_fallback
+38,TISSEMSILT,KHEMISTI TISSEMSILT,IIa,rpa99_annex,35.6848996,1.9409705,nominatim_commune_wilaya
+38,TISSEMSILT,LARDJEM,IIa,rpa99_annex,35.7480295,1.5480772,nominatim_commune_wilaya
+38,TISSEMSILT,LAYOUNE,IIa,rpa99_annex,35.6683622,2.0645059,nominatim_commune_wilaya
+38,TISSEMSILT,OULED BESSEM,IIa,rpa99_annex,35.6987742,1.8240855,nominatim_commune_wilaya
+38,TISSEMSILT,SIDI SLIMANE,IIa,rpa99_annex,35.8544291,1.7237871,nominatim_commune_wilaya
+38,TISSEMSILT,STILL,IIa,rpa99_annex,34.2591866,5.9149716,nominatim_commune_only_fallback
+38,TISSEMSILT,THENIET EL HAD,IIa,rpa99_annex,35.8739691,2.0240828,nominatim_commune_wilaya
+38,TISSEMSILT,TISSEMSILT,IIa,rpa99_annex,35.604813,1.810476,nominatim_commune_wilaya
+38,TISSEMSILT,TIT,IIa,rpa99_annex,26.9383021,1.4910197,nominatim_commune_only_fallback
+39,EL OUED,BAYADHA,0,rpa99_annex,33.3278311,6.8885733,nominatim_commune_wilaya
+39,EL OUED,EL BAYADH,0,rpa99_annex,33.684319,1.0182453,nominatim_commune_only_fallback
+39,EL OUED,EL OUED,0,rpa99_annex,33.3611531,6.8606693,nominatim_commune_wilaya
+39,EL OUED,GUEMAR,0,rpa99_annex,33.4916197,6.7977914,nominatim_commune_wilaya
+39,EL OUED,HAMRAIA,0,rpa99_annex,34.1103311,6.2299381,nominatim_commune_wilaya
+39,EL OUED,HASSANI ABDELKRIM,0,rpa99_annex,33.4771663,6.8948804,nominatim_commune_wilaya
+39,EL OUED,HASSI KHELIFA,0,rpa99_annex,33.5630338,6.9953023,nominatim_commune_wilaya
+39,EL OUED,KOUININE,0,rpa99_annex,33.4037855,6.8264542,nominatim_commune_wilaya
+39,EL OUED,MAGRANE,0,rpa99_annex,33.5625599,6.930939,nominatim_commune_wilaya
+39,EL OUED,MIH OUENSA,0,rpa99_annex,33.1995461,6.7096899,nominatim_commune_wilaya
+39,EL OUED,NAKHLA,0,rpa99_annex,33.2763121,6.9515739,nominatim_commune_wilaya
+39,EL OUED,OUED EL ALENDA,0,rpa99_annex,33.2308061,6.7613731,nominatim_commune_wilaya
+39,EL OUED,OURMES,0,rpa99_annex,33.353029,6.539482,nominatim_commune_wilaya
+39,EL OUED,REGUIBA,0,rpa99_annex,33.5653009,6.7114196,nominatim_commune_wilaya
+39,EL OUED,ROBBAH,0,rpa99_annex,33.2894337,6.9040129,nominatim_commune_wilaya
+39,EL OUED,SIDI AOUN,0,rpa99_annex,33.8391534,6.8108559,nominatim_commune_wilaya
+39,EL OUED,TALEB LARBI,0,rpa99_annex,33.728911,7.5176604,nominatim_commune_wilaya
+39,EL OUED,TRIFAOU,0,rpa99_annex,,,missing
+40,KHENCHELA,AIN TOUILA,I,rpa99_annex,35.4793116,7.3748585,nominatim_commune_wilaya
+40,KHENCHELA,AIN TOUTA,I,rpa99_annex,35.3752089,5.894213,nominatim_commune_only_fallback
+40,KHENCHELA,BABAR,I,rpa99_annex,35.1688559,7.1054786,nominatim_commune_wilaya
+40,KHENCHELA,BAGHAI,I,rpa99_annex,35.5232847,7.1140725,nominatim_commune_wilaya
+40,KHENCHELA,BAGHLIA,I,rpa99_annex,36.7959552,3.8675211,nominatim_commune_only_fallback
+40,KHENCHELA,BOUHMAMA,I,rpa99_annex,35.3188013,6.7466351,nominatim_commune_wilaya
+40,KHENCHELA,CHELIA,I,rpa99_annex,35.3642294,6.7793901,nominatim_commune_wilaya
+40,KHENCHELA,EL HAMMA,I,rpa99_annex,35.4716036,7.0856456,nominatim_commune_wilaya
+40,KHENCHELA,EL MAHMAL,I,rpa99_annex,35.3751785,7.2115567,nominatim_commune_wilaya
+40,KHENCHELA,ENSIGHA,I,rpa99_annex,35.3960059,7.1427291,nominatim_commune_wilaya
+40,KHENCHELA,KAIS,I,rpa99_annex,35.4956337,6.9235555,nominatim_commune_wilaya
+40,KHENCHELA,KHENCHELA,I,rpa99_annex,35.430154,7.145711,nominatim_commune_wilaya
+40,KHENCHELA,MTOUSSA,I,rpa99_annex,,,missing
+40,KHENCHELA,REMILA,I,rpa99_annex,35.5871075,6.9034374,nominatim_commune_wilaya
+40,KHENCHELA,TAMZA,I,rpa99_annex,35.2514688,6.9973328,nominatim_commune_wilaya
+40,KHENCHELA,TAOUZIANAT,I,rpa99_annex,,,missing
+40,KHENCHELA,YABOUS,I,rpa99_annex,35.407649,6.6416748,nominatim_commune_wilaya
+41,SOUK AHRAS,AHMER EL AIN,I,rpa99_annex,36.5012961,2.5716532,nominatim_commune_only_fallback
+41,SOUK AHRAS,AIN SOLTANE AIN DEFLA,I,rpa99_annex,36.2483226,2.2973227,nominatim_commune_only_fallback
+41,SOUK AHRAS,AIN SOLTANE SOUK AHRAS,I,rpa99_annex,36.1796759,7.3594933,nominatim_commune_wilaya
+41,SOUK AHRAS,BOU ISMAIL,I,rpa99_annex,36.642758,2.6899362,nominatim_commune_only_fallback
+41,SOUK AHRAS,HADJOUT,I,rpa99_annex,36.5121198,2.4142888,nominatim_commune_only_fallback
+41,SOUK AHRAS,MDAOUROUCHE,I,rpa99_annex,,,missing
+41,SOUK AHRAS,MENACEUR,I,rpa99_annex,36.5000414,2.2236309,nominatim_commune_only_fallback
+41,SOUK AHRAS,MERAHNA,I,rpa99_annex,36.1978548,8.1556144,nominatim_commune_wilaya
+41,SOUK AHRAS,MEURAD,I,rpa99_annex,36.4763774,2.4272954,nominatim_commune_only_fallback
+41,SOUK AHRAS,OUED KEBERIT,I,rpa99_annex,35.9229948,7.917529,nominatim_commune_wilaya
+41,SOUK AHRAS,OULED DRISS,I,rpa99_annex,36.3574912,8.0255425,nominatim_commune_wilaya
+41,SOUK AHRAS,SEDRATA,I,rpa99_annex,36.1356466,7.53412,nominatim_commune_wilaya
+41,SOUK AHRAS,SIDI AMER,I,rpa99_annex,36.5223193,2.3648239,nominatim_commune_only_fallback
+41,SOUK AHRAS,SOUK-AHRAS,I,rpa99_annex,36.282865,7.9537896,nominatim_commune_wilaya
+41,SOUK AHRAS,TAOURA,I,rpa99_annex,36.167061,8.042039,nominatim_commune_wilaya
+42,TIPAZA,AHMER EL AIN,III,rpa99_annex,36.5012961,2.5716532,nominatim_commune_wilaya
+42,TIPAZA,AIN BENIAN (AIN DEFLA),III,rpa99_annex,36.3523428,2.3899539,nominatim_commune_only_fallback
+42,TIPAZA,AIN NAGA,III,rpa99_annex,34.6535415,6.1416099,nominatim_commune_only_fallback
+42,TIPAZA,AIN TAGOURAIT,III,rpa99_annex,36.6027844,2.6090961,nominatim_commune_wilaya
+42,TIPAZA,BERROUAGHIA,III,rpa99_annex,36.1352805,2.9172738,nominatim_commune_only_fallback
+42,TIPAZA,BORDJ BADJI MOKHTAR,III,rpa99_annex,21.3302568,0.9540403,nominatim_commune_only_fallback
+42,TIPAZA,BOU ISMAIL,III,rpa99_annex,36.642758,2.6899362,nominatim_commune_wilaya
+42,TIPAZA,BOUDOUAOU,III,rpa99_annex,36.7271127,3.4085912,nominatim_commune_only_fallback
+42,TIPAZA,BOUFARIK,III,rpa99_annex,36.5755523,2.9128963,nominatim_commune_only_fallback
+42,TIPAZA,BOUHAROUN,III,rpa99_annex,36.6248757,2.657232,nominatim_commune_wilaya
+42,TIPAZA,BOURKIKA,III,rpa99_annex,36.4942993,2.4775236,nominatim_commune_wilaya
+42,TIPAZA,CHAIBA,III,rpa99_annex,36.6095154,2.7330752,nominatim_commune_wilaya
+42,TIPAZA,CHELGHOUM LAID,III,rpa99_annex,36.1605629,6.1673286,nominatim_commune_only_fallback
+42,TIPAZA,CHERAGA ALGER,III,rpa99_annex,36.7555504,2.974436,nominatim_commune_only_fallback
+42,TIPAZA,CHERCHEL,III,rpa99_annex,36.6075021,2.1901982,nominatim_commune_wilaya
+42,TIPAZA,DAMOUS,III,rpa99_annex,36.5487437,1.7055525,nominatim_commune_wilaya
+42,TIPAZA,DELY BRAHIM,III,rpa99_annex,36.7516098,2.9825732,nominatim_commune_only_fallback
+42,TIPAZA,DOUAOUDA,III,rpa99_annex,36.6737396,2.7900902,nominatim_commune_wilaya
+42,TIPAZA,ECH CHAIBA,III,rpa99_annex,34.8407894,4.9234598,nominatim_commune_only_fallback
+42,TIPAZA,EL BIAR,III,rpa99_annex,36.7688818,3.030651,nominatim_commune_only_fallback
+42,TIPAZA,EL HARRACH,III,rpa99_annex,36.7207974,3.1373893,nominatim_commune_only_fallback
+42,TIPAZA,EL KARIMIA,III,rpa99_annex,36.1121742,1.5534446,nominatim_commune_only_fallback
+42,TIPAZA,FOUKA,III,rpa99_annex,36.6615612,2.7421167,nominatim_commune_wilaya
+42,TIPAZA,GOURAYA,III,rpa99_annex,36.5720127,1.9057978,nominatim_commune_wilaya
+42,TIPAZA,HADJERET ENNOUS,III,rpa99_annex,36.5730902,2.0534126,nominatim_commune_wilaya
+42,TIPAZA,HADJOUT,III,rpa99_annex,36.5121198,2.4142888,nominatim_commune_wilaya
+42,TIPAZA,HATTATBA,III,rpa99_annex,,,missing
+42,TIPAZA,KHEMIS MILIANA,III,rpa99_annex,36.2560052,2.2206013,nominatim_commune_only_fallback
+42,TIPAZA,KHEMISTI TIPAZA,III,rpa99_annex,36.625387,2.6797524,nominatim_commune_wilaya
+42,TIPAZA,KOLEA,III,rpa99_annex,36.6373657,2.769126,nominatim_commune_wilaya
+42,TIPAZA,LARHAT,III,rpa99_annex,36.556746,1.8030812,nominatim_commune_wilaya
+42,TIPAZA,MAHELMA,III,rpa99_annex,36.6823629,2.87765,nominatim_commune_only_fallback
+42,TIPAZA,MENACEUR,III,rpa99_annex,36.5000414,2.2236309,nominatim_commune_wilaya
+42,TIPAZA,MESSELMOUN,III,rpa99_annex,36.5626559,2.0022623,nominatim_commune_wilaya
+42,TIPAZA,MEURAD,III,rpa99_annex,36.4763774,2.4272954,nominatim_commune_wilaya
+42,TIPAZA,NADOR,III,rpa99_annex,36.5693907,2.3935492,nominatim_commune_wilaya
+42,TIPAZA,NADORAH,III,rpa99_annex,35.2154942,1.9127933,nominatim_commune_only_fallback
+42,TIPAZA,OULED FAYET,III,rpa99_annex,36.7355249,2.9509064,nominatim_commune_only_fallback
+42,TIPAZA,SIDI AMAR TIPAZA,III,rpa99_annex,36.5424695,2.3059586,nominatim_commune_wilaya
+42,TIPAZA,SIDI AMER,III,rpa99_annex,36.5223193,2.3648239,nominatim_commune_wilaya
+42,TIPAZA,SIDI GHILES,III,rpa99_annex,36.5833323,2.1225093,nominatim_commune_wilaya
+42,TIPAZA,SIDI MHAMED ALGER,III,rpa99_annex,36.7584001,3.0627161,nominatim_commune_only_fallback
+42,TIPAZA,SIDI MOUSSA,III,rpa99_annex,36.5684579,2.3355455,nominatim_commune_wilaya
+42,TIPAZA,SIDI RACHED,III,rpa99_annex,36.5625526,2.5324546,nominatim_commune_wilaya
+42,TIPAZA,SOUIDANIA,III,rpa99_annex,36.7085304,2.9116721,nominatim_commune_only_fallback
+42,TIPAZA,STAOUELI,III,rpa99_annex,36.7532755,2.8881822,nominatim_commune_only_fallback
+42,TIPAZA,TELAGHMA,III,rpa99_annex,,,missing
+42,TIPAZA,TIPAZA,III,rpa99_annex,36.5918179,2.4482509,nominatim_commune_wilaya
+42,TIPAZA,ZERALDA,III,rpa99_annex,36.6905495,2.793231,nominatim_commune_wilaya
+43,MILA,AHMED RACHDI,IIa,rpa99_annex,,,missing
+43,MILA,AIN MELLOUK,IIa,rpa99_annex,36.273988,6.1447568,nominatim_commune_wilaya
+43,MILA,AIN MLILA,IIa,rpa99_annex,36.0375444,6.570986,nominatim_commune_only_fallback
+43,MILA,AIN SMARA,IIa,rpa99_annex,36.2787361,5.9879627,nominatim_commune_wilaya
+43,MILA,AIN TINE,IIa,rpa99_annex,36.4155335,6.3282212,nominatim_commune_wilaya
+43,MILA,AMIRA ARRES,IIa,rpa99_annex,36.551664,6.0558151,nominatim_commune_wilaya
+43,MILA,ANNABA,IIa,rpa99_annex,36.8982165,7.7549272,nominatim_commune_only_fallback
+43,MILA,AZZABA,IIa,rpa99_annex,36.7388133,7.1062378,nominatim_commune_only_fallback
+43,MILA,BENI GUECHA,IIa,rpa99_annex,36.3907169,5.9940093,nominatim_commune_wilaya
+43,MILA,BENYAHIA ABDERRAHMANE,IIa,rpa99_annex,36.2158595,6.0103474,nominatim_commune_wilaya
+43,MILA,BOUHATEM,IIa,rpa99_annex,36.314608,6.0521801,nominatim_commune_wilaya
+43,MILA,CHEGUIG,IIa,rpa99_annex,33.9829587,1.1229566,nominatim_commune_only_fallback
+43,MILA,CHELGHOUM LAID,IIa,rpa99_annex,36.1605629,6.1673286,nominatim_commune_wilaya
+43,MILA,CHERAGA MILA,IIa,rpa99_annex,,,missing
+43,MILA,DERRADJI BOUSSELAH,IIa,rpa99_annex,,,missing
+43,MILA,EL AYADI BARBES,IIa,rpa99_annex,36.4357774,5.8197886,nominatim_commune_wilaya
+43,MILA,EL MCHIRA,IIa,rpa99_annex,,,missing
+43,MILA,FERDJIOUA,IIa,rpa99_annex,36.4073812,5.9419603,nominatim_commune_wilaya
+43,MILA,GRAREM GOUGA,IIa,rpa99_annex,36.5152648,6.3261322,nominatim_commune_wilaya
+43,MILA,HADJOUT,IIa,rpa99_annex,36.5121198,2.4142888,nominatim_commune_only_fallback
+43,MILA,HAMALA,IIa,rpa99_annex,36.571449,6.3391852,nominatim_commune_wilaya
+43,MILA,JIJEL,IIa,rpa99_annex,36.4761166,5.7271305,nominatim_commune_wilaya
+43,MILA,MECHRIA,IIa,rpa99_annex,33.5428415,-0.2750524,nominatim_commune_only_fallback
+43,MILA,MILA,IIa,rpa99_annex,36.451941,6.262331,nominatim_commune_wilaya
+43,MILA,MILIANA,IIa,rpa99_annex,36.3047698,2.226821,nominatim_commune_only_fallback
+43,MILA,MINAR ZARZA,IIa,rpa99_annex,36.5344008,5.9115909,nominatim_commune_wilaya
+43,MILA,OUED ATHMANIA,IIa,rpa99_annex,36.266171,6.3117791,nominatim_commune_wilaya
+43,MILA,OUED ENDJA,IIa,rpa99_annex,36.4296241,6.1218697,nominatim_commune_wilaya
+43,MILA,OUED SEGUEN,IIa,rpa99_annex,36.1811194,6.3883093,nominatim_commune_wilaya
+43,MILA,OULED HAMLA,IIa,rpa99_annex,36.0795998,6.4720919,nominatim_commune_only_fallback
+43,MILA,OULED KHELLOUF,IIa,rpa99_annex,35.98497,6.0735927,nominatim_commune_wilaya
+43,MILA,ROUACHED,IIa,rpa99_annex,36.4581588,6.0391589,nominatim_commune_wilaya
+43,MILA,SETIF,IIa,rpa99_annex,36.4474413,6.2648946,nominatim_commune_wilaya
+43,MILA,SIDI KHELIFA,IIa,rpa99_annex,36.3635685,6.261707,nominatim_commune_wilaya
+43,MILA,SIDI MEROUANE,IIa,rpa99_annex,36.5189042,6.2603141,nominatim_commune_wilaya
+43,MILA,TADJENANET,IIa,rpa99_annex,36.1192994,5.9857948,nominatim_commune_wilaya
+43,MILA,TASSADANE HADDADA,IIa,rpa99_annex,36.5016155,5.8787288,nominatim_commune_wilaya
+43,MILA,TASSALA LEMTAI,IIa,rpa99_annex,36.5693012,5.9884624,nominatim_commune_wilaya
+43,MILA,TELAGHMA,IIa,rpa99_annex,,,missing
+43,MILA,TERRAI BAINEM,IIa,rpa99_annex,,,missing
+43,MILA,TIBERGUENT,IIa,rpa99_annex,36.3978575,6.0587121,nominatim_commune_wilaya
+43,MILA,ZEGHAIA,IIa,rpa99_annex,36.480762,6.1673842,nominatim_commune_wilaya
+44,AIN DEFLA,ADRAR,IIa,rpa99_annex,27.873203,-0.2876021,nominatim_commune_only_fallback
+44,AIN DEFLA,AIN BENIAN (AIN DEFLA),IIb,rpa99_annex,36.3523428,2.3899539,nominatim_commune_wilaya
+44,AIN DEFLA,AIN BOUYAHIA,III,rpa99_annex,36.2878137,1.7658713,nominatim_commune_wilaya
+44,AIN DEFLA,AIN SOLTANE AIN DEFLA,IIb,rpa99_annex,36.2483226,2.2973227,nominatim_commune_wilaya
+44,AIN DEFLA,AIN TORKI,IIb,rpa99_annex,36.3348803,2.3032371,nominatim_commune_wilaya
+44,AIN DEFLA,AIN-DEFLA,IIa,rpa99_annex,36.2657178,1.9701347,nominatim_commune_wilaya
+44,AIN DEFLA,ARIB,IIb,rpa99_annex,36.2919441,2.0683322,nominatim_commune_wilaya
+44,AIN DEFLA,BENI HAOUA,IIa,rpa99_annex,36.5304451,1.5692626,nominatim_commune_only_fallback
+44,AIN DEFLA,BORDJ EMIR KHALED,IIa,rpa99_annex,36.1200332,2.2045088,nominatim_commune_wilaya
+44,AIN DEFLA,BOUMEDFAA,IIa,rpa99_annex,36.3700317,2.4732963,nominatim_commune_wilaya
+44,AIN DEFLA,BOURACHED,IIb,rpa99_annex,36.16983,1.9321167,nominatim_commune_wilaya
+44,AIN DEFLA,CHLEF,IIa,rpa99_annex,36.2131519,1.3306374,nominatim_commune_wilaya
+44,AIN DEFLA,DHAYA,IIa,rpa99_annex,34.6354748,-0.63522,nominatim_commune_only_fallback
+44,AIN DEFLA,DJELIDA,IIa,rpa99_annex,36.2027341,2.0795157,nominatim_commune_wilaya
+44,AIN DEFLA,DJEMAA OULED CHEIKH,IIa,rpa99_annex,36.0770321,2.0045972,nominatim_commune_wilaya
+44,AIN DEFLA,DJENDEL,IIa,rpa99_annex,36.2192263,2.4153796,nominatim_commune_wilaya
+44,AIN DEFLA,EL ABBADIA,IIa,rpa99_annex,,,missing
+44,AIN DEFLA,EL AMRA,IIb,rpa99_annex,36.3050171,1.8482739,nominatim_commune_wilaya
+44,AIN DEFLA,EL ATTAF,III,rpa99_annex,36.2244328,1.6725159,nominatim_commune_wilaya
+44,AIN DEFLA,EL ATTEUF,IIa,rpa99_annex,32.476746,3.7471239,nominatim_commune_only_fallback
+44,AIN DEFLA,EL MAIN,IIa,rpa99_annex,36.382437,4.7442779,nominatim_commune_only_fallback
+44,AIN DEFLA,EL MAYENE,IIa,rpa99_annex,,,missing
+44,AIN DEFLA,HAMMAM RIGHA,IIb,rpa99_annex,36.3827173,2.4009305,nominatim_commune_wilaya
+44,AIN DEFLA,KHEMIS MILIANA,IIa,rpa99_annex,36.2560052,2.2206013,nominatim_commune_wilaya
+44,AIN DEFLA,MEKHATRIA,IIb,rpa99_annex,36.3025793,1.9597495,nominatim_commune_wilaya
+44,AIN DEFLA,MILIANA,IIa,rpa99_annex,36.3047698,2.226821,nominatim_commune_wilaya
+44,AIN DEFLA,ROUINA,IIb,rpa99_annex,36.2448216,1.8055909,nominatim_commune_wilaya
+44,AIN DEFLA,SIDI LAKHDAR AIN DEFLA,IIb,rpa99_annex,36.2656357,2.1617628,nominatim_commune_wilaya
+44,AIN DEFLA,TACHTA ZEGARRA,IIa,rpa99_annex,,,missing
+44,AIN DEFLA,TAMZOUGHA,IIa,rpa99_annex,,,missing
+44,AIN DEFLA,TIBERGUENT,IIa,rpa99_annex,36.3978575,6.0587121,nominatim_commune_only_fallback
+44,AIN DEFLA,TIBERKANINE,IIb,rpa99_annex,36.1746084,1.6274197,nominatim_commune_wilaya
+44,AIN DEFLA,ZEDDINE,IIb,rpa99_annex,36.1562103,1.8201697,nominatim_commune_wilaya
+45,NAAMA,AIN SEFRA,I,rpa99_annex,32.7568151,-0.577859,nominatim_commune_wilaya
+45,NAAMA,BORDJ BOU ARRERIDJ,I,rpa99_annex,36.0741121,4.7613476,nominatim_commune_only_fallback
+45,NAAMA,MECHRIA,I,rpa99_annex,33.5428415,-0.2750524,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,AIN EL ARBAA,IIa,rpa99_annex,35.4058264,-0.8811572,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,AIN LARBI,IIa,rpa99_annex,35.3038999,-1.1430122,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,AIN-TEMOUCHENT,IIa,rpa99_annex,35.3048421,-1.1457771,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,BENI SAF,IIa,rpa99_annex,35.3025458,-1.382036,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,BIR EL DJIR,IIa,rpa99_annex,35.719874,-0.5675118,nominatim_commune_only_fallback
+46,AIN TIMOUCHENT,BOUZEDJAR AIN TEMOUCHENT,IIa,rpa99_annex,35.5802687,-1.14895,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,EL ABBADIA,IIa,rpa99_annex,,,missing
+46,AIN TIMOUCHENT,EL AMRIA,IIa,rpa99_annex,35.5248267,-1.0145245,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,EL ATTAF,IIa,rpa99_annex,36.2244328,1.6725159,nominatim_commune_only_fallback
+46,AIN TIMOUCHENT,EL MALAH,IIa,rpa99_annex,35.3899817,-1.0959775,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,HAMMAM BOUHADJAR,IIa,rpa99_annex,35.3790296,-0.9711585,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,ORAN,IIa,rpa99_annex,35.526689,-0.8104313,nominatim_commune_wilaya
+46,AIN TIMOUCHENT,OULHACA GHERRABA AIN TEMOUCHENT,IIa,rpa99_annex,,,missing
+46,AIN TIMOUCHENT,TAMESGUIDA,IIa,rpa99_annex,36.3223888,2.6895235,nominatim_commune_only_fallback
+46,AIN TIMOUCHENT,TAMZOUGHA,IIa,rpa99_annex,,,missing
+47,GHARDAIA,AIN-DEFLA,0,rpa99_annex,36.1586843,2.0842817,nominatim_commune_only_fallback
+47,GHARDAIA,BERRIANE,0,rpa99_annex,32.8256322,3.7639006,nominatim_commune_wilaya
+47,GHARDAIA,EL ATTEUF,0,rpa99_annex,32.476746,3.7471239,nominatim_commune_wilaya
+47,GHARDAIA,GHARDAIA,0,rpa99_annex,32.485588,3.6771496,nominatim_commune_wilaya
+47,GHARDAIA,METLILI,0,rpa99_annex,32.2605169,3.6259116,nominatim_commune_wilaya
+47,GHARDAIA,OUARGLA,0,rpa99_annex,31.9444998,5.3217813,nominatim_commune_only_fallback
+48,RELIZANE,DJIDIOUIA,IIb,rpa99_annex,35.9336653,0.8266434,nominatim_commune_wilaya
+48,RELIZANE,OUED RHIOU,IIb,rpa99_annex,35.9607535,0.9180664,nominatim_commune_wilaya
+48,RELIZANE,OULED YAICH RELIZANE,IIa,rpa99_annex,35.8266939,0.9631855,nominatim_commune_wilaya
+48,RELIZANE,RELIZANE,IIa,rpa99_annex,35.7381193,0.5547673,nominatim_commune_wilaya
+48,RELIZANE,SIDI KHETTAB,IIa,rpa99_annex,35.9105034,0.5113687,nominatim_commune_wilaya
+48,RELIZANE,SIDI MHAMED BEN ALI RELIZANE,IIa,rpa99_annex,,,missing
+49,TIMIMOUN,TIMIAOUINE,0,inferred_from_parent_wilaya,20.4339578,1.8101265,nominatim_commune_only_fallback
+50,BORDJ BADJI MOKHTAR,BORDJ BADJI MOKHTAR,0,inferred_from_parent_wilaya,21.3302568,0.9540403,nominatim_commune_wilaya
+50,BORDJ BADJI MOKHTAR,BORDJ BOU ARRERIDJ,0,inferred_from_parent_wilaya,36.0741121,4.7613476,nominatim_commune_only_fallback
+50,BORDJ BADJI MOKHTAR,EL ACHIR,0,inferred_from_parent_wilaya,36.0632388,4.6294961,nominatim_commune_only_fallback
+50,BORDJ BADJI MOKHTAR,TIMIAOUINE,0,inferred_from_parent_wilaya,20.4339578,1.8101265,nominatim_commune_wilaya
+51,OULED DJELLAL,BACH DJERRAH,I,inferred_from_parent_wilaya,,,missing
+51,OULED DJELLAL,CHAIBA,I,inferred_from_parent_wilaya,34.8407894,4.9234598,nominatim_commune_wilaya
+51,OULED DJELLAL,OULED DJELLAL,I,inferred_from_parent_wilaya,34.4254103,5.0644342,nominatim_commune_wilaya
+51,OULED DJELLAL,ZERALDA,I,inferred_from_parent_wilaya,36.7120392,2.8407894,nominatim_commune_only_fallback
+53,IN SALAH,IN SALAH,0,inferred_from_parent_wilaya,27.25101,2.5101628,nominatim_commune_wilaya
+54,IN GUEZZAM,IN GUEZZAM,0,inferred_from_parent_wilaya,19.5696707,5.7725744,nominatim_commune_wilaya
+54,IN GUEZZAM,TAMANRASSET,0,inferred_from_parent_wilaya,22.7859372,5.5291395,nominatim_commune_only_fallback
+54,IN GUEZZAM,TIN ZAOUATINE,0,inferred_from_parent_wilaya,19.9541906,2.9694782,nominatim_commune_wilaya
+55,TOUGGOURT,NEZLA,0,inferred_from_parent_wilaya,33.0960188,6.0630525,nominatim_commune_wilaya
+55,TOUGGOURT,TEBESBEST,0,inferred_from_parent_wilaya,33.115308,6.0818339,nominatim_commune_wilaya
+55,TOUGGOURT,TOUGGOURT,0,inferred_from_parent_wilaya,33.1048574,6.0667276,nominatim_commune_wilaya
+56,DJANET,DJANET,0,inferred_from_parent_wilaya,24.5538847,9.484194,nominatim_commune_wilaya
+57,EL MGHAIR,DJAMAA,0,inferred_from_parent_wilaya,33.5304325,5.9892386,nominatim_commune_wilaya
+57,EL MGHAIR,EL MGHAIR,0,inferred_from_parent_wilaya,,,missing
+57,EL MGHAIR,OUM TIOUR,0,inferred_from_parent_wilaya,35.8197357,5.935051,nominatim_commune_only_fallback
+57,EL MGHAIR,OUM TOUYOUR,0,inferred_from_parent_wilaya,34.1523583,5.8337623,nominatim_commune_wilaya
+57,EL MGHAIR,TENDLA,0,inferred_from_parent_wilaya,33.6734168,6.0331753,nominatim_commune_wilaya
