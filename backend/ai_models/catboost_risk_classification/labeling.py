@@ -1,5 +1,5 @@
 # services/ml_service/labeling.py
-
+import pandas as pd
 ZONE_TO_NUM = {"0": 0, "I": 1, "IIa": 2, "IIb": 3, "III": 4}
 
 # Risk weights for each factor (calibrated to RPA 99 and actuarial practice)

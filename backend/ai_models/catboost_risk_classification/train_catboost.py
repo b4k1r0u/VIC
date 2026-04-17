@@ -11,22 +11,26 @@ from sklearn.metrics import classification_report, roc_auc_score
 import shap
 import matplotlib.pyplot as plt
 import joblib
+import os
 
-from scripts.build_commune_zones import build_lookup_table
-from scripts.prepare_portfolio import load_and_clean_portfolio, join_zones
-from services.ml_service.labeling import assign_risk_labels
-from services.ml_service.features import build_feature_matrix
+from labeling import assign_risk_labels
+from features import build_feature_matrix
 
 
 def train():
     # ── 1. Load & prepare data ──────────────────────────────────────
-    portfolio = load_and_clean_portfolio([
-        "data/portfolio_2023.csv",
-        "data/portfolio_2024.csv",
-        "data/portfolio_2025.csv",
-    ])
-    zones_df = pd.read_csv("data/commune_zones.csv")
-    portfolio = join_zones(portfolio, zones_df)
+    here = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(here, "..", "datasets", "data", "portfolio_enriched.csv")
+    
+    print(f"Loading portfolio from {csv_path}...")
+    portfolio = pd.read_csv(csv_path, low_memory=False)
+    
+    # Ensure VALEUR_ASSURÉE column exists (handle accents)
+    if "VALEUR_ASSURÉE" not in portfolio.columns and "VALEUR_ASSUREE" in portfolio.columns:
+        portfolio.rename(columns={"VALEUR_ASSUREE": "VALEUR_ASSURÉE"}, inplace=True)
+        
+    portfolio["VALEUR_ASSURÉE"] = pd.to_numeric(portfolio["VALEUR_ASSURÉE"], errors="coerce").fillna(0)
+    portfolio = portfolio[portfolio["VALEUR_ASSURÉE"] > 0].copy()
 
     # ── 2. Build features and labels ────────────────────────────────
     X, cat_features = build_feature_matrix(portfolio)
@@ -101,21 +105,19 @@ def train():
         plot_type="bar",
         show=False
     )
-    plt.savefig("ml_models/shap_feature_importance.png", bbox_inches="tight")
+    plt.savefig(os.path.join(here, "shap_feature_importance.png"), bbox_inches="tight")
     plt.close()
-    print("SHAP plot saved to ml_models/shap_feature_importance.png")
+    print("SHAP plot saved to shap_feature_importance.png")
 
-    # ── 8. Save model ───────────────────────────────────────────────
-    model.save_model("ml_models/catboost_model.cbm")
-    # Also save as ONNX for potential edge deployment
-    # model.save_model("ml_models/catboost_model.onnx", format="onnx")
+    os.makedirs(os.path.join(here, "ml_models"), exist_ok=True)
+    model.save_model(os.path.join(here, "ml_models", "catboost_model.cbm"))
 
     # Save feature names for inference validation
     joblib.dump({
         "feature_names": list(X.columns),
         "cat_features": cat_features,
         "zone_to_num": {"0": 0, "I": 1, "IIa": 2, "IIb": 3, "III": 4}
-    }, "ml_models/feature_metadata.pkl")
+    }, os.path.join(here, "ml_models", "feature_metadata.pkl"))
 
     print("\n✅ Model saved to ml_models/catboost_model.cbm")
     print(f"   Best iteration: {model.best_iteration_}")

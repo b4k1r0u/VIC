@@ -2,8 +2,13 @@
 import numpy as np
 import pandas as pd
 import joblib
+import os
 from catboost import CatBoostClassifier
-from services.ml_service.features import build_feature_matrix
+
+try:
+    from .features import build_feature_matrix
+except ImportError:
+    from features import build_feature_matrix
 
 class MLService:
     """
@@ -16,9 +21,13 @@ class MLService:
         self.TIER_LABELS = {0: "LOW", 1: "MEDIUM", 2: "HIGH"}
 
     def load_models(self):
+        here = os.path.dirname(os.path.abspath(__file__))
+        cbm_path = os.path.join(here, "ml_models/catboost_model.cbm")
+        pkl_path = os.path.join(here, "ml_models/feature_metadata.pkl")
+        
         self.model = CatBoostClassifier()
-        self.model.load_model("ml_models/catboost_model.cbm")
-        self.metadata = joblib.load("ml_models/feature_metadata.pkl")
+        self.model.load_model(cbm_path)
+        self.metadata = joblib.load(pkl_path)
         print("✅ CatBoost model loaded")
 
     def score_policy(self, policy_data: dict) -> dict:
