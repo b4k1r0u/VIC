@@ -1,7 +1,0 @@
-# Monte Carlo Loss Simulation — Python dependencies
-numpy
-pandas
-scipy
-fastapi
-uvicorn[standard]
-pydantic>=2.0
