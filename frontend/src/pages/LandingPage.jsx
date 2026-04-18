@@ -35,12 +35,12 @@ function StatCard({ value, label, suffix = '', prefix = '' }) {
 }
 
 const FEATURES = [
-  { Icon: Map, color: '#2563eb', title: 'Carte Interactive', desc: 'Visualisation Leaflet temps réel des 48 wilayas avec exposition par zone RPA99.' },
-  { Icon: Zap, color: '#7c3aed', title: 'Simulateur Monte Carlo', desc: 'Calcul de PML et VaR sur 8 000 itérations pour chaque scénario catastrophe.' },
-  { Icon: Bell, color: '#dc2626', title: 'Alertes Sismiques LIVE', desc: 'Flux WebSocket EMSC en temps réel avec calcul automatique d\'impact portefeuille.' },
-  { Icon: Scale, color: '#059669', title: 'Bilan & Rééquilibrage', desc: 'Score de balance et feuille de route stratégique pour optimiser la concentration.' },
-  { Icon: Bot, color: '#d97706', title: 'Analyses & Optimisations', desc: 'Note stratégique générée automatiquement pour la direction générale.' },
-  { Icon: FlaskConical, color: '#0d9488', title: 'Sandbox Souscription', desc: 'Test d\'impact d\'une nouvelle police avant approbation définitive.' },
+  { Icon: Map, color: '#2563eb', title: 'Interactive Map', desc: 'Real-time Leaflet visualization of all 48 wilayas with exposure by RPA99 zone.' },
+  { Icon: Zap, color: '#7c3aed', title: 'Monte Carlo Simulator', desc: 'PML and VaR calculation across 8,000 iterations for each catastrophe scenario.' },
+  { Icon: Bell, color: '#dc2626', title: 'Live Seismic Alerts', desc: 'Real-time EMSC WebSocket feed with automatic portfolio impact analysis.' },
+  { Icon: Scale, color: '#059669', title: 'Balance & Rebalancing', desc: 'Balance score and strategic roadmap to optimize concentration.' },
+  { Icon: Bot, color: '#d97706', title: 'AI Analysis & Optimization', desc: 'Strategic note generated automatically for executive management.' },
+  { Icon: FlaskConical, color: '#0d9488', title: 'Underwriting Sandbox', desc: 'Test the impact of a new policy before final approval.' },
 ]
 
 /* ── Feature card ── */
@@ -95,15 +95,15 @@ export default function LandingPage({ onLogin }) {
           </div>
           <div>
             <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.1rem', color: 'var(--text-primary)', lineHeight: 1 }}>رَصْد RASED</div>
-            <div style={{ fontSize: '0.55rem', color: 'var(--text-tertiary)', letterSpacing: '1px', textTransform: 'uppercase' }}>Risque Assurantiel Sismique</div>
+            <div style={{ fontSize: '0.55rem', color: 'var(--text-tertiary)', letterSpacing: '1px', textTransform: 'uppercase' }}>Seismic Insurance Risk</div>
           </div>
         </div>
         <div style={S.navLinks}>
-          {['Fonctionnalités', 'Données', 'À Propos'].map(l => (
+          {['Features', 'Data', 'About'].map(l => (
             <a key={l} href="#" style={S.navLink}>{l}</a>
           ))}
           <button onClick={onLogin} style={S.navCta}>
-            Accéder <ArrowRight size={13} style={{ marginLeft: 6 }} />
+            Access <ArrowRight size={13} style={{ marginLeft: 6 }} />
           </button>
         </div>
       </nav>
@@ -116,24 +116,24 @@ export default function LandingPage({ onLogin }) {
         <div style={S.heroContent}>
           <div style={S.heroBadge}>
             <span style={S.heroBadgeDot} />
-            Plateforme Risk Management IARD · Algérie 2025
+            P&C Risk Management Platform · Algeria 2025
           </div>
 
           <h1 style={S.heroH1}>
-            Gestion Interactive<br />
-            <span style={S.heroH1Accent}>des Risques Sismiques</span>
+            Interactive Management<br />
+            <span style={S.heroH1Accent}>of Seismic Risk</span>
           </h1>
           <p style={S.heroSub}>
-            RASED centralise l'exposition de votre portefeuille IARD face aux risques sismiques algériens. Simulez, analysez et rééquilibrez vos engagements pour une prise de décision stratégique optimale.
+            RASED centralizes your P&C portfolio exposure to Algerian seismic risk. Simulate, analyze, and rebalance your commitments for sharper strategic decisions.
           </p>
 
           <div style={S.heroActions}>
             <button onClick={onLogin} style={S.heroPrimaryBtn}>
-              Accéder à la Plateforme →
+              Access the Platform →
             </button>
             <button style={S.heroSecondaryBtn}>
               <ExternalLink size={14} style={{ marginRight: 7 }} />
-              Voir la Démo
+              View Demo
             </button>
           </div>
 
@@ -188,20 +188,20 @@ export default function LandingPage({ onLogin }) {
 
       {/* ── Stats section ── */}
       <section style={S.statsSection}>
-        <StatCard value={113100} label="Polices Assurées" />
-        <StatCard value={1131} label="Mrd DZD Exposés" suffix=" Mrd" />
-        <StatCard value={30.5} label="Zone III Critique" suffix="%" />
-        <StatCard value={285} label="PML 200-ans (Mrd DZD)" prefix="~" />
-        <StatCard value={48} label="Wilayas Couvertes" />
+        <StatCard value={113100} label="Insured Policies" />
+        <StatCard value={1131} label="Bn DZD Exposed" suffix=" Bn" />
+        <StatCard value={30.5} label="Critical Zone III" suffix="%" />
+        <StatCard value={285} label="200-Year PML (Bn DZD)" prefix="~" />
+        <StatCard value={48} label="Covered Wilayas" />
       </section>
 
       {/* ── Features section ── */}
       <section style={S.featuresSection}>
         <div style={S.sectionHeader}>
-          <div style={S.sectionBadge}>Fonctionnalités</div>
-          <h2 style={S.sectionH2}>Tous les Outils du Risk Manager</h2>
+          <div style={S.sectionBadge}>Features</div>
+          <h2 style={S.sectionH2}>All the Tools a Risk Manager Needs</h2>
           <p style={S.sectionSub}>
-            Une suite complète pour gérer, analyser et optimiser votre exposition aux risques sismiques en Algérie.
+            A complete suite to manage, analyze, and optimize seismic exposure across Algeria.
           </p>
         </div>
         <div style={S.featuresGrid}>
@@ -218,13 +218,13 @@ export default function LandingPage({ onLogin }) {
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
             <div style={{ fontSize: '2.5rem', marginBottom: 14 }}>🛡️</div>
             <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 'clamp(1.4rem,3vw,2rem)', color: '#fff', marginBottom: 14, letterSpacing: '-0.3px' }}>
-              Prêt à Sécuriser Votre Portefeuille ?
+              Ready to Secure Your Portfolio?
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', marginBottom: 32, maxWidth: 480, margin: '0 auto 32px' }}>
-              Accédez à la plateforme RASED et transformez votre gestion du risque sismique dès aujourd'hui.
+              Access the RASED platform and modernize your seismic risk management today.
             </p>
             <button onClick={onLogin} style={S.ctaBtn}>
-              Accéder à RASED →
+              Access RASED →
             </button>
           </div>
         </div>
@@ -236,9 +236,9 @@ export default function LandingPage({ onLogin }) {
           <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: 'var(--primary-600)', fontSize: '1.05rem', display: 'flex', alignItems: 'center', gap: 8 }}>
             <Shield size={16} color="var(--primary-600)" />رَصَد RASED
           </div>
-          <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', marginTop: 4 }}>Risque Assurantiel Sismique · Exposition et Diagnostic</div>
+          <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)', marginTop: 4 }}>Seismic Insurance Risk · Exposure and Diagnostics</div>
         </div>
-        <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)' }}>© 2025 Plateforme IARD Algérie · Confidentiel</div>
+        <div style={{ fontSize: '0.68rem', color: 'var(--text-quaternary)' }}>© 2025 Algeria P&C Platform · Confidential</div>
       </footer>
     </div>
   )

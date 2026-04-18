@@ -4,6 +4,7 @@ import {
   LayoutDashboard, Map, Zap, Scale, Bot, AlertTriangle,
   FlaskConical, ChevronLeft, ChevronRight, LogOut,
   Activity, Bell,
+  ScanSearch,
 } from 'lucide-react'
 
 const PAGES = [
@@ -11,7 +12,8 @@ const PAGES = [
   { id:'map',        Icon:Map,             label:'Carte des Risques', group:'main' },
   { id:'simulator',  Icon:Zap,             label:'Simulateur',        group:'main' },
   { id:'balance',    Icon:Scale,           label:'Équilibre',         group:'analyse' },
-  { id:'ai',         Icon:Bot,             label:'Stratégie & Optimisation',group:'analyse' },
+  { id:'ai',         Icon:Bot,             label:'Modèles IA',        group:'analyse' },
+  { id:'parametric', Icon:ScanSearch,      label:'Paramétrique',      group:'analyse' },
   { id:'alerts',     Icon:AlertTriangle,   label:'Alertes Sismiques', group:'live', live:true },
   { id:'sandbox',    Icon:FlaskConical,    label:'Sandbox Souscription',group:'live' },
 ]

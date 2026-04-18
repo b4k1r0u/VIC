@@ -16,6 +16,9 @@
  * @property {number} pml_999
  * @property {number[]} distribution_json   - sampled loss values for histogram
  * @property {CommuneLoss[]} per_commune_json
+ * @property {string|Object|null} [recommendation]
+ * @property {string|Object|null} [ai_recommendation]
+ * @property {string|Object|null} [recommendations]
  * @property {string} created_at
  */
 

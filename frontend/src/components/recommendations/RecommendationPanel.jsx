@@ -22,6 +22,10 @@ const PRIORITY_ICON = {
   ÉLEVÉE:      '🟠',
   MODÉRÉE:     '🟡',
   OPPORTUNITÉ: '🟢',
+  CRITICAL:    '🔴',
+  HIGH:        '🟠',
+  MEDIUM:      '🟡',
+  OPPORTUNITY: '🟢',
 }
 
 export default function RecommendationPanel({ scope = 'portfolio', scopeRef }) {
@@ -97,12 +101,12 @@ export default function RecommendationPanel({ scope = 'portfolio', scopeRef }) {
   return (
     <div className="recommendation-panel">
       <div className="panel-header">
-        <span className="panel-title">💡 Recommandations Stratégiques</span>
+        <span className="panel-title">💡 Strategic Recommendations</span>
         <button
           className="refresh-btn"
           onClick={() => fetchRecommendations()}
           disabled={streaming}
-          title="Actualiser"
+          title="Refresh"
         >
           ↺
         </button>
@@ -145,13 +149,13 @@ export default function RecommendationPanel({ scope = 'portfolio', scopeRef }) {
         <input
           ref={questionRef}
           type="text"
-          placeholder="Posez une question au modèle actuariel…"
+          placeholder="Ask the actuarial model a question..."
           value={userQuestion}
           onChange={(e) => setUserQuestion(e.target.value)}
           disabled={streaming}
         />
         <button type="submit" disabled={streaming || !userQuestion.trim()}>
-          Envoyer
+          Send
         </button>
       </form>
     </div>

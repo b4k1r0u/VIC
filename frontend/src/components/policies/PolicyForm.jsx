@@ -13,7 +13,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { geoAPI } from '../../api/geo'
 import { policiesAPI } from '../../api/policies'
-import apiClient from '../../api/client'
+import { mlAPI } from '../../api/ml'
 import usePolicyStore from '../../store/policyStore'
 import useMapStore from '../../store/mapStore'
 import PolicyRiskBadge from './PolicyRiskBadge'
@@ -83,17 +83,32 @@ export default function PolicyForm({ editPolicy, onSuccess }) {
     debounceRef.current = setTimeout(async () => {
       setScoringLoading(true)
       try {
-        const res = await apiClient.post('/api/ml/score', {
+        const res = await mlAPI.batchScore([{
+          policy_id: 'preview',
           zone_sismique: zone,
           wilaya_code: form.wilaya_code,
+          commune_name: form.commune_name || undefined,
           type_risque: form.type_risque,
+          construction_type: form.construction_type,
           valeur_assuree: parseFloat(form.valeur_assuree),
-        })
-        setRiskScore(res.data)
+          prime_nette: parseFloat(form.prime_nette || 0),
+          year: new Date(form.date_effet || Date.now()).getFullYear(),
+        }])
+        const preview = res.results?.[0]
+        setRiskScore(preview ? { score: preview.score, tier: preview.tier } : null)
       } catch { /* silent */ }
       finally { setScoringLoading(false) }
     }, 500)
-  }, [zone, form.wilaya_code, form.type_risque, form.valeur_assuree])
+  }, [
+    zone,
+    form.wilaya_code,
+    form.commune_name,
+    form.type_risque,
+    form.construction_type,
+    form.valeur_assuree,
+    form.prime_nette,
+    form.date_effet,
+  ])
 
   useEffect(() => { scorePolicy() }, [scorePolicy])
 

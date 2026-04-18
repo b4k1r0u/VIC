@@ -27,6 +27,10 @@ import useSimulationStore from '../../store/simulationStore'
 // Algeria bounding box centre
 const ALGERIA_CENTER = [28.0339, 1.6596]
 const DEFAULT_ZOOM = 5
+const ALGERIA_BOUNDS = [
+  [18.0, -8.8],
+  [37.3, 12.2],
+]
 
 export default function AlgeriaMap() {
   const { communeData, activeLayer, handleCommuneClick } = useMapData()
@@ -37,6 +41,9 @@ export default function AlgeriaMap() {
     <MapContainer
       center={ALGERIA_CENTER}
       zoom={DEFAULT_ZOOM}
+      minZoom={5}
+      maxBounds={ALGERIA_BOUNDS}
+      maxBoundsViscosity={1}
       zoomControl={false}
       style={{ width: '100%', height: '100%', background: '#0f172a' }}
     >

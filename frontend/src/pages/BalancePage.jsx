@@ -123,7 +123,7 @@ export default function BalancePage() {
   if (error || !summary) {
     return (
       <main style={S.loadingPage}>
-        <div style={S.errorBox}>{error || 'Réponse backend incomplète.'}</div>
+        <div style={S.errorBox}>{error || 'Les donnees recues sont incompletes.'}</div>
       </main>
     )
   }
@@ -134,10 +134,10 @@ export default function BalancePage() {
 
       <div style={S.hero}>
         <div style={S.heroMain}>
-          <div style={S.heroTitle}>Lecture backend de la concentration et de l’adéquation tarifaire</div>
+          <div style={S.heroTitle}>Lecture de la concentration et de l’adéquation tarifaire</div>
           <div style={S.heroText}>
-            Cette vue consolide `/api/policies/summary` et `/api/geo/premium-adequacy` pour repérer
-            les zones les plus concentrées et les segments les plus sous-tarifés.
+            Cette vue croise les indicateurs du portefeuille et l’adéquation tarifaire pour
+            repérer les zones les plus concentrées et les segments les plus sous-tarifés.
           </div>
         </div>
 

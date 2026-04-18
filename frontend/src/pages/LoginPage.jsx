@@ -1,10 +1,5 @@
 import React, { useState } from 'react'
 
-const DEMO_USERS = [
-  { email: 'admin@rased.dz', password: 'rased2025', name: 'Ahmed Benali', role: 'Directeur Risques' },
-  { email: 'demo@rased.dz', password: 'demo', name: 'Yasmine Kaci', role: 'Analyste Actuariel' },
-]
-
 export default function LoginPage({ onLogin, onBack }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -18,20 +13,19 @@ export default function LoginPage({ onLogin, onBack }) {
     setError('')
     setLoading(true)
     setTimeout(() => {
-      const user = DEMO_USERS.find(u => u.email === email && u.password === password)
-      if (user) {
-        onLogin(user)
-      } else {
-        setError('Email ou mot de passe incorrect.')
+      if (!email.trim() || !password.trim()) {
+        setError('Invalid email or password.')
         setLoading(false)
+        return
       }
-    }, 900)
-  }
 
-  const fillDemo = (u) => {
-    setEmail(u.email)
-    setPassword(u.password)
-    setError('')
+      onLogin({
+        email: email.trim(),
+        password: '',
+        name: email.trim().split('@')[0] || 'User',
+        role: 'Platform user',
+      })
+    }, 900)
   }
 
   return (
@@ -41,20 +35,20 @@ export default function LoginPage({ onLogin, onBack }) {
         <div style={S.leftBg} />
 
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <button onClick={onBack} style={S.backBtn}>← Retour</button>
+          <button onClick={onBack} style={S.backBtn}>← Back</button>
 
           <div style={S.brandWrap}>
             <div style={S.logo}>رَصْد</div>
             <div style={S.brandName}>RASED</div>
-            <div style={S.brandTagline}>Risque Assurantiel Sismique<br />Exposition et Diagnostic</div>
+            <div style={S.brandTagline}>Seismic Insurance Risk<br />Exposure and Diagnostics</div>
           </div>
 
           <div style={S.features}>
             {[
-              { icon: '🗺️', text: 'Carte sismique interactive Leaflet' },
-              { icon: '🎲', text: 'Simulation Monte Carlo 10K itérations' },
-              { icon: '🔴', text: 'Alertes sismiques en temps réel (EMSC)' },
-              { icon: '📊', text: 'Recommandations stratégiques & Actuariat' },
+              { icon: '🗺️', text: 'Interactive seismic map with Leaflet' },
+              { icon: '🎲', text: '10K-iteration Monte Carlo simulation' },
+              { icon: '🔴', text: 'Real-time seismic alerts (EMSC)' },
+              { icon: '📊', text: 'Strategic recommendations and actuarial insights' },
             ].map(f => (
               <div key={f.text} style={S.featureItem}>
                 <div style={S.featureIconLeft}>{f.icon}</div>
@@ -64,7 +58,7 @@ export default function LoginPage({ onLogin, onBack }) {
           </div>
 
           <div style={S.statsWrap}>
-            {[['113 100', 'Polices'], ['1 131 Mrd', 'Exposition (DZD)'], ['48', 'Wilayas']].map(([v, l]) => (
+            {[['113 100', 'Policies'], ['1 131 Bn', 'Exposure (DZD)'], ['48', 'Wilayas']].map(([v, l]) => (
               <div key={l} style={S.statItem}>
                 <div style={S.statVal}>{v}</div>
                 <div style={S.statLbl}>{l}</div>
@@ -78,32 +72,19 @@ export default function LoginPage({ onLogin, onBack }) {
       <div style={S.right}>
         <div style={S.formCard}>
           <div style={S.formHeader}>
-            <div style={S.formTitle}>Connexion</div>
-            <div style={S.formSub}>Accédez à votre espace RASED</div>
-          </div>
-
-          {/* Demo accounts */}
-          <div style={S.demoSection}>
-            <div style={S.demoLabel}>Comptes de démonstration :</div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {DEMO_USERS.map(u => (
-                <button key={u.email} onClick={() => fillDemo(u)} style={S.demoBtn}>
-                  <div style={{ fontSize: '0.72rem', fontWeight: 600, color: 'var(--primary-700)' }}>{u.role}</div>
-                  <div style={{ fontSize: '0.62rem', color: 'var(--text-tertiary)' }}>{u.email}</div>
-                </button>
-              ))}
-            </div>
+            <div style={S.formTitle}>Sign in</div>
+            <div style={S.formSub}>Access your RASED workspace</div>
           </div>
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             {/* Email */}
             <div style={S.fieldWrap}>
-              <label style={S.label}>Adresse Email</label>
+              <label style={S.label}>Email Address</label>
               <div style={{ ...S.inputWrap, borderColor: focused === 'email' ? 'var(--primary-500)' : error ? 'var(--danger)' : 'var(--border)', boxShadow: focused === 'email' ? '0 0 0 3px rgba(20,184,166,0.08)' : 'none' }}>
                 <span style={S.inputIcon}>📧</span>
                 <input
                   type="email" value={email} required
-                  placeholder="votre@email.dz"
+                  placeholder="your@email.com"
                   onChange={e => setEmail(e.target.value)}
                   onFocus={() => setFocused('email')}
                   onBlur={() => setFocused(null)}
@@ -114,7 +95,7 @@ export default function LoginPage({ onLogin, onBack }) {
 
             {/* Password */}
             <div style={S.fieldWrap}>
-              <label style={S.label}>Mot de Passe</label>
+              <label style={S.label}>Password</label>
               <div style={{ ...S.inputWrap, borderColor: focused === 'pass' ? 'var(--primary-500)' : error ? 'var(--danger)' : 'var(--border)', boxShadow: focused === 'pass' ? '0 0 0 3px rgba(20,184,166,0.08)' : 'none' }}>
                 <span style={S.inputIcon}>🔒</span>
                 <input
@@ -143,15 +124,15 @@ export default function LoginPage({ onLogin, onBack }) {
               {loading ? (
                 <span style={{ display: 'flex', alignItems: 'center', gap: 8, justifyContent: 'center' }}>
                   <span style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.3)', borderTop: '2px solid #fff', borderRadius: '50%', animation: 'spin 0.7s linear infinite', display: 'inline-block' }} />
-                  Connexion en cours...
+                  Signing in...
                 </span>
-              ) : 'Se Connecter →'}
+              ) : 'Sign In →'}
             </button>
           </form>
 
           <div style={S.formFooter}>
             <div style={{ fontSize: '0.7rem', color: 'var(--text-quaternary)', textAlign: 'center' }}>
-              🔒 Accès restreint · Données confidentielles IARD
+              🔒 Restricted access · Confidential P&C data
             </div>
           </div>
         </div>
@@ -208,13 +189,6 @@ const S = {
   formHeader: { marginBottom: 24 },
   formTitle: { fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.5rem', color: 'var(--text-primary)', marginBottom: 4 },
   formSub: { fontSize: '0.82rem', color: 'var(--text-tertiary)' },
-  demoSection: { marginBottom: 20 },
-  demoLabel: { fontSize: '0.65rem', fontWeight: 600, color: 'var(--text-quaternary)', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: 8 },
-  demoBtn: {
-    flex: 1, background: 'var(--primary-50)', border: '1px solid rgba(20,184,166,0.12)',
-    borderRadius: 10, padding: '10px 12px', cursor: 'pointer',
-    textAlign: 'left', transition: 'background 0.15s', display: 'block',
-  },
   fieldWrap: { display: 'flex', flexDirection: 'column', gap: 6 },
   label: { fontSize: '0.72rem', fontWeight: 600, color: 'var(--text-secondary)' },
   inputWrap: {

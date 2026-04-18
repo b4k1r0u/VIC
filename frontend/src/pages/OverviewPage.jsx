@@ -142,7 +142,7 @@ export default function OverviewPage() {
       <main style={S.loadingPage}>
         <div style={S.errorBox}>
           <strong>Impossible de charger le portefeuille.</strong>
-          <span>{error || 'Réponse backend incomplète.'}</span>
+          <span>{error || 'Les donnees recues sont incompletes.'}</span>
         </div>
       </main>
     )
@@ -156,7 +156,7 @@ export default function OverviewPage() {
         <StatCard
           label="Total Polices"
           value={formatInteger(state.kpis.total_policies)}
-          note="Portefeuille actuellement chargé depuis le backend"
+          note="Portefeuille actuellement charge"
           Icon={FileText}
         />
         <StatCard
@@ -168,7 +168,7 @@ export default function OverviewPage() {
         <StatCard
           label="Rétention Nette"
           value={formatCompactDzd(state.kpis.net_retention)}
-          note="Calcul backend sur les données agrégées"
+          note="Calculee a partir des donnees agregees"
           Icon={Shield}
         />
         <StatCard
@@ -192,7 +192,7 @@ export default function OverviewPage() {
       <div style={S.twoCol}>
         <div style={S.card}>
           <div style={S.cardTitle}>Distribution par zone sismique</div>
-          <div style={S.cardSub}>Basé sur `/api/policies/summary`</div>
+          <div style={S.cardSub}>Répartition calculée à partir du portefeuille consolidé</div>
           <div style={S.pieRow}>
             <ResponsiveContainer width={190} height={190}>
               <PieChart>
@@ -259,7 +259,7 @@ export default function OverviewPage() {
 
       <div style={S.card}>
         <div style={S.cardTitle}>Top communes par concentration</div>
-        <div style={S.cardSub}>Source: `/api/geo/hotspots`</div>
+        <div style={S.cardSub}>Communes les plus exposées selon la concentration observée</div>
         <div style={S.tableWrap}>
           <table style={S.table}>
             <thead>

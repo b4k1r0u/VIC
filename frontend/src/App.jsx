@@ -10,6 +10,7 @@ import BalancePage   from './pages/BalancePage'
 import AIPage        from './pages/AIPage'
 import AlertsPage    from './pages/AlertsPage'
 import SandboxPage   from './pages/SandboxPage'
+import ParametricInsurance from './pages/ParametricInsurance'
 
 function DashboardLayout({ user, onLogout }) {
   const location = useLocation()
@@ -35,6 +36,7 @@ function DashboardLayout({ user, onLogout }) {
           <Route path="/simulator" element={<SimulatorPage />} />
           <Route path="/balance" element={<BalancePage />} />
           <Route path="/ai" element={<AIPage />} />
+          <Route path="/parametric" element={<ParametricInsurance />} />
           <Route path="/alerts" element={<AlertsPage />} />
           <Route path="/sandbox" element={<SandboxPage />} />
           <Route path="*" element={<Navigate to="/overview" replace />} />
